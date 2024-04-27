@@ -54,9 +54,9 @@ public class Consulta extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
-        Cantidad = new javax.swing.JComboBox<>();
+        CantidadCB = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        PagarB = new javax.swing.JButton();
         Panel_Informacion = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -129,19 +129,24 @@ public class Consulta extends javax.swing.JFrame {
         jLabel6.setText("Cantidad");
         Panel_Ver.add(jLabel6);
 
-        Cantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Cantidad.addActionListener(new java.awt.event.ActionListener() {
+        CantidadCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CantidadCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CantidadActionPerformed(evt);
+                CantidadCBActionPerformed(evt);
             }
         });
-        Panel_Ver.add(Cantidad);
+        Panel_Ver.add(CantidadCB);
 
         jLabel9.setText("jLabel9");
         Panel_Ver.add(jLabel9);
 
-        jButton3.setText("jButton3");
-        Panel_Ver.add(jButton3);
+        PagarB.setText("Pagar");
+        PagarB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PagarBActionPerformed(evt);
+            }
+        });
+        Panel_Ver.add(PagarB);
 
         Panel_Principal.add(Panel_Ver);
 
@@ -203,11 +208,15 @@ public class Consulta extends javax.swing.JFrame {
         mostrarProducto();
     }//GEN-LAST:event_ProductosCBActionPerformed
 
-    private void CantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CantidadActionPerformed
+    private void CantidadCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CantidadCBActionPerformed
         // TODO add your handling code here:
         
         
-    }//GEN-LAST:event_CantidadActionPerformed
+    }//GEN-LAST:event_CantidadCBActionPerformed
+
+    private void PagarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PagarBActionPerformed
     //Metodos mios
     public void mostrarProducto()
     {
@@ -215,10 +224,17 @@ public class Consulta extends javax.swing.JFrame {
        CODIGO_JL.setText(aux.getCodigo());
        PRODUCTO_JL.setText(aux.getNombre());
        PRECIO_JL.setText(aux.getPrecioUnitario());
+       CantidadCB.setModel(new DefaultComboBoxModel(ModeloCantidad(aux.getCantidadINT()))); 
     }
-    /**
-     * @param args the command line arguments
-     */
+    public Object[] ModeloCantidad(int i)
+    {
+        Object[] aux= new Object[i];
+        for(int x=0;x<i;x++)
+        {
+            aux[x]=String.valueOf(x+1);
+        }
+        return aux;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -253,10 +269,11 @@ public class Consulta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CODIGO_JL;
-    private javax.swing.JComboBox<String> Cantidad;
+    private javax.swing.JComboBox<String> CantidadCB;
     private javax.swing.JComboBox<String> CategoriaCB;
     private javax.swing.JLabel PRECIO_JL;
     private javax.swing.JLabel PRODUCTO_JL;
+    private javax.swing.JButton PagarB;
     private javax.swing.JPanel Panel_Informacion;
     private javax.swing.JPanel Panel_Principal;
     private javax.swing.JPanel Panel_Superior;
@@ -264,7 +281,6 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ProductosCB;
     private javax.swing.JLabel UsuarioTx;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

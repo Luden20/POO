@@ -54,10 +54,14 @@ public class Producto {
     {
         Cantidad=Cantidad+c;
     }
+    public void Vaciar()
+    {
+        Cantidad=0;
+    }
 
     public String[] getAll()
     {
-        return new String[]{getCodigo(),getNombre(),getDescripcion(),getCantidad(),getPrecioUnitario()};
+        return new String[]{getCodigo(),getNombre(),getCantidad(),getPrecioUnitario()};
     }
     public double CalcularPrecioTotal()
     {

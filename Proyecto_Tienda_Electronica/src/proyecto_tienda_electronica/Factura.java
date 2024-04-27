@@ -15,8 +15,7 @@ public class Factura {
        Producto aux=prod;
        aux.Vaciar();
        aux.AumentarCantidad(CantidadComprada);
-       prod.ReducirCantidad
-       
-       Carrito.put(key, value)
+       prod.ReducirCantidad(CantidadComprada);
+       Carrito.put(aux.getNombre(), aux);
    }
 }

@@ -4,6 +4,7 @@
  */
 package proyecto_tienda_electronica;
 
+import static java.lang.Integer.parseInt;
 import java.util.LinkedHashMap;
 import javax.swing.DefaultComboBoxModel;
 
@@ -216,6 +217,8 @@ public class Consulta extends javax.swing.JFrame {
 
     private void PagarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarBActionPerformed
         // TODO add your handling code here:
+        Producto aux=Existencias.get(CategoriaCB.getSelectedItem().toString()).getProducto(ProductosCB.getSelectedItem().toString());
+        Facturafinal.agregarProducto(aux,parseInt(CantidadCB.getSelectedItem().toString()));
     }//GEN-LAST:event_PagarBActionPerformed
     //Metodos mios
     public void mostrarProducto()
@@ -297,4 +300,5 @@ public class Consulta extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private LinkedHashMap<String,Categoria> Existencias;
     private Cliente clientefinal;
+    private Factura Facturafinal;
 }

@@ -23,9 +23,13 @@ public class Consulta extends javax.swing.JFrame {
     public Consulta(Cliente c,LinkedHashMap<String,Categoria> aux) {
         initComponents();
         TC =new DefaultTableModel();
+        String ids [] = {"Codigo","Nombre","Cantidad","PrecioU","PrecioT"};
+        TC.setColumnIdentifiers(ids);
+        
         clientefinal=c;
         Existencias=aux;
         UsuarioTx.setText("Bienvenido "+c.getNombre());
+        Facturafinal=new Factura(clientefinal);
         TB_Factura.setModel(TC);
     }
 
@@ -228,8 +232,11 @@ public class Consulta extends javax.swing.JFrame {
 
     private void PagarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarBActionPerformed
         // TODO add your handling code here:
+        mostrarProducto();
         Producto aux=Existencias.get(CategoriaCB.getSelectedItem().toString()).getProducto(ProductosCB.getSelectedItem().toString());
+        System.out.println(aux);
         Producto ingresado=Facturafinal.agregarProducto(aux,parseInt(CantidadCB.getSelectedItem().toString()));
+        System.out.println(ingresado);
         TC.addRow(ingresado.getAll());
     }//GEN-LAST:event_PagarBActionPerformed
     //Metodos mios

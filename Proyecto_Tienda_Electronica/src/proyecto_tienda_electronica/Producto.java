@@ -71,4 +71,11 @@ public class Producto {
     {
         return (double)Cantidad*Precio;
     }
+    @Override
+    public String toString() {
+        return "Producto{" +
+                ", nombre='" + Nombre + '\'' +
+                ", Cantidad=" + Cantidad +
+                '}';
+    }
 }

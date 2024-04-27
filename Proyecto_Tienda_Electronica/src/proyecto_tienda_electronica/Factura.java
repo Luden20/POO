@@ -12,7 +12,7 @@ public class Factura {
    }
    public Producto agregarProducto(Producto prod,int CantidadComprada)
    {
-       Producto aux=prod;
+       Producto aux=;
        aux.Vaciar();
        aux.AumentarCantidad(CantidadComprada);
        prod.ReducirCantidad(CantidadComprada);

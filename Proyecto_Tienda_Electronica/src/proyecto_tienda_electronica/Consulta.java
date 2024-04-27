@@ -4,6 +4,8 @@
  */
 package proyecto_tienda_electronica;
 
+import java.util.LinkedHashMap;
+
 /**
  *
  * @author polip
@@ -12,9 +14,14 @@ public class Consulta extends javax.swing.JFrame {
 
     /**
      * Creates new form Consulta
+     * @param aux
      */
-    public Consulta() {
+    public Consulta(Cliente c,LinkedHashMap<String,Categoria> aux) {
         initComponents();
+    }
+
+    private Consulta() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -30,8 +37,8 @@ public class Consulta extends javax.swing.JFrame {
         UsuarioTx = new javax.swing.JLabel();
         Panel_Principal = new javax.swing.JPanel();
         Panel_Ver = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        CategoriaCB = new javax.swing.JComboBox<>();
+        ProductosCB = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         CODIGO_JL = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -39,9 +46,12 @@ public class Consulta extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         PRECIO_JL = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         Panel_Informacion = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -66,18 +76,23 @@ public class Consulta extends javax.swing.JFrame {
         Panel_Principal.setLayout(new javax.swing.BoxLayout(Panel_Principal, javax.swing.BoxLayout.X_AXIS));
 
         Panel_Ver.setBackground(new java.awt.Color(0, 102, 102));
-        Panel_Ver.setLayout(new java.awt.GridLayout(6, 3));
+        Panel_Ver.setLayout(new java.awt.GridLayout(7, 3, 0, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        CategoriaCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Componentes", "Consolas", "Celulares", "Computadores", " " }));
+        CategoriaCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                CategoriaCBActionPerformed(evt);
             }
         });
-        Panel_Ver.add(jComboBox1);
+        Panel_Ver.add(CategoriaCB);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Panel_Ver.add(jComboBox3);
+        ProductosCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ProductosCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductosCBActionPerformed(evt);
+            }
+        });
+        Panel_Ver.add(ProductosCB);
 
         jLabel1.setText("CODIGO");
         Panel_Ver.add(jLabel1);
@@ -97,15 +112,26 @@ public class Consulta extends javax.swing.JFrame {
         PRECIO_JL.setText("jLabel6");
         Panel_Ver.add(PRECIO_JL);
 
-        jLabel7.setText("CANTIDAD");
+        jLabel7.setText("Descripcion");
         Panel_Ver.add(jLabel7);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Panel_Ver.add(jComboBox4);
-        Panel_Ver.add(jLabel8);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
 
-        jButton1.setText("jButton1");
-        Panel_Ver.add(jButton1);
+        Panel_Ver.add(jScrollPane2);
+
+        jLabel6.setText("Cantidad");
+        Panel_Ver.add(jLabel6);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Panel_Ver.add(jComboBox2);
+
+        jLabel9.setText("jLabel9");
+        Panel_Ver.add(jLabel9);
+
+        jButton3.setText("jButton3");
+        Panel_Ver.add(jButton3);
 
         Panel_Principal.add(Panel_Ver);
 
@@ -153,13 +179,19 @@ public class Consulta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void CategoriaCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategoriaCBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+        
+        
+    }//GEN-LAST:event_CategoriaCBActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void ProductosCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductosCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProductosCBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,27 +230,32 @@ public class Consulta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CODIGO_JL;
+    private javax.swing.JComboBox<String> CategoriaCB;
     private javax.swing.JLabel PRECIO_JL;
     private javax.swing.JLabel PRODUCTO_JL;
     private javax.swing.JPanel Panel_Informacion;
     private javax.swing.JPanel Panel_Principal;
     private javax.swing.JPanel Panel_Superior;
     private javax.swing.JPanel Panel_Ver;
+    private javax.swing.JComboBox<String> ProductosCB;
     private javax.swing.JLabel UsuarioTx;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+    private LinkedHashMap<String,Categoria> Existencias;
+    private Cliente clientefinal;
 }

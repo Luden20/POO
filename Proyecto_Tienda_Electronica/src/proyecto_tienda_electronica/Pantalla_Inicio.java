@@ -11,18 +11,18 @@ import javax.swing.JFrame;
  *
  * @author polip
  */
-public class Ingreso_Cliente extends javax.swing.JFrame {
+public class Pantalla_Inicio extends javax.swing.JFrame {
 
     /**
-     * Creates new form Ingreso_Cliente
+     * Creates new form Pantalla_Inicio
      * @param aux
      */
-    public Ingreso_Cliente(LinkedHashMap<String,Categoria> aux) {
+    public Pantalla_Inicio(LinkedHashMap<String,Categoria> aux) {
         initComponents();
-        Existencias=aux;
+        this.Existencias=aux;
     }
 
-    private Ingreso_Cliente() {
+    private Pantalla_Inicio() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -38,63 +38,40 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        NombreTF = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        CedulaTF = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        DireccionTF = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        Ingresar_Cliente = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        Tienda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(51, 0, 153));
-        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
+        getContentPane().setLayout(new java.awt.GridLayout());
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 0));
-        jPanel1.setLayout(new java.awt.GridLayout(5, 2));
-
-        jLabel1.setText("Bienvenido");
+        jPanel1.setBackground(new java.awt.Color(51, 255, 102));
+        jPanel1.setLayout(new java.awt.GridLayout(3, 4, 40, 80));
         jPanel1.add(jLabel1);
-
-        jLabel2.setText("Ingrese sus datos");
         jPanel1.add(jLabel2);
 
-        jLabel3.setText("Nombre");
-        jPanel1.add(jLabel3);
-        jPanel1.add(NombreTF);
+        jButton2.setText("Inventario");
+        jPanel1.add(jButton2);
 
-        jLabel4.setText("Cedula");
-        jPanel1.add(jLabel4);
-        jPanel1.add(CedulaTF);
-
-        jLabel5.setText("Direccion");
-        jPanel1.add(jLabel5);
-        jPanel1.add(DireccionTF);
-
-        jLabel6.setText("Estos datos se usaran para la facturacion");
-        jPanel1.add(jLabel6);
-
-        Ingresar_Cliente.setText("Ingresar");
-        Ingresar_Cliente.addActionListener(new java.awt.event.ActionListener() {
+        Tienda.setText("Cliente");
+        Tienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ingresar_ClienteActionPerformed(evt);
+                TiendaActionPerformed(evt);
             }
         });
-        jPanel1.add(Ingresar_Cliente);
+        jPanel1.add(Tienda);
 
         getContentPane().add(jPanel1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Ingresar_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ingresar_ClienteActionPerformed
+    private void TiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TiendaActionPerformed
         // TODO add your handling code here:
-        Consulta a=new Consulta(new Cliente(NombreTF.toString(),CedulaTF.toString(),DireccionTF.toString()),Existencias);
+        Ingreso_Cliente a=new Ingreso_Cliente(Existencias);
         a.setTitle("Menu");
         a.setVisible(true);
         a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-    }//GEN-LAST:event_Ingresar_ClienteActionPerformed
+    }//GEN-LAST:event_TiendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,35 +90,29 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Ingreso_Cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pantalla_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Ingreso_Cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pantalla_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Ingreso_Cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pantalla_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Ingreso_Cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pantalla_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Ingreso_Cliente().setVisible(true);
+                new Pantalla_Inicio().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CedulaTF;
-    private javax.swing.JTextField DireccionTF;
-    private javax.swing.JButton Ingresar_Cliente;
-    private javax.swing.JTextField NombreTF;
+    private javax.swing.JButton Tienda;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
     private LinkedHashMap<String,Categoria> Existencias;

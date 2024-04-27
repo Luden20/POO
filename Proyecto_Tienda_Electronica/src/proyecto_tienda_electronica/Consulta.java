@@ -234,10 +234,13 @@ public class Consulta extends javax.swing.JFrame {
         // TODO add your handling code here:
         mostrarProducto();
         Producto aux=Existencias.get(CategoriaCB.getSelectedItem().toString()).getProducto(ProductosCB.getSelectedItem().toString());
-        System.out.println(aux);
-        Producto ingresado=Facturafinal.agregarProducto(aux,parseInt(CantidadCB.getSelectedItem().toString()));
-        System.out.println(ingresado);
+        Producto ingresado=Facturafinal.agregarProducto(aux,Integer.parseInt(CantidadCB.getSelectedItem().toString()));
+        
+        System.out.println(Integer.parseInt(CantidadCB.getSelectedItem().toString()));
+        System.out.println("El producto en la tienda queda "+aux);
+        System.out.println("El prodcuto en la fact es "+ingresado);
         TC.addRow(ingresado.getAll());
+        mostrarProducto();
     }//GEN-LAST:event_PagarBActionPerformed
     //Metodos mios
     public void mostrarProducto()

@@ -7,7 +7,7 @@ public class Proyecto_Tienda_Electronica {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Producto producto1 = new Producto("001", "XBOX SERIE S", 399.99, "XBOZ", 3);
+        Producto producto1 = new Producto("001", "XBOX SERIE S", 399.99, "XBOZ", 4);
         Producto producto2 = new Producto("002", "IPHONE 15", 1229.99, "TU ERE POBRE TU NO TIENE IPHONE", 30);
         Producto producto3 = new Producto("003", "COMPUTADOR GAMER XD", 999.99, "COMPUTADOR", 10);
         Producto producto4 = new Producto("004", "Rizen 4", 199.99, "Ryzen 4", 20);

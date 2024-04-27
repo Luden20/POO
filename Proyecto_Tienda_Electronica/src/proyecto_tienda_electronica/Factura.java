@@ -12,8 +12,7 @@ public class Factura {
    }
    public Producto agregarProducto(Producto prod,int CantidadComprada)
    {
-       Producto aux=;
-       aux.Vaciar();
+       Producto aux=new Producto(prod.getCodigo(),prod.getNombre(),prod.getPrecioUnitarioDouble(),prod.getDescripcion(),0);
        aux.AumentarCantidad(CantidadComprada);
        prod.ReducirCantidad(CantidadComprada);
        Carrito.put(aux.getNombre(), aux);

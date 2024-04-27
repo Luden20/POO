@@ -200,7 +200,7 @@ public class Consulta extends javax.swing.JFrame {
     //Metodos mios
     public void mostrarProducto()
     {
-    
+        Existencias.get(CategoriaCB.getSelectedItem().toString());
     }
     /**
      * @param args the command line arguments

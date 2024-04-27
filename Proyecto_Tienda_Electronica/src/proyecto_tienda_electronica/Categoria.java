@@ -24,6 +24,10 @@ public class Categoria {
     {
         ProductosAlmacenados.put(agregado.getNombre(),agregado);
     }
+    public Producto getProducto(String Nombre)
+    {
+        return ProductosAlmacenados.get(Nombre);
+    }
     public Object[] getListado()
     {
         LinkedList<String> lista=new LinkedList<String>();

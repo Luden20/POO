@@ -34,6 +34,10 @@ public class Producto {
     {
         return Precio+"";
     }
+    public double getPrecioUnitarioDouble()
+    {
+        return Precio;
+    }
     public String getDescripcion()
     {
         return Descripcion;

@@ -10,9 +10,12 @@ public class Factura {
        Comprador=c;
        Carrito=new LinkedHashMap<String,Producto>();
    }
-   public void agregarProducto(Producto prod)
+   public void agregarProducto(Producto prod,int CantidadComprada)
    {
        Producto aux=prod;
+       aux.Vaciar();
+       aux.AumentarCantidad(CantidadComprada);
+       prod.ReducirCantidad
        
        Carrito.put(key, value)
    }

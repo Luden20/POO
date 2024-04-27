@@ -54,7 +54,7 @@ public class Consulta extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        Cantidad = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         Panel_Informacion = new javax.swing.JPanel();
@@ -129,8 +129,13 @@ public class Consulta extends javax.swing.JFrame {
         jLabel6.setText("Cantidad");
         Panel_Ver.add(jLabel6);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Panel_Ver.add(jComboBox2);
+        Cantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Cantidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CantidadActionPerformed(evt);
+            }
+        });
+        Panel_Ver.add(Cantidad);
 
         jLabel9.setText("jLabel9");
         Panel_Ver.add(jLabel9);
@@ -195,12 +200,21 @@ public class Consulta extends javax.swing.JFrame {
 
     private void ProductosCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductosCBActionPerformed
         // TODO add your handling code here:
-        
+        mostrarProducto();
     }//GEN-LAST:event_ProductosCBActionPerformed
+
+    private void CantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CantidadActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_CantidadActionPerformed
     //Metodos mios
     public void mostrarProducto()
     {
-        Existencias.get(CategoriaCB.getSelectedItem().toString());
+       Producto aux=Existencias.get(CategoriaCB.getSelectedItem().toString()).getProducto(ProductosCB.getSelectedItem().toString());
+       CODIGO_JL.setText(aux.getCodigo());
+       PRODUCTO_JL.setText(aux.getNombre());
+       PRECIO_JL.setText(aux.getPrecioUnitario());
     }
     /**
      * @param args the command line arguments
@@ -239,6 +253,7 @@ public class Consulta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CODIGO_JL;
+    private javax.swing.JComboBox<String> Cantidad;
     private javax.swing.JComboBox<String> CategoriaCB;
     private javax.swing.JLabel PRECIO_JL;
     private javax.swing.JLabel PRODUCTO_JL;
@@ -250,7 +265,6 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JLabel UsuarioTx;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

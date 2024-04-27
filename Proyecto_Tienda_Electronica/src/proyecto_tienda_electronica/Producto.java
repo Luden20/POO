@@ -42,6 +42,10 @@ public class Producto {
     {
         return Cantidad+"";
     }
+    public int getCantidadINT()
+    {
+        return Cantidad;
+    }
     public void ReducirCantidad(int c)
     {
         Cantidad=Cantidad-c;

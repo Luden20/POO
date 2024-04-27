@@ -24,14 +24,14 @@ public class Categoria {
     {
         ProductosAlmacenados.put(agregado.getNombre(),agregado);
     }
-    public String[] getListado()
+    public Object[] getListado()
     {
         LinkedList<String> lista=new LinkedList<String>();
         for (Map.Entry<String, Producto> entry : ProductosAlmacenados.entrySet()) 
             {
                 lista.add(entry.getKey());
             }
-        return lista.toArray(new String[0]);
+        return lista.toArray();
     }
             
 }

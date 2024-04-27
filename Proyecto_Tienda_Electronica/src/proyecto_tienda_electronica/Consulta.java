@@ -5,6 +5,7 @@
 package proyecto_tienda_electronica;
 
 import java.util.LinkedHashMap;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -14,10 +15,14 @@ public class Consulta extends javax.swing.JFrame {
 
     /**
      * Creates new form Consulta
+     * @param c
      * @param aux
      */
     public Consulta(Cliente c,LinkedHashMap<String,Categoria> aux) {
         initComponents();
+        clientefinal=c;
+        Existencias=aux;
+        UsuarioTx.setText("Bienvenido "+c.getNombre());
     }
 
     private Consulta() {
@@ -76,7 +81,7 @@ public class Consulta extends javax.swing.JFrame {
         Panel_Principal.setLayout(new javax.swing.BoxLayout(Panel_Principal, javax.swing.BoxLayout.X_AXIS));
 
         Panel_Ver.setBackground(new java.awt.Color(0, 102, 102));
-        Panel_Ver.setLayout(new java.awt.GridLayout(7, 3, 0, 30));
+        Panel_Ver.setLayout(new java.awt.GridLayout(7, 3, 15, 30));
 
         CategoriaCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Componentes", "Consolas", "Celulares", "Computadores", " " }));
         CategoriaCB.addActionListener(new java.awt.event.ActionListener() {
@@ -181,8 +186,7 @@ public class Consulta extends javax.swing.JFrame {
 
     private void CategoriaCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategoriaCBActionPerformed
         // TODO add your handling code here:
-        
-        
+       ProductosCB.setModel(new DefaultComboBoxModel(Existencias.get(CategoriaCB.getSelectedItem().toString()).getListado()));
     }//GEN-LAST:event_CategoriaCBActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -191,8 +195,13 @@ public class Consulta extends javax.swing.JFrame {
 
     private void ProductosCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductosCBActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_ProductosCBActionPerformed
-
+    //Metodos mios
+    public void mostrarProducto()
+    {
+    
+    }
     /**
      * @param args the command line arguments
      */

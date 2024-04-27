@@ -10,4 +10,8 @@ public class Cliente {
         this.Cedula=C;
         this.Direccion=D;
     }
+    public String getNombre()
+    {
+        return this.Nombre;
+    }
 }

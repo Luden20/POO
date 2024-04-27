@@ -6,6 +6,7 @@ package proyecto_tienda_electronica;
 
 import java.util.LinkedHashMap;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -90,12 +91,26 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
 
     private void Ingresar_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ingresar_ClienteActionPerformed
         // TODO add your handling code here:
-        Consulta a=new Consulta(new Cliente(NombreTF.toString(),CedulaTF.toString(),DireccionTF.toString()),Existencias);
-        a.setTitle("Menu");
-        a.setVisible(true);
-        a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        if(Validar())
+        {
+            Consulta a=new Consulta(new Cliente(NombreTF.getText(),CedulaTF.getText(),DireccionTF.getText()),Existencias);
+            a.setTitle("Menu");
+            a.setVisible(true);
+            a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            dispose();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this,"Ingrese datos valids", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        
     }//GEN-LAST:event_Ingresar_ClienteActionPerformed
-
+    public boolean Validar()
+    {
+        return !NombreTF.getText().isEmpty() && !CedulaTF.getText().isEmpty() && !DireccionTF.getText().isEmpty();
+        
+    }
     /**
      * @param args the command line arguments
      */

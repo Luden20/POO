@@ -7,6 +7,7 @@ package proyecto_tienda_electronica;
 import static java.lang.Integer.parseInt;
 import java.util.LinkedHashMap;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -21,9 +22,11 @@ public class Consulta extends javax.swing.JFrame {
      */
     public Consulta(Cliente c,LinkedHashMap<String,Categoria> aux) {
         initComponents();
+        TC =new DefaultTableModel();
         clientefinal=c;
         Existencias=aux;
         UsuarioTx.setText("Bienvenido "+c.getNombre());
+        TB_Factura.setModel(TC);
     }
 
     private Consulta() {
@@ -60,7 +63,7 @@ public class Consulta extends javax.swing.JFrame {
         PagarB = new javax.swing.JButton();
         Panel_Informacion = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TB_Factura = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -154,18 +157,26 @@ public class Consulta extends javax.swing.JFrame {
         Panel_Informacion.setBackground(new java.awt.Color(102, 204, 0));
         Panel_Informacion.setLayout(new javax.swing.BoxLayout(Panel_Informacion, javax.swing.BoxLayout.PAGE_AXIS));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TB_Factura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Codigo", "Nombre", "Cantidad", "PrecioUnitario", "PrecioTotal"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(TB_Factura);
 
         Panel_Informacion.add(jScrollPane1);
 
@@ -218,7 +229,8 @@ public class Consulta extends javax.swing.JFrame {
     private void PagarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarBActionPerformed
         // TODO add your handling code here:
         Producto aux=Existencias.get(CategoriaCB.getSelectedItem().toString()).getProducto(ProductosCB.getSelectedItem().toString());
-        Facturafinal.agregarProducto(aux,parseInt(CantidadCB.getSelectedItem().toString()));
+        Producto ingresado=Facturafinal.agregarProducto(aux,parseInt(CantidadCB.getSelectedItem().toString()));
+        TC.addRow(ingresado.getAll());
     }//GEN-LAST:event_PagarBActionPerformed
     //Metodos mios
     public void mostrarProducto()
@@ -282,6 +294,7 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JPanel Panel_Superior;
     private javax.swing.JPanel Panel_Ver;
     private javax.swing.JComboBox<String> ProductosCB;
+    private javax.swing.JTable TB_Factura;
     private javax.swing.JLabel UsuarioTx;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -295,10 +308,10 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
     private LinkedHashMap<String,Categoria> Existencias;
     private Cliente clientefinal;
     private Factura Facturafinal;
+    private  DefaultTableModel TC;
 }

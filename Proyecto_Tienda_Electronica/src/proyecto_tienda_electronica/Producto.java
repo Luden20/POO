@@ -65,7 +65,7 @@ public class Producto {
 
     public String[] getAll()
     {
-        return new String[]{getCodigo(),getNombre(),getCantidad(),getPrecioUnitario()};
+        return new String[]{getCodigo(),getNombre(),getCantidad(),getPrecioUnitario(),CalcularPrecioTotal()+""};
     }
     public double CalcularPrecioTotal()
     {

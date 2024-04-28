@@ -31,31 +31,31 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        CBCategoria = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        TFCodigo = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        TFNombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        TFPrecio = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        TFDescripcion = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        CBCantidad = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        BotonIngresoNuevo = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         Panel_Ingreso_Productos_Existente = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        CBCategoriaIngreso = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        CBProductoIngreso = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        CBCantidadIngreso = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        ButtonIngresoExistente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
@@ -75,44 +75,57 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel9.setText("Categoria");
         Panel_Ingreso_Productos_Nuevos.add(jLabel9);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Panel_Ingreso_Productos_Nuevos.add(jComboBox3);
+        CBCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Categoria)", "Componentes", "Consolas", "Celulares", "Computadores" }));
+        CBCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBCategoriaActionPerformed(evt);
+            }
+        });
+        Panel_Ingreso_Productos_Nuevos.add(CBCategoria);
 
         jLabel3.setText("Codigo");
         Panel_Ingreso_Productos_Nuevos.add(jLabel3);
 
-        jTextField1.setText("jTextField1");
-        Panel_Ingreso_Productos_Nuevos.add(jTextField1);
+        TFCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFCodigoActionPerformed(evt);
+            }
+        });
+        Panel_Ingreso_Productos_Nuevos.add(TFCodigo);
 
         jLabel4.setText("Nombre");
         Panel_Ingreso_Productos_Nuevos.add(jLabel4);
-
-        jTextField2.setText("jTextField2");
-        Panel_Ingreso_Productos_Nuevos.add(jTextField2);
+        Panel_Ingreso_Productos_Nuevos.add(TFNombre);
 
         jLabel5.setText("Precio");
         Panel_Ingreso_Productos_Nuevos.add(jLabel5);
-
-        jTextField3.setText("jTextField3");
-        Panel_Ingreso_Productos_Nuevos.add(jTextField3);
+        Panel_Ingreso_Productos_Nuevos.add(TFPrecio);
 
         jLabel6.setText("Descripcion");
         Panel_Ingreso_Productos_Nuevos.add(jLabel6);
-
-        jTextField4.setText("jTextField4");
-        Panel_Ingreso_Productos_Nuevos.add(jTextField4);
+        Panel_Ingreso_Productos_Nuevos.add(TFDescripcion);
 
         jLabel15.setText("Cantidad");
         Panel_Ingreso_Productos_Nuevos.add(jLabel15);
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Panel_Ingreso_Productos_Nuevos.add(jComboBox5);
+        CBCantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99" }));
+        CBCantidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBCantidadActionPerformed(evt);
+            }
+        });
+        Panel_Ingreso_Productos_Nuevos.add(CBCantidad);
 
-        jLabel16.setText("jLabel16");
+        jLabel16.setText(".");
         Panel_Ingreso_Productos_Nuevos.add(jLabel16);
 
-        jButton3.setText("jButton3");
-        Panel_Ingreso_Productos_Nuevos.add(jButton3);
+        BotonIngresoNuevo.setText("Ingresar");
+        BotonIngresoNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonIngresoNuevoActionPerformed(evt);
+            }
+        });
+        Panel_Ingreso_Productos_Nuevos.add(BotonIngresoNuevo);
 
         Panel_Principal.add(Panel_Ingreso_Productos_Nuevos);
 
@@ -120,7 +133,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 27, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,34 +154,34 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel11.setText("Categoria");
         Panel_Ingreso_Productos_Existente.add(jLabel11);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        CBCategoriaIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Componente)", "Componentes", "Consolas", "Celulares", "Computadores" }));
+        CBCategoriaIngreso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                CBCategoriaIngresoActionPerformed(evt);
             }
         });
-        Panel_Ingreso_Productos_Existente.add(jComboBox1);
+        Panel_Ingreso_Productos_Existente.add(CBCategoriaIngreso);
 
         jLabel12.setText("Producto");
         Panel_Ingreso_Productos_Existente.add(jLabel12);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Panel_Ingreso_Productos_Existente.add(jComboBox2);
+        CBProductoIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Panel_Ingreso_Productos_Existente.add(CBProductoIngreso);
 
         jLabel13.setText("Cantidad a ingresar");
         Panel_Ingreso_Productos_Existente.add(jLabel13);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Panel_Ingreso_Productos_Existente.add(jComboBox4);
+        CBCantidadIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99" }));
+        Panel_Ingreso_Productos_Existente.add(CBCantidadIngreso);
         Panel_Ingreso_Productos_Existente.add(jLabel14);
 
-        jButton2.setText("Ingresar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ButtonIngresoExistente.setText("Ingresar");
+        ButtonIngresoExistente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ButtonIngresoExistenteActionPerformed(evt);
             }
         });
-        Panel_Ingreso_Productos_Existente.add(jButton2);
+        Panel_Ingreso_Productos_Existente.add(ButtonIngresoExistente);
 
         Panel_Principal.add(Panel_Ingreso_Productos_Existente);
 
@@ -177,13 +190,29 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void CBCategoriaIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBCategoriaIngresoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_CBCategoriaIngresoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ButtonIngresoExistenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonIngresoExistenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ButtonIngresoExistenteActionPerformed
+
+    private void TFCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TFCodigoActionPerformed
+
+    private void BotonIngresoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIngresoNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonIngresoNuevoActionPerformed
+
+    private void CBCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBCantidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CBCantidadActionPerformed
+
+    private void CBCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBCategoriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CBCategoriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,18 +248,29 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             }
         });
     }
+    
+    public boolean validar()
+    {
+        return !"".equals(TFCodigo.getText())&&!"".equals(TFNombre.getText())&&!"".equals(TFPrecio.getText())&&!"".equals(TFDescripcion.getText());
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonIngresoNuevo;
+    private javax.swing.JButton ButtonIngresoExistente;
+    private javax.swing.JComboBox<String> CBCantidad;
+    private javax.swing.JComboBox<String> CBCantidadIngreso;
+    private javax.swing.JComboBox<String> CBCategoria;
+    private javax.swing.JComboBox<String> CBCategoriaIngreso;
+    private javax.swing.JComboBox<String> CBProductoIngreso;
     private javax.swing.JPanel Panel_Ingreso_Productos_Existente;
     private javax.swing.JPanel Panel_Ingreso_Productos_Nuevos;
     private javax.swing.JPanel Panel_Principal;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JTextField TFCodigo;
+    private javax.swing.JTextField TFDescripcion;
+    private javax.swing.JTextField TFNombre;
+    private javax.swing.JTextField TFPrecio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -247,9 +287,5 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

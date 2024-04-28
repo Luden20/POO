@@ -5,14 +5,18 @@ import java.util.Map;
 import javax.swing.table.DefaultTableModel;
 
 public class Factura {
+    //Atributos de la factura
    private Cliente Comprador;
    private LinkedHashMap<String,Producto> Carrito;
+   //El contructor solo requiere cliente 
    public Factura(Cliente c)
    {
        Comprador=c;
        Carrito=new LinkedHashMap<String,Producto>();
    }
-   public Producto agregarProducto(Producto prod,int CantidadComprada)
+   //Funcion para agregar productos y una cantidad
+   //El producto
+   public void agregarProducto(Producto prod,int CantidadComprada)
    {
        Producto aux=new Producto(prod.getCodigo(),prod.getNombre(),prod.getPrecioUnitarioDouble(),prod.getDescripcion(),0);
        aux.AumentarCantidad(CantidadComprada);
@@ -26,7 +30,6 @@ public class Factura {
            Carrito.put(aux.getNombre(), aux);
        }
        
-       return aux;
    }
    public double getTotalProd()
    {

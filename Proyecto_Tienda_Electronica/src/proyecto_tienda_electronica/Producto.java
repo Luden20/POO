@@ -32,7 +32,7 @@ public class Producto {
     }
     public String getPrecioUnitario()
     {
-        return Precio+"";
+        return String.format("%.2f", Precio);
     }
     public double getPrecioUnitarioDouble()
     {
@@ -69,7 +69,7 @@ public class Producto {
 
     public String[] getAll()
     {
-        return new String[]{getCodigo(),getNombre(),getCantidad(),getPrecioUnitario(),CalcularPrecioTotal()+""};
+        return new String[]{getCodigo(),getNombre(),getCantidad(),getPrecioUnitario(),String.format("%.2f", CalcularPrecioTotal())};
     }
     public String[] getAllCompleto()
     {

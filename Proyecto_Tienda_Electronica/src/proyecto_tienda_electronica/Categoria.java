@@ -40,7 +40,7 @@ public class Categoria {
             }
         return lista.toArray();
     }
-    public void mostratTabla(DefaultTableModel TC)
+    public void mostrarTabla(DefaultTableModel TC)
    {
        TC.setRowCount(0);
        for (Map.Entry<String, Producto> entry : ProductosAlmacenados.entrySet()) 

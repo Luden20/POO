@@ -88,23 +88,25 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Panel_Principal.setMaximumSize(new java.awt.Dimension(1920, 1080));
         Panel_Principal.setMinimumSize(new java.awt.Dimension(1920, 1080));
         Panel_Principal.setPreferredSize(new java.awt.Dimension(1920, 1080));
-        Panel_Principal.setLayout(new javax.swing.BoxLayout(Panel_Principal, javax.swing.BoxLayout.X_AXIS));
+        Panel_Principal.setLayout(new java.awt.GridLayout(1, 3, 10, 0));
 
         Panel_Ingreso_Productos_Nuevos.setBackground(new java.awt.Color(33, 63, 99));
-        Panel_Ingreso_Productos_Nuevos.setLayout(new java.awt.GridLayout(8, 2, 5, 30));
+        Panel_Ingreso_Productos_Nuevos.setLayout(new java.awt.GridLayout(9, 2, 5, 90));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Ingreso");
         Panel_Ingreso_Productos_Nuevos.add(jLabel1);
 
-        jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 255, 255));
         jLabel2.setText("Productos nuevos");
         Panel_Ingreso_Productos_Nuevos.add(jLabel2);
 
-        jLabel9.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Categoria");
         Panel_Ingreso_Productos_Nuevos.add(jLabel9);
 
@@ -116,8 +118,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Panel_Ingreso_Productos_Nuevos.add(CBCategoria);
 
-        jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Codigo");
         Panel_Ingreso_Productos_Nuevos.add(jLabel3);
 
@@ -128,26 +131,30 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Panel_Ingreso_Productos_Nuevos.add(TFCodigo);
 
-        jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Nombre");
         Panel_Ingreso_Productos_Nuevos.add(jLabel4);
         Panel_Ingreso_Productos_Nuevos.add(TFNombre);
 
-        jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Precio");
         Panel_Ingreso_Productos_Nuevos.add(jLabel5);
         Panel_Ingreso_Productos_Nuevos.add(TFPrecio);
 
-        jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Descripcion");
         Panel_Ingreso_Productos_Nuevos.add(jLabel6);
         Panel_Ingreso_Productos_Nuevos.add(TFDescripcion);
 
-        jLabel15.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Cantidad");
         Panel_Ingreso_Productos_Nuevos.add(jLabel15);
 
@@ -161,7 +168,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText(".");
         Panel_Ingreso_Productos_Nuevos.add(jLabel16);
 
         BotonIngresoNuevo.setText("Ingresar");
@@ -175,20 +181,22 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Panel_Principal.add(Panel_Ingreso_Productos_Nuevos);
 
         Panel_Ingreso_Productos_Existente.setBackground(new java.awt.Color(102, 102, 102));
-        Panel_Ingreso_Productos_Existente.setLayout(new java.awt.GridLayout(5, 2, 10, 30));
+        Panel_Ingreso_Productos_Existente.setLayout(new java.awt.GridLayout(6, 2, 10, 150));
 
-        jLabel8.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Ingreso");
         Panel_Ingreso_Productos_Existente.add(jLabel8);
 
-        jLabel10.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(102, 255, 255));
         jLabel10.setText("Productos existentes");
         Panel_Ingreso_Productos_Existente.add(jLabel10);
 
-        jLabel11.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Categoria");
         Panel_Ingreso_Productos_Existente.add(jLabel11);
 
@@ -200,8 +208,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Panel_Ingreso_Productos_Existente.add(CBCategoriaIngreso);
 
-        jLabel12.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Producto");
         Panel_Ingreso_Productos_Existente.add(jLabel12);
 
@@ -212,8 +221,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Panel_Ingreso_Productos_Existente.add(CBProductoIngreso);
 
-        jLabel13.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Cantidad a ingresar");
         Panel_Ingreso_Productos_Existente.add(jLabel13);
 
@@ -315,7 +325,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             }*/
 
             //JOptionPane.showMessageDialog(this, "Cantidad actualizada correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-            Existencias.get(Componentes_Ver.getSelectedItem().toString()).mostratTabla(TC);
+            Existencias.get(Componentes_Ver.getSelectedItem().toString()).mostrarTabla(TC);
     }//GEN-LAST:event_ButtonIngresoExistenteActionPerformed
 
     private void TFCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFCodigoActionPerformed
@@ -336,7 +346,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         else
         {
             categoria.agregarProducto(nuevoProducto);
-            Existencias.get(Componentes_Ver.getSelectedItem().toString()).mostratTabla(TC);
+            Existencias.get(Componentes_Ver.getSelectedItem().toString()).mostrarTabla(TC);
             cantidades(categoriaSeleccionada);
         }
         
@@ -359,7 +369,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
 
     private void Componentes_VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Componentes_VerActionPerformed
         // TODO add your handling code here:
-        Existencias.get(Componentes_Ver.getSelectedItem().toString()).mostratTabla(TC);
+        Existencias.get(Componentes_Ver.getSelectedItem().toString()).mostrarTabla(TC);
     }//GEN-LAST:event_Componentes_VerActionPerformed
 
     private void CBProductoIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBProductoIngresoActionPerformed

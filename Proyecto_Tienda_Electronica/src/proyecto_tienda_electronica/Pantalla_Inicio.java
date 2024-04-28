@@ -49,7 +49,9 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jPanel1.add(jLabel2);
 
-        jButton2.setText("Inventario");
+        jButton2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 0, 0));
+        jButton2.setText("Gestion de productos");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -57,7 +59,9 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2);
 
-        Tienda.setText("Cliente");
+        Tienda.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        Tienda.setForeground(new java.awt.Color(51, 51, 255));
+        Tienda.setText("Tienda");
         Tienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TiendaActionPerformed(evt);

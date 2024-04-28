@@ -56,35 +56,51 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setLayout(new java.awt.GridLayout(5, 2));
+        jPanel1.setLayout(new java.awt.GridLayout(6, 2, 0, 150));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Bienvenido");
         jPanel1.add(jLabel1);
 
-        jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ingrese sus datos");
         jPanel1.add(jLabel2);
 
-        jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Nombre");
         jPanel1.add(jLabel3);
+
+        NombreTF.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
         jPanel1.add(NombreTF);
 
-        jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Cedula");
         jPanel1.add(jLabel4);
+
+        CedulaTF.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
         jPanel1.add(CedulaTF);
 
-        jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Direccion");
         jPanel1.add(jLabel5);
+
+        DireccionTF.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
         jPanel1.add(DireccionTF);
 
-        jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Estos datos se usaran para la facturacion");
         jPanel1.add(jLabel6);
 
+        Ingresar_Cliente.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
+        Ingresar_Cliente.setForeground(new java.awt.Color(0, 153, 153));
         Ingresar_Cliente.setText("Ingresar");
         Ingresar_Cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

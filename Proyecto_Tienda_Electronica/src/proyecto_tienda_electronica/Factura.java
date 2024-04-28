@@ -15,7 +15,10 @@ public class Factura {
        Carrito=new LinkedHashMap<String,Producto>();
    }
    //Funcion para agregar productos y una cantidad
-   //El producto
+   //El producto se agrega en esta funcion y ademas se le ingresa una cantidad que se va a comprar
+   //El producto ingresado es el del inventario, se resta deste producto lo que compramos y
+   //copiamos sus datos para generar un nuevo producto igual pero que que tiene la cantidad que compramos
+   //Este ultumo se le agrega a la factura
    public void agregarProducto(Producto prod,int CantidadComprada)
    {
        Producto aux=new Producto(prod.getCodigo(),prod.getNombre(),prod.getPrecioUnitarioDouble(),prod.getDescripcion(),0);
@@ -31,6 +34,7 @@ public class Factura {
        }
        
    }
+   //Sirve para calcular el precio total de los productos
    public double getTotalProd()
    {
        double precio=0;
@@ -40,9 +44,12 @@ public class Factura {
             }
        return precio;
    }
+   //Sirve para mostrar recibe un tablemodel y lo modifica con los datos
    public void mostratTabla(DefaultTableModel TC)
    {
+       //borro todo
        TC.setRowCount(0);
+       //agrego producto por producto
        for (Map.Entry<String, Producto> entry : Carrito.entrySet()) 
             {
                 TC.addRow(entry.getValue().getAll());

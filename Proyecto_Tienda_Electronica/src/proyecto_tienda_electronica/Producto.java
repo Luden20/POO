@@ -67,6 +67,10 @@ public class Producto {
     {
         return new String[]{getCodigo(),getNombre(),getCantidad(),getPrecioUnitario(),CalcularPrecioTotal()+""};
     }
+    public String[] getAllCompleto()
+    {
+        return new String[]{getCodigo(),getNombre(),getCantidad(),getPrecioUnitario(),getDescripcion()};
+    }
     public double CalcularPrecioTotal()
     {
         return (double)Cantidad*Precio;

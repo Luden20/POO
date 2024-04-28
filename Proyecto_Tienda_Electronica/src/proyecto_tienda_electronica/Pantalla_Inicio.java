@@ -42,14 +42,19 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         Tienda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout());
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel1.setBackground(new java.awt.Color(51, 255, 102));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new java.awt.GridLayout(3, 4, 40, 80));
         jPanel1.add(jLabel1);
         jPanel1.add(jLabel2);
 
         jButton2.setText("Inventario");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
 
         Tienda.setText("Cliente");
@@ -72,6 +77,13 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         a.setVisible(true);
         a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_TiendaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Ingreso_Productos a=new Ingreso_Productos(Existencias);
+        a.setVisible(true);
+        a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -3,6 +3,7 @@ package proyecto_tienda_electronica;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
+import javax.swing.table.DefaultTableModel;
 
 public class Categoria {
     private String Nombre;
@@ -37,5 +38,13 @@ public class Categoria {
             }
         return lista.toArray();
     }
+    public void mostratTabla(DefaultTableModel TC)
+   {
+       TC.setRowCount(0);
+       for (Map.Entry<String, Producto> entry : ProductosAlmacenados.entrySet()) 
+            {
+                TC.addRow(entry.getValue().getAllCompleto());
+            }
+   }
             
 }

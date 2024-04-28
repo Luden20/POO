@@ -62,6 +62,10 @@ public class Producto {
     {
         Cantidad=0;
     }
+    
+        public void setCantidad(int cantidad) {
+        this.Cantidad = cantidad;
+    }
 
     public String[] getAll()
     {

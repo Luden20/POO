@@ -6,6 +6,7 @@ package proyecto_tienda_electronica;
 import java.util.LinkedHashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.DefaultComboBoxModel;
 /*
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
@@ -23,15 +24,15 @@ public class Ingreso_Productos extends javax.swing.JFrame {
      */
     public Ingreso_Productos(LinkedHashMap<String,Categoria> c) {
         initComponents();
+        TC = new DefaultTableModel();
+        String ids [] = {"Codigo","Nombre","Cantidad","Precio","Descripcion"};
+        TC.setColumnIdentifiers(ids);
+        Tabla.setModel(TC);
         Existencias = c;
         Componentes = 0;
         Consolas = 0;
         Celulares = 0;
         Computadores = 0;
-        TC =new DefaultTableModel();
-        String ids [] = {"Codigo","Nombre","Cantidad","Precio","Descripcion"};
-        TC.setColumnIdentifiers(ids);
-        Tabla.setModel(TC);
     }
 
     private Ingreso_Productos() {
@@ -185,7 +186,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel11.setText("Categoria");
         Panel_Ingreso_Productos_Existente.add(jLabel11);
 
-        CBCategoriaIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Componente)", "Componentes", "Consolas", "Celulares", "Computadores" }));
+        CBCategoriaIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Categoria)", "Componentes", "Consolas", "Celulares", "Computadores" }));
         CBCategoriaIngreso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CBCategoriaIngresoActionPerformed(evt);
@@ -198,7 +199,11 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel12.setText("Producto");
         Panel_Ingreso_Productos_Existente.add(jLabel12);
 
-        CBProductoIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBProductoIngreso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBProductoIngresoActionPerformed(evt);
+            }
+        });
         Panel_Ingreso_Productos_Existente.add(CBProductoIngreso);
 
         jLabel13.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
@@ -207,6 +212,11 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Panel_Ingreso_Productos_Existente.add(jLabel13);
 
         CBCantidadIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99" }));
+        CBCantidadIngreso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBCantidadIngresoActionPerformed(evt);
+            }
+        });
         Panel_Ingreso_Productos_Existente.add(CBCantidadIngreso);
 
         jLabel14.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
@@ -265,10 +275,39 @@ public class Ingreso_Productos extends javax.swing.JFrame {
 
     private void CBCategoriaIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBCategoriaIngresoActionPerformed
         // TODO add your handling code here:
+        String categoriaSeleccionada = CBCategoriaIngreso.getSelectedItem().toString();
+    
+        Object[] productos = Existencias.get(categoriaSeleccionada).getListado();
+    
+        String[] productosString = new String[productos.length];
+        for (int i = 0; i < productos.length; i++) 
+        {
+            productosString[i] = productos[i].toString();
+        }
+    
+        CBProductoIngreso.setModel(new DefaultComboBoxModel<>(productosString));
     }//GEN-LAST:event_CBCategoriaIngresoActionPerformed
 
     private void ButtonIngresoExistenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonIngresoExistenteActionPerformed
         // TODO add your handling code here:
+        String categoriaSeleccionada = CBCategoriaIngreso.getSelectedItem().toString();
+        String productoSeleccionado = CBProductoIngreso.getSelectedItem().toString();
+        int cantidadIngresada = Integer.parseInt(CBCantidadIngreso.getSelectedItem().toString());
+    
+        Categoria categoria = Existencias.get(categoriaSeleccionada);
+        Producto producto = categoria.getProducto(productoSeleccionado);
+        
+        producto.AumentarCantidad(cantidadIngresada);
+
+            // Actualizar la cantidad en la tabla
+            for (int i = 0; i < TC.getRowCount(); i++) {
+                if (TC.getValueAt(i, 0).equals(producto.getCodigo())) {
+                    TC.setValueAt(producto.getCantidad(), i, 2); // Actualizar la cantidad en la columna 2
+                    break;
+                }
+            }
+
+            JOptionPane.showMessageDialog(this, "Cantidad actualizada correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_ButtonIngresoExistenteActionPerformed
 
     private void TFCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFCodigoActionPerformed
@@ -276,29 +315,22 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_TFCodigoActionPerformed
 
     private void BotonIngresoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIngresoNuevoActionPerformed
-        // TODO add your handling code here:
-        /**Verificar Campos Validos*/
-        if (validar())
-        {
-            if (existe(TFCodigo.getText()))
-            {
-                JOptionPane.showMessageDialog(this,"El producto ya esta registrado", "Error", JOptionPane.ERROR_MESSAGE);
-                reset();
-            }
-            else
-            {
-                System.out.println("Se ingresó " + new Producto(TFCodigo.getText(), TFNombre.getText(), Double.parseDouble(TFPrecio.getText()), TFDescripcion.getText(), Integer.parseInt(CBCantidad.getSelectedItem().toString())));
-                Existencias.get(CBCategoria.getSelectedItem().toString()).agregarProducto(new Producto(TFCodigo.getText(), TFNombre.getText(), Double.parseDouble(TFPrecio.getText()), TFDescripcion.getText(), Integer.parseInt(CBCantidad.getSelectedItem().toString())));
-                /**Actualizacion de cantidades y limpieza de campos*/
-                cantidades(CBCategoria.getSelectedItem().toString());
-                reset();
-                Existencias.get(Componentes_Ver.getSelectedItem().toString()).mostratTabla(TC);
-            }
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(this, "Ingrese bien los datos oe", "ERROR 404", JOptionPane.ERROR_MESSAGE);
-        }
+    // TODO add your handling code here:
+    if (validar()) 
+    {
+        String categoriaSeleccionada = CBCategoria.getSelectedItem().toString();
+        Categoria categoria = Existencias.get(categoriaSeleccionada);
+        Producto nuevoProducto = new Producto(TFCodigo.getText(), TFNombre.getText(), Double.parseDouble(TFPrecio.getText()), TFDescripcion.getText(), Integer.parseInt(CBCantidad.getSelectedItem().toString()));
+        
+        categoria.agregarProducto(nuevoProducto);
+        TC.addRow(nuevoProducto.getAllCompleto());
+        
+        cantidades(categoriaSeleccionada);
+        reset();
+    } else {
+        JOptionPane.showMessageDialog(this, "Error en el Ingreso de datos", "ERROR", JOptionPane.ERROR_MESSAGE);
+    }
+
     }//GEN-LAST:event_BotonIngresoNuevoActionPerformed
 
     private void CBCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBCantidadActionPerformed
@@ -313,6 +345,15 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         // TODO add your handling code here:
         Existencias.get(Componentes_Ver.getSelectedItem().toString()).mostratTabla(TC);
     }//GEN-LAST:event_Componentes_VerActionPerformed
+
+    private void CBProductoIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBProductoIngresoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_CBProductoIngresoActionPerformed
+
+    private void CBCantidadIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBCantidadIngresoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CBCantidadIngresoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -379,6 +420,17 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             case "Computadores" -> Computadores++;
         }
     }
+    
+    public static DefaultComboBoxModel<String> ModeloCant(int i)
+    {
+        String[] elementos = new String [i];
+        for (int x = 0; x < i; x++)
+        {
+            elementos[x] = String.valueOf(x + 1);
+        }
+        return new DefaultComboBoxModel<>(elementos);
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonIngresoNuevo;

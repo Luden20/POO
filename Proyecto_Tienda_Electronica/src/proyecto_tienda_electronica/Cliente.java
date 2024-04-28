@@ -1,6 +1,8 @@
 
 package proyecto_tienda_electronica;
 public class Cliente {
+    //Clase que guarda datos del cliente
+    //Nada del otro mundo
     private String Nombre;
     private String Cedula;
     private String Direccion;

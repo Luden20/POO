@@ -6,7 +6,9 @@ import java.util.Map;
 import javax.swing.table.DefaultTableModel;
 
 public class Categoria {
+    //Datos miembro de categoria 
     private String Nombre;
+    //Productos almacenado
     private LinkedHashMap<String,Producto> ProductosAlmacenados;
     public Categoria(String Nombre)
     {

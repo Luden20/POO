@@ -14,4 +14,12 @@ public class Cliente {
     {
         return this.Nombre;
     }
+    public String getCedula()
+    {
+        return this.Cedula;
+    }
+    public String getDireccion()
+    {
+        return this.Direccion;
+    }
 }

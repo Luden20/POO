@@ -52,27 +52,33 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         setBackground(new java.awt.Color(51, 0, 153));
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 0));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new java.awt.GridLayout(5, 2));
 
+        jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         jLabel1.setText("Bienvenido");
         jPanel1.add(jLabel1);
 
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         jLabel2.setText("Ingrese sus datos");
         jPanel1.add(jLabel2);
 
+        jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         jLabel3.setText("Nombre");
         jPanel1.add(jLabel3);
         jPanel1.add(NombreTF);
 
+        jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         jLabel4.setText("Cedula");
         jPanel1.add(jLabel4);
         jPanel1.add(CedulaTF);
 
+        jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         jLabel5.setText("Direccion");
         jPanel1.add(jLabel5);
         jPanel1.add(DireccionTF);
 
+        jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         jLabel6.setText("Estos datos se usaran para la facturacion");
         jPanel1.add(jLabel6);
 

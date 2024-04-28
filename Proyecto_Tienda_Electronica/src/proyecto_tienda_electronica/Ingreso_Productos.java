@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFrame;
 /*
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
@@ -79,10 +80,15 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Tabla = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
-        Panel_Principal.setBackground(new java.awt.Color(102, 102, 0));
-        Panel_Principal.setLayout(new javax.swing.BoxLayout(Panel_Principal, javax.swing.BoxLayout.LINE_AXIS));
+        Panel_Principal.setBackground(new java.awt.Color(255, 255, 255));
+        Panel_Principal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Panel_Principal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Panel_Principal.setMaximumSize(new java.awt.Dimension(1920, 1080));
+        Panel_Principal.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        Panel_Principal.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        Panel_Principal.setLayout(new javax.swing.BoxLayout(Panel_Principal, javax.swing.BoxLayout.X_AXIS));
 
         Panel_Ingreso_Productos_Nuevos.setBackground(new java.awt.Color(33, 63, 99));
         Panel_Ingreso_Productos_Nuevos.setLayout(new java.awt.GridLayout(8, 2, 5, 30));
@@ -102,7 +108,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel9.setText("Categoria");
         Panel_Ingreso_Productos_Nuevos.add(jLabel9);
 
-        CBCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Categoria)", "Componentes", "Consolas", "Celulares", "Computadores" }));
+        CBCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Componentes", "Consolas", "Celulares", "Computadores" }));
         CBCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CBCategoriaActionPerformed(evt);
@@ -186,7 +192,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel11.setText("Categoria");
         Panel_Ingreso_Productos_Existente.add(jLabel11);
 
-        CBCategoriaIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Categoria)", "Componentes", "Consolas", "Celulares", "Computadores" }));
+        CBCategoriaIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Componentes", "Consolas", "Celulares", "Computadores" }));
         CBCategoriaIngreso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CBCategoriaIngresoActionPerformed(evt);
@@ -300,14 +306,16 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         producto.AumentarCantidad(cantidadIngresada);
 
             // Actualizar la cantidad en la tabla
+            /*
             for (int i = 0; i < TC.getRowCount(); i++) {
                 if (TC.getValueAt(i, 0).equals(producto.getCodigo())) {
                     TC.setValueAt(producto.getCantidad(), i, 2); // Actualizar la cantidad en la columna 2
                     break;
                 }
-            }
+            }*/
 
-            JOptionPane.showMessageDialog(this, "Cantidad actualizada correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(this, "Cantidad actualizada correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            Existencias.get(Componentes_Ver.getSelectedItem().toString()).mostratTabla(TC);
     }//GEN-LAST:event_ButtonIngresoExistenteActionPerformed
 
     private void TFCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFCodigoActionPerformed
@@ -321,13 +329,21 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         String categoriaSeleccionada = CBCategoria.getSelectedItem().toString();
         Categoria categoria = Existencias.get(categoriaSeleccionada);
         Producto nuevoProducto = new Producto(TFCodigo.getText(), TFNombre.getText(), Double.parseDouble(TFPrecio.getText()), TFDescripcion.getText(), Integer.parseInt(CBCantidad.getSelectedItem().toString()));
+        if(categoria.Existe(nuevoProducto))
+        {
+            JOptionPane.showMessageDialog(this, "Este producto ya existe", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+        else
+        {
+            categoria.agregarProducto(nuevoProducto);
+            Existencias.get(Componentes_Ver.getSelectedItem().toString()).mostratTabla(TC);
+            cantidades(categoriaSeleccionada);
+        }
         
-        categoria.agregarProducto(nuevoProducto);
-        TC.addRow(nuevoProducto.getAllCompleto());
         
-        cantidades(categoriaSeleccionada);
         reset();
-    } else {
+    } 
+    else {
         JOptionPane.showMessageDialog(this, "Error en el Ingreso de datos", "ERROR", JOptionPane.ERROR_MESSAGE);
     }
 

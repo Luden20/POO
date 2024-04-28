@@ -50,6 +50,9 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 0, 153));
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -107,7 +110,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         }
         else
         {
-            JOptionPane.showMessageDialog(this,"Ingrese datos valids", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,"Ingrese datos validos", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
         

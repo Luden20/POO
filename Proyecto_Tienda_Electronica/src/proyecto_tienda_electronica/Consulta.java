@@ -88,6 +88,9 @@ public class Consulta extends javax.swing.JFrame {
         PagarBT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
 
         Panel_Superior.setBackground(new java.awt.Color(255, 255, 204));
@@ -328,7 +331,7 @@ public class Consulta extends javax.swing.JFrame {
         }
         else
         {
-            JOptionPane.showMessageDialog(this,"No ha existencias del producto", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,"No hay existencias del producto", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
         mostrarProducto();

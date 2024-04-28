@@ -147,8 +147,9 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea1">
+                <Component class="javax.swing.JTextArea" name="DescripcionTA">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
@@ -185,7 +186,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="PagarB">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Pagar"/>
+                <Property name="text" type="java.lang.String" value="Agregar"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PagarBActionPerformed"/>
@@ -275,7 +276,7 @@
                     <Property name="text" type="java.lang.String" value="Total a pagar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel2">
+                <Component class="javax.swing.JLabel" name="PTotalJL">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Total"/>
                   </Properties>

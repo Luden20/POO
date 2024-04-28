@@ -1,6 +1,8 @@
 package proyecto_tienda_electronica;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
+import javax.swing.table.DefaultTableModel;
 
 public class Factura {
    private Cliente Comprador;
@@ -15,7 +17,32 @@ public class Factura {
        Producto aux=new Producto(prod.getCodigo(),prod.getNombre(),prod.getPrecioUnitarioDouble(),prod.getDescripcion(),0);
        aux.AumentarCantidad(CantidadComprada);
        prod.ReducirCantidad(CantidadComprada);
-       Carrito.put(aux.getNombre(), aux);
+       if(Carrito.containsKey(aux.getNombre()))
+       {
+           Carrito.get(aux.getNombre()).AumentarCantidad(CantidadComprada);
+       }
+       else
+       {
+           Carrito.put(aux.getNombre(), aux);
+       }
+       
        return aux;
+   }
+   public double getTotalProd()
+   {
+       double precio=0;
+       for (Map.Entry<String, Producto> entry : Carrito.entrySet()) 
+            {
+                precio=precio+entry.getValue().CalcularPrecioTotal();
+            }
+       return precio;
+   }
+   public void mostratTabla(DefaultTableModel TC)
+   {
+       TC.setRowCount(0);
+       for (Map.Entry<String, Producto> entry : Carrito.entrySet()) 
+            {
+                TC.addRow(entry.getValue().getAll());
+            }
    }
 }

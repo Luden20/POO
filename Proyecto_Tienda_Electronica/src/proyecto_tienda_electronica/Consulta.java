@@ -25,12 +25,12 @@ public class Consulta extends javax.swing.JFrame {
         TC =new DefaultTableModel();
         String ids [] = {"Codigo","Nombre","Cantidad","PrecioU","PrecioT"};
         TC.setColumnIdentifiers(ids);
-        
+        TB_Factura.setModel(TC);
         clientefinal=c;
         Existencias=aux;
         UsuarioTx.setText("Bienvenido "+c.getNombre());
         Facturafinal=new Factura(clientefinal);
-        TB_Factura.setModel(TC);
+       
     }
 
     private Consulta() {
@@ -60,7 +60,7 @@ public class Consulta extends javax.swing.JFrame {
         PRECIO_JL = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        DescripcionTA = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         CantidadCB = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
@@ -70,7 +70,7 @@ public class Consulta extends javax.swing.JFrame {
         TB_Factura = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        PTotalJL = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -128,9 +128,10 @@ public class Consulta extends javax.swing.JFrame {
         jLabel7.setText("Descripcion");
         Panel_Ver.add(jLabel7);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        DescripcionTA.setEditable(false);
+        DescripcionTA.setColumns(20);
+        DescripcionTA.setRows(5);
+        jScrollPane2.setViewportView(DescripcionTA);
 
         Panel_Ver.add(jScrollPane2);
 
@@ -148,7 +149,7 @@ public class Consulta extends javax.swing.JFrame {
         jLabel9.setText("jLabel9");
         Panel_Ver.add(jLabel9);
 
-        PagarB.setText("Pagar");
+        PagarB.setText("Agregar");
         PagarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PagarBActionPerformed(evt);
@@ -190,8 +191,8 @@ public class Consulta extends javax.swing.JFrame {
         jLabel3.setText("Total a pagar");
         jPanel1.add(jLabel3);
 
-        jLabel2.setText("Total");
-        jPanel1.add(jLabel2);
+        PTotalJL.setText("Total");
+        jPanel1.add(PTotalJL);
 
         jButton2.setText("Pagar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -226,20 +227,23 @@ public class Consulta extends javax.swing.JFrame {
 
     private void CantidadCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CantidadCBActionPerformed
         // TODO add your handling code here:
-        
+        //mostrarProducto();
+        System.out.println("Se selecciono"+CantidadCB.getSelectedItem().toString());
         
     }//GEN-LAST:event_CantidadCBActionPerformed
 
     private void PagarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarBActionPerformed
         // TODO add your handling code here:
-        mostrarProducto();
+
         Producto aux=Existencias.get(CategoriaCB.getSelectedItem().toString()).getProducto(ProductosCB.getSelectedItem().toString());
         Producto ingresado=Facturafinal.agregarProducto(aux,Integer.parseInt(CantidadCB.getSelectedItem().toString()));
         
         System.out.println(Integer.parseInt(CantidadCB.getSelectedItem().toString()));
         System.out.println("El producto en la tienda queda "+aux);
         System.out.println("El prodcuto en la fact es "+ingresado);
-        TC.addRow(ingresado.getAll());
+        
+        PTotalJL.setText(Facturafinal.getTotalProd()+"");
+        Facturafinal.mostratTabla(TC);
         mostrarProducto();
     }//GEN-LAST:event_PagarBActionPerformed
     //Metodos mios
@@ -249,16 +253,15 @@ public class Consulta extends javax.swing.JFrame {
        CODIGO_JL.setText(aux.getCodigo());
        PRODUCTO_JL.setText(aux.getNombre());
        PRECIO_JL.setText(aux.getPrecioUnitario());
-       CantidadCB.setModel(new DefaultComboBoxModel(ModeloCantidad(aux.getCantidadINT()))); 
+       DescripcionTA.setText(aux.getDescripcion());
+       CantidadCB.setModel(ModeloCantidad(aux.getCantidadINT())); 
     }
-    public Object[] ModeloCantidad(int i)
-    {
-        Object[] aux= new Object[i];
-        for(int x=0;x<i;x++)
-        {
-            aux[x]=String.valueOf(x+1);
+    public static DefaultComboBoxModel<String> ModeloCantidad(int i) {
+        String[] elementos = new String[i];
+        for (int x = 0; x < i; x++) {
+            elementos[x] = String.valueOf(x + 1);
         }
-        return aux;
+        return new DefaultComboBoxModel<>(elementos);
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -296,8 +299,10 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JLabel CODIGO_JL;
     private javax.swing.JComboBox<String> CantidadCB;
     private javax.swing.JComboBox<String> CategoriaCB;
+    private javax.swing.JTextArea DescripcionTA;
     private javax.swing.JLabel PRECIO_JL;
     private javax.swing.JLabel PRODUCTO_JL;
+    private javax.swing.JLabel PTotalJL;
     private javax.swing.JButton PagarB;
     private javax.swing.JPanel Panel_Informacion;
     private javax.swing.JPanel Panel_Principal;
@@ -308,7 +313,6 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JLabel UsuarioTx;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -318,7 +322,6 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
     private LinkedHashMap<String,Categoria> Existencias;
     private Cliente clientefinal;

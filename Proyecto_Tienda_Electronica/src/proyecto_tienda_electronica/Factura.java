@@ -16,14 +16,13 @@ public class Factura {
    }
    //Funcion para agregar productos y una cantidad
    //El producto se agrega en esta funcion y ademas se le ingresa una cantidad que se va a comprar
-   //El producto ingresado es el del inventario, se resta deste producto lo que compramos y
+   //El producto ingresado es el del inventario
    //copiamos sus datos para generar un nuevo producto igual pero que que tiene la cantidad que compramos
    //Este ultumo se le agrega a la factura
    public void agregarProducto(Producto prod,int CantidadComprada)
    {
        Producto aux=new Producto(prod.getCodigo(),prod.getNombre(),prod.getPrecioUnitarioDouble(),prod.getDescripcion(),0);
        aux.AumentarCantidad(CantidadComprada);
-       prod.ReducirCantidad(CantidadComprada);
        if(Carrito.containsKey(aux.getNombre()))
        {
            Carrito.get(aux.getNombre()).AumentarCantidad(CantidadComprada);

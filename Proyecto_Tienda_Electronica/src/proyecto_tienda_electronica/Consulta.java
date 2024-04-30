@@ -357,6 +357,7 @@ public class Consulta extends javax.swing.JFrame {
             //Obtengo el producto que se selecciona en base a las combo box
             Producto aux=Existencias.get(CategoriaCB.getSelectedItem().toString()).getProducto(ProductosCB.getSelectedItem().toString());
             //Agrego el producto para modifcarlo y agregarlo y paso la cantidad seleccionada
+            aux.ReducirCantidad(Integer.parseInt(CantidadCB.getSelectedItem().toString()));
             Facturafinal.agregarProducto(aux,Integer.parseInt(CantidadCB.getSelectedItem().toString()));
             //En base a los productos que esten en la factura muestro el total que se debe pagar
             PTotalJL.setText(String.format("%.2f",Facturafinal.getTotalProd())+"USD");

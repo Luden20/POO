@@ -16,10 +16,6 @@ public class Interfaz_Creacion extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-<<<<<<< HEAD
-=======
-        jButton1 = new javax.swing.JButton();
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
         jFileChooser3 = new javax.swing.JFileChooser();
         jButton2 = new javax.swing.JButton();
 
@@ -48,40 +44,14 @@ public class Interfaz_Creacion extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(17, 85, 17, 85);
         jPanel2.add(jScrollPane1, gridBagConstraints);
-
-<<<<<<< HEAD
-        jFileChooser3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFileChooser3ActionPerformed(evt);
-=======
-        jButton1.setFont(new java.awt.Font("Tw Cen MT", 2, 24)); // NOI18N
-        jButton1.setText("Guardar Archivo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-<<<<<<< HEAD
-=======
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel2.add(jButton1, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
         gridBagConstraints.gridy = 1;
         jPanel2.add(jFileChooser3, gridBagConstraints);
 
         jButton2.setFont(new java.awt.Font("Tw Cen MT", 2, 24)); // NOI18N
-<<<<<<< HEAD
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icone-de-dossier-symbole-png-ver.png"))); // NOI18N
         jButton2.setText("Guardar Archivo");
-=======
-        jButton2.setText("Añadir al Archivo");
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -98,51 +68,19 @@ public class Interfaz_Creacion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
         File file = jFileChooser3.getSelectedFile();
         try (FileWriter fw = new FileWriter(file, true); 
              BufferedWriter bw = new BufferedWriter(fw)) {
             bw.write(jTextArea1.getText());
-            bw.flush();
-            dispose();
+            bw.flush(); 
         } catch (IOException ex) { 
             JOptionPane.showMessageDialog(null, "Error al escribir en el archivo: " + ex.getMessage(), "Ta mal >:V", JOptionPane.ERROR_MESSAGE);
         }
     }
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jFileChooser3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFileChooser3ActionPerformed
     
-=======
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-        File file = jFileChooser3.getSelectedFile();
-        String contenido = jTextArea1.getText();
-        Archivo nuevoArchivo = new Archivo(file.getName(), file.getAbsolutePath(), contenido);
-        try {
-            nuevoArchivo.guardarContenido(); 
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, "Error al guardar el archivo.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-        File file = jFileChooser3.getSelectedFile();
-        try (FileWriter fw = new FileWriter(file, true); BufferedWriter bw = new BufferedWriter(fw)) {
-                bw.write(jTextArea1.getText());
-                } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(null, "Error al agregar al archivo.", "Ta mal >:(", JOptionPane.ERROR_MESSAGE);
-                }
-    }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
     /**
      *
      * @param args
@@ -156,10 +94,6 @@ public class Interfaz_Creacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-=======
-    private javax.swing.JButton jButton1;
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
     private javax.swing.JButton jButton2;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JFileChooser jFileChooser3;

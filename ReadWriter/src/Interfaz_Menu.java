@@ -53,7 +53,6 @@ public class Interfaz_Menu extends javax.swing.JFrame {
         jPanel4.setLayout(new java.awt.BorderLayout());
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 255));
-<<<<<<< HEAD
         jPanel6.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
             }
@@ -63,8 +62,6 @@ public class Interfaz_Menu extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-=======
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
         jPanel6.setLayout(new java.awt.GridBagLayout());
 
         jLabel2.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
@@ -74,10 +71,7 @@ public class Interfaz_Menu extends javax.swing.JFrame {
         jPanel6.add(jLabel2, gridBagConstraints);
 
         jPanel4.add(jPanel6, java.awt.BorderLayout.PAGE_START);
-<<<<<<< HEAD
         jPanel6.getAccessibleContext().setAccessibleName("");
-=======
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
 
         jPanel7.setLayout(new java.awt.GridBagLayout());
 
@@ -88,10 +82,7 @@ public class Interfaz_Menu extends javax.swing.JFrame {
         jPanel7.add(jLabel3, gridBagConstraints);
 
         jButton3.setFont(new java.awt.Font("Tw Cen MT", 2, 24)); // NOI18N
-<<<<<<< HEAD
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/symbole-fichier-document-bleu (1).png"))); // NOI18N
-=======
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
         jButton3.setText("Escribir un Archivo");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,10 +96,7 @@ public class Interfaz_Menu extends javax.swing.JFrame {
         jPanel7.add(jButton3, gridBagConstraints);
 
         jButton4.setFont(new java.awt.Font("Tw Cen MT", 2, 24)); // NOI18N
-<<<<<<< HEAD
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icone-de-dossier-symbole-png-ble (1).png"))); // NOI18N
-=======
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
         jButton4.setText("Leer un Archivo");
         jButton4.setToolTipText("");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -123,10 +111,7 @@ public class Interfaz_Menu extends javax.swing.JFrame {
         jPanel7.add(jButton4, gridBagConstraints);
 
         jPanel4.add(jPanel7, java.awt.BorderLayout.CENTER);
-<<<<<<< HEAD
         jPanel7.getAccessibleContext().setAccessibleName("");
-=======
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
 
         getContentPane().add(jPanel4, java.awt.BorderLayout.CENTER);
 
@@ -145,13 +130,10 @@ public class Interfaz_Menu extends javax.swing.JFrame {
                 leerArchivo.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-<<<<<<< HEAD
     private void jPanel6AncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel6AncestorMoved
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel6AncestorMoved
 
-=======
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {

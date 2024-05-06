@@ -22,10 +22,7 @@ public class Archivo {
     File file = new File(Path, Nombre);
     try (PrintWriter out = new PrintWriter(new FileWriter(file))) {
             out.print(Contenido);
-<<<<<<< HEAD
             
-=======
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
         }
     }
 }

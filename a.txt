@@ -1,0 +1,5 @@
+Nombre,Apellido,Edad,Ciudad
+Juan,Pérez,30,Buenos Aires
+María,Gómez,25,Madrid
+Carlos,Ruíz,35,México DF
+Ana,López,28,Santiago

@@ -17,15 +17,9 @@ public class Interfaz_read extends javax.swing.JFrame {
         jFileChooser1 = new javax.swing.JFileChooser();
         jButton1 = new javax.swing.JButton();
 
-<<<<<<< HEAD
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jPanel1.setBackground(new java.awt.Color(255, 102, 204));
-=======
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 102, 102));
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
+        jPanel1.setBackground(new java.awt.Color(255, 102, 204));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
@@ -53,10 +47,7 @@ public class Interfaz_read extends javax.swing.JFrame {
         jPanel2.add(jFileChooser1, gridBagConstraints);
 
         jButton1.setFont(new java.awt.Font("Tw Cen MT", 2, 24)); // NOI18N
-<<<<<<< HEAD
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icone-de-dossier-symbole-png-ros.png"))); // NOI18N
-=======
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
         jButton1.setText("Buscar un Archivo");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,10 +76,6 @@ public class Interfaz_read extends javax.swing.JFrame {
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
-<<<<<<< HEAD
-=======
-                    
->>>>>>> 8860b61f906033e9a85cd36af7d961f72a78e4c7
          }
     }//GEN-LAST:event_jButton1ActionPerformed
 

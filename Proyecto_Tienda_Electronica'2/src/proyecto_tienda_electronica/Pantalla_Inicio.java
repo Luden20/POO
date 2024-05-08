@@ -87,6 +87,7 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         Ingreso_Productos a=new Ingreso_Productos(inventariado);
         a.setVisible(true);
         a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        a.setSize(800,600);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

@@ -24,7 +24,12 @@ public class Inventariado {
     }
     public Categoria getCategoria(String Categoria)
     {
-        return Inventario.get(Categoria);
+        if(Categoria!="NaN")
+        {
+            return Inventario.get(Categoria);
+        }
+        return null;
+        
     }
     public void agregar_Categoria(String Cat)
     {
@@ -68,28 +73,35 @@ public class Inventariado {
         }
     }
        public void GuardarInventariado(FileWriter v)
-   {
-       try { 
-           FileWriter e=v;
-           BufferedWriter bw = new BufferedWriter(e);
-            for (Map.Entry<String, Categoria> entry : Inventario.entrySet()) 
-            {
-                
-            }
-           bw.flush();
-       }
-             
-         catch (IOException e) { 
-            JOptionPane.showMessageDialog(null, "Error al escribir en el archivo: " + e.getMessage(), "Ta mal >:V", JOptionPane.ERROR_MESSAGE);
+    {
+        String a="";
+        try { 
+            FileWriter e=v;
+            BufferedWriter bw = new BufferedWriter(e);
+             for (Map.Entry<String, Categoria> entry : Inventario.entrySet()) 
+             {
+                 a=a+entry.getValue().get_AllProductosStr();
+             }
+            bw.write(a);
+            bw.flush();
         }
-   }
-    public Object[] getListado()
+
+          catch (IOException e) { 
+             JOptionPane.showMessageDialog(null, "Error al escribir en el archivo: " + e.getMessage(), "Ta mal >:V", JOptionPane.ERROR_MESSAGE);
+         }
+    }
+    public Object[] getListado(boolean x)
     {
         LinkedList<String> lista=new LinkedList<String>();
         for (Map.Entry<String, Categoria> entry : Inventario.entrySet()) 
             {
                 lista.add(entry.getKey());
             }
+        if(x)
+        {
+            lista.add("NaN");
+        }
+        
         return lista.toArray();
     }
 }

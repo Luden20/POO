@@ -51,6 +51,7 @@ public class Categoria {
             {
                 a=a+getNombre()+","+entry.getValue().getAllGuardar()+"\n";
             }
+        return a;
     }
     public void mostrarTabla(DefaultTableModel TC)
    {

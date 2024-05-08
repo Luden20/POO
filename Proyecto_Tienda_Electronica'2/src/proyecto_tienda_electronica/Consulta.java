@@ -12,6 +12,7 @@ import java.util.LinkedHashMap;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -35,7 +36,7 @@ public class Consulta extends javax.swing.JFrame {
         inventariado=aux;
         UsuarioTx.setText("Bienvenido "+c.getNombre()+" a GadgetGalaxy");
         Facturafinal=new Factura(clientefinal);
-        CategoriaCB.setModel(new DefaultComboBoxModel(inventariado.getListado()));
+        CategoriaCB.setModel(new DefaultComboBoxModel(inventariado.getListado(false)));
         
     }
 
@@ -337,22 +338,27 @@ public class Consulta extends javax.swing.JFrame {
     }//GEN-LAST:event_CategoriaCBActionPerformed
 
     private void PagarBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarBTActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Gracias por comprar con nosotros "+clientefinal.getNombre(), "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-            JFileChooser jFileChooser3 = new JFileChooser();
-            jFileChooser3.setDialogTitle("Selecciona una carpeta para guardar la factura");
-            if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+        JFileChooser jFileChooser3 = new JFileChooser();
+        jFileChooser3.setAcceptAllFileFilterUsed(false); 
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de texto (*.txt)", "txt");
+        jFileChooser3.addChoosableFileFilter(filter); 
+        jFileChooser3.setDialogTitle("Selecciona una carpeta para guardar la factura");
+
+        if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
             File file = jFileChooser3.getSelectedFile();
-            try 
-            {
-                 FileWriter e = new FileWriter(file);
-                 Facturafinal.GuardarFactura(e); 
-            } 
-            catch (IOException e) 
-            { 
-                JOptionPane.showMessageDialog(null, "Error al ecargar " + e.getMessage(), "Ta mal >:V", JOptionPane.ERROR_MESSAGE);
+            if (!file.getName().toLowerCase().endsWith(".txt")) {
+                // Si el usuario no agregó la extensión .txt, se la añadimos.
+                file = new File(file.getParentFile(), file.getName() + ".txt");
+            }
+            try {
+                FileWriter e = new FileWriter(file);
+                Facturafinal.GuardarFactura(e);
+                JOptionPane.showMessageDialog(null, "Factura guardada con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(null, "Error al guardar: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
+
     }//GEN-LAST:event_PagarBTActionPerformed
 
     private void ProductosCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductosCBActionPerformed

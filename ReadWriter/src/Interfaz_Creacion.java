@@ -44,6 +44,12 @@ public class Interfaz_Creacion extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(17, 85, 17, 85);
         jPanel2.add(jScrollPane1, gridBagConstraints);
+
+        jFileChooser3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFileChooser3ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -80,6 +86,10 @@ public class Interfaz_Creacion extends javax.swing.JFrame {
         }
     }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jFileChooser3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFileChooser3ActionPerformed
     
     /**
      *

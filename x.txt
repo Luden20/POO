@@ -1,0 +1,9 @@
+Electrónicos,001,Smartphone Samsung Galaxy S20,1200,Potente smartphone con cámara de alta resolución,50
+Electrónicos,002,Laptop Lenovo ThinkPad X1 Carbon,1800,Ultrabook empresarial ultraligero y potente,20
+Electrónicos,003,Smart TV LG OLED CX,2500,Televisor con tecnología OLED y resolución 4K,30
+Electrodomésticos,101,Refrigeradora Samsung Side-by-Side,2200,Amplia capacidad de almacenamiento,10
+Electrodomésticos,102,Lavadora LG Inverter Direct Drive,1000,Lavadora eficiente con tecnología Inverter,15
+Electrodomésticos,103,Microondas Panasonic NN-SN966S,150,Con tecnología Inverter para cocinar uniformemente,40
+Ropa,201,Camisa Polo Ralph Lauren,80,Camisa de algodón de alta calidad,100
+Ropa,202,Pantalones Vaqueros Levi's 501,60,Pantalones vaqueros clásicos de mezclilla,150
+Ropa,203,Zapatos Adidas Stan Smith,90,Zapatillas deportivas de estilo retro,200

@@ -4,8 +4,13 @@
  */
 package proyecto_tienda_electronica;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -334,7 +339,20 @@ public class Consulta extends javax.swing.JFrame {
     private void PagarBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarBTActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Gracias por comprar con nosotros "+clientefinal.getNombre(), "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-        dispose();
+            JFileChooser jFileChooser3 = new JFileChooser();
+            jFileChooser3.setDialogTitle("Selecciona una carpeta para guardar la factura");
+            if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            File file = jFileChooser3.getSelectedFile();
+            try 
+            {
+                 FileWriter e = new FileWriter(file);
+                 Facturafinal.GuardarFactura(e); 
+            } 
+            catch (IOException e) 
+            { 
+                JOptionPane.showMessageDialog(null, "Error al ecargar " + e.getMessage(), "Ta mal >:V", JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_PagarBTActionPerformed
 
     private void ProductosCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductosCBActionPerformed

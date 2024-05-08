@@ -1,12 +1,15 @@
 package proyecto_tienda_electronica;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
 
 public class Inventariado {
     //Podran arguemntar que esta clase es innecesaria, pero es para gestionarlo todo de una manera mucho mas facil y sencilla.
@@ -64,6 +67,22 @@ public class Inventariado {
             System.err.println("Error al leer el archivo: " + e.getMessage());
         }
     }
+       public void GuardarInventariado(FileWriter v)
+   {
+       try { 
+           FileWriter e=v;
+           BufferedWriter bw = new BufferedWriter(e);
+            for (Map.Entry<String, Categoria> entry : Inventario.entrySet()) 
+            {
+                
+            }
+           bw.flush();
+       }
+             
+         catch (IOException e) { 
+            JOptionPane.showMessageDialog(null, "Error al escribir en el archivo: " + e.getMessage(), "Ta mal >:V", JOptionPane.ERROR_MESSAGE);
+        }
+   }
     public Object[] getListado()
     {
         LinkedList<String> lista=new LinkedList<String>();

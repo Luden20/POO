@@ -1,7 +1,12 @@
 package proyecto_tienda_electronica;
 
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Factura {
@@ -53,5 +58,26 @@ public class Factura {
             {
                 TC.addRow(entry.getValue().getAll());
             }
+   }
+   public void GuardarFactura(FileWriter v)
+   {
+       try { 
+           FileWriter e=v;
+           BufferedWriter bw = new BufferedWriter(e);
+           bw.write("FACTURA BUDGET GALAXY\n");
+           bw.write(Comprador.get_Datos());
+           bw.write("PRODUCTOS\n");
+                  for (Map.Entry<String, Producto> entry : Carrito.entrySet()) 
+            {
+                bw.write(entry.getValue().getAllStr()+"\n");
+            }
+           bw.write("Total"+getTotalProd()+"USD\n");
+           bw.write("Gracias por comprar con nosotros =D");
+           bw.flush();
+       }
+             
+         catch (IOException e) { 
+            JOptionPane.showMessageDialog(null, "Error al escribir en el archivo: " + e.getMessage(), "Ta mal >:V", JOptionPane.ERROR_MESSAGE);
+        }
    }
 }

@@ -59,11 +59,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Productos_ExistentesBT = new javax.swing.JButton();
         Nuevos_ProductosBT = new javax.swing.JButton();
         Ver_TablaBT = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        Panel_Principal = new javax.swing.JPanel();
-        Panel_Ingreso_Archivo = new javax.swing.JPanel();
-        jFileChooser3 = new javax.swing.JFileChooser();
         jButton1 = new javax.swing.JButton();
+        Panel_Principal = new javax.swing.JPanel();
         Panel_Ingreso_Productos_Nuevos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -126,13 +123,13 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(Ver_TablaBT);
 
-        jButton2.setText("Ingreso_ArchivoBT");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Ingresar Archivo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        Botones.add(jButton2);
+        Botones.add(jButton1);
 
         getContentPane().add(Botones);
 
@@ -143,19 +140,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Panel_Principal.setMinimumSize(new java.awt.Dimension(1920, 1080));
         Panel_Principal.setPreferredSize(new java.awt.Dimension(1920, 1080));
         Panel_Principal.setLayout(new java.awt.CardLayout());
-
-        Panel_Ingreso_Archivo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Panel_Ingreso_Archivo.add(jFileChooser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, -1, -1));
-
-        jButton1.setText("Ingresar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        Panel_Ingreso_Archivo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, -1, -1));
-
-        Panel_Principal.add(Panel_Ingreso_Archivo, "card5");
 
         Panel_Ingreso_Productos_Nuevos.setBackground(new java.awt.Color(33, 63, 99));
         Panel_Ingreso_Productos_Nuevos.setLayout(new java.awt.GridLayout(9, 2, 5, 90));
@@ -479,26 +463,22 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_Ver_TablaBTActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-        File file = jFileChooser3.getSelectedFile();
-        try {
-             FileReader e = new FileReader(file);
-             inventariado.ingresar_datos(e); 
-             Refrescar();
-        } catch (IOException e) { 
-            JOptionPane.showMessageDialog(null, "Error al ecargar " + e.getMessage(), "Ta mal >:V", JOptionPane.ERROR_MESSAGE);
+            JFileChooser jFileChooser3 = new JFileChooser();
+            jFileChooser3.setDialogTitle("Selecciona un archivo para cargar los datos");
+            if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            File file = jFileChooser3.getSelectedFile();
+            try 
+            {
+                 FileReader e = new FileReader(file);
+                 inventariado.ingresar_datos(e); 
+                 Refrescar();
+            } 
+            catch (IOException e) 
+            { 
+                JOptionPane.showMessageDialog(null, "Error al ecargar " + e.getMessage(), "Ta mal >:V", JOptionPane.ERROR_MESSAGE);
+            }
         }
-    }
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        Panel_Principal.removeAll();
-        Panel_Principal.add(Panel_Ingreso_Archivo);
-        Panel_Principal.repaint();
-        Panel_Principal.revalidate();
-        Refrescar();
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -580,7 +560,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CBProductoIngreso;
     private javax.swing.JComboBox<String> Componentes_Ver;
     private javax.swing.JButton Nuevos_ProductosBT;
-    private javax.swing.JPanel Panel_Ingreso_Archivo;
     private javax.swing.JPanel Panel_Ingreso_Productos_Existente;
     private javax.swing.JPanel Panel_Ingreso_Productos_Nuevos;
     private javax.swing.JPanel Panel_Principal;
@@ -593,8 +572,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JTable Tabla;
     private javax.swing.JButton Ver_TablaBT;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JFileChooser jFileChooser3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

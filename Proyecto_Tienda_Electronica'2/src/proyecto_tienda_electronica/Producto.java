@@ -66,10 +66,17 @@ public class Producto {
         public void setCantidad(int cantidad) {
         this.Cantidad = cantidad;
     }
-
+    public String getAllGuardar()
+    {
+            return getCodigo()+","+getNombre()+","+getPrecioUnitario()+","+getDescripcion()+","+getCantidad();
+    }
     public String[] getAll()
     {
         return new String[]{getCodigo(),getNombre(),getCantidad(),getPrecioUnitario(),String.format("%.2f", CalcularPrecioTotal())};
+    }
+    public String getAllStr()
+    {
+        return "Codigo:"+getCodigo()+"|"+getNombre()+"|"+getCantidad()+" Unidades|"+getPrecioUnitario()+"USD Precio Unitario|"+String.format("%.2f", CalcularPrecioTotal())+"USD Precio";
     }
     public String[] getAllCompleto()
     {

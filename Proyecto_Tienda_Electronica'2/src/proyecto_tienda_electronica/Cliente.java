@@ -24,4 +24,8 @@ public class Cliente {
     {
         return this.Direccion;
     }
+    public String get_Datos()
+    {
+        return "Nombre:"+ getNombre()+"\n"+"Cedula:"+getCedula()+"\n"+"Direccion:"+getDireccion()+"\n";
+    }
 }

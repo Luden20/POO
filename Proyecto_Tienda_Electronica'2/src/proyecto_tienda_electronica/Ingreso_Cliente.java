@@ -122,6 +122,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
             a.setTitle("Menu");
             a.setVisible(true);
             a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            a.setExtendedState(JFrame.MAXIMIZED_BOTH);
             dispose();
         }
         else

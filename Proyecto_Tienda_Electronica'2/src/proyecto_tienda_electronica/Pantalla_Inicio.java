@@ -80,6 +80,7 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         a.setTitle("Menu");
         a.setVisible(true);
         a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        a.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }//GEN-LAST:event_TiendaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -88,6 +89,7 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         a.setVisible(true);
         a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         a.setSize(800,600);
+        a.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

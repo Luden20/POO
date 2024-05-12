@@ -85,10 +85,9 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Ingreso_Productos a=new Ingreso_Productos(inventariado);
+        Password a=new Password(inventariado);
         a.setVisible(true);
         a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        a.setSize(800,600);
         a.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }//GEN-LAST:event_jButton2ActionPerformed
 

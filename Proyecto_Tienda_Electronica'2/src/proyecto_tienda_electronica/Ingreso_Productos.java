@@ -111,7 +111,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(jButton2);
 
-        Productos_ExistentesBT.setText("Productos_Existentes");
+        Productos_ExistentesBT.setText("Agregar existencias a productos existentes");
         Productos_ExistentesBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Productos_ExistentesBTActionPerformed(evt);
@@ -119,7 +119,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(Productos_ExistentesBT);
 
-        Nuevos_ProductosBT.setText("Nuevos_Productos");
+        Nuevos_ProductosBT.setText("Ingreso de productos nuevos");
         Nuevos_ProductosBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nuevos_ProductosBTActionPerformed(evt);
@@ -127,7 +127,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(Nuevos_ProductosBT);
 
-        Ver_TablaBT.setText("Ver_Tabla");
+        Ver_TablaBT.setText("Ver Tabla");
         Ver_TablaBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Ver_TablaBTActionPerformed(evt);
@@ -135,7 +135,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(Ver_TablaBT);
 
-        jButton1.setText("Ingresar Archivo");
+        jButton1.setText("Leer inventario de un archivo");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -143,7 +143,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(jButton1);
 
-        GuardarBT.setText("Guardar Archivo");
+        GuardarBT.setText("Guardar inventario en un archivo");
         GuardarBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GuardarBTActionPerformed(evt);

@@ -44,7 +44,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="Productos_ExistentesBT">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Productos_Existentes"/>
+            <Property name="text" type="java.lang.String" value="Agregar existencias a productos existentes"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Productos_ExistentesBTActionPerformed"/>
@@ -52,7 +52,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="Nuevos_ProductosBT">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nuevos_Productos"/>
+            <Property name="text" type="java.lang.String" value="Ingreso de productos nuevos"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Nuevos_ProductosBTActionPerformed"/>
@@ -60,7 +60,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="Ver_TablaBT">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ver_Tabla"/>
+            <Property name="text" type="java.lang.String" value="Ver Tabla"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Ver_TablaBTActionPerformed"/>
@@ -68,7 +68,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ingresar Archivo"/>
+            <Property name="text" type="java.lang.String" value="Leer inventario de un archivo"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -76,7 +76,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="GuardarBT">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Guardar Archivo"/>
+            <Property name="text" type="java.lang.String" value="Guardar inventario en un archivo"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GuardarBTActionPerformed"/>

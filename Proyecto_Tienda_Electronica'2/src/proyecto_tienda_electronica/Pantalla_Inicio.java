@@ -88,7 +88,6 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         Password a=new Password(inventariado);
         a.setVisible(true);
         a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        a.setSize(800,600);
         a.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }//GEN-LAST:event_jButton2ActionPerformed
 

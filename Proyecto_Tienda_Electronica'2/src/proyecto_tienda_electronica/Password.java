@@ -35,34 +35,58 @@ public class Password extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        jToolBar1 = new javax.swing.JToolBar();
+        Panel_Superior = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         Panel_Ingreso = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         UserTF = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         Password = new javax.swing.JPasswordField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         IngresarBT = new javax.swing.JButton();
 
+        jToolBar1.setRollover(true);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        Panel_Superior.setBackground(new java.awt.Color(51, 153, 255));
+        Panel_Superior.setForeground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
+        Panel_Superior.setLayout(new java.awt.GridLayout());
+
+        jLabel4.setFont(new java.awt.Font("Lucida Sans", 3, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Ingrese el usuario y contraseña adecuados para entrar");
+        Panel_Superior.add(jLabel4);
+
+        getContentPane().add(Panel_Superior, java.awt.BorderLayout.PAGE_START);
+
+        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1920, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 36, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_END);
 
-        Panel_Ingreso.setLayout(new java.awt.GridLayout(3, 2, 0, 45));
+        Panel_Ingreso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Panel_Ingreso.setLayout(new java.awt.GridLayout(6, 4, 45, 45));
 
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel1.setText("Usuarios");
+        jLabel1.setText("Usuario");
         Panel_Ingreso.add(jLabel1);
 
         UserTF.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
@@ -79,10 +103,17 @@ public class Password extends javax.swing.JFrame {
             }
         });
         Panel_Ingreso.add(Password);
+        Panel_Ingreso.add(jLabel5);
+        Panel_Ingreso.add(jLabel6);
+        Panel_Ingreso.add(jLabel7);
+        Panel_Ingreso.add(jLabel8);
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         Panel_Ingreso.add(jLabel3);
 
+        IngresarBT.setBackground(new java.awt.Color(153, 255, 255));
+        IngresarBT.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        IngresarBT.setForeground(new java.awt.Color(0, 153, 255));
         IngresarBT.setText("Ingresar");
         IngresarBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,6 +141,7 @@ public class Password extends javax.swing.JFrame {
             a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             a.setSize(800,600);
             a.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            dispose();
         }
         else
         {
@@ -155,12 +187,19 @@ public class Password extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton IngresarBT;
     private javax.swing.JPanel Panel_Ingreso;
+    private javax.swing.JPanel Panel_Superior;
     private javax.swing.JPasswordField Password;
     private javax.swing.JTextField UserTF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
     private Inventariado inventariado;
 }

@@ -56,13 +56,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Botones = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        Productos_ExistentesBT = new javax.swing.JButton();
-        Nuevos_ProductosBT = new javax.swing.JButton();
-        Ver_TablaBT = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        GuardarBT = new javax.swing.JButton();
+        P_I = new javax.swing.JPanel();
         Panel_Principal = new javax.swing.JPanel();
         Panel_Tabla = new javax.swing.JPanel();
         Componentes_Ver = new javax.swing.JComboBox<>();
@@ -96,62 +90,17 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         CBCantidadIngreso = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
+        Botones = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        Productos_ExistentesBT = new javax.swing.JButton();
+        Nuevos_ProductosBT = new javax.swing.JButton();
+        Ver_TablaBT = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        GuardarBT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
-
-        Botones.setLayout(new javax.swing.BoxLayout(Botones, javax.swing.BoxLayout.X_AXIS));
-
-        jButton2.setText("Refrescar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        Botones.add(jButton2);
-
-        Productos_ExistentesBT.setText("Agregar existencias a productos existentes");
-        Productos_ExistentesBT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Productos_ExistentesBTActionPerformed(evt);
-            }
-        });
-        Botones.add(Productos_ExistentesBT);
-
-        Nuevos_ProductosBT.setText("Ingreso de productos nuevos");
-        Nuevos_ProductosBT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nuevos_ProductosBTActionPerformed(evt);
-            }
-        });
-        Botones.add(Nuevos_ProductosBT);
-
-        Ver_TablaBT.setText("Ver Tabla");
-        Ver_TablaBT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ver_TablaBTActionPerformed(evt);
-            }
-        });
-        Botones.add(Ver_TablaBT);
-
-        jButton1.setText("Leer inventario de un archivo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        Botones.add(jButton1);
-
-        GuardarBT.setText("Guardar inventario en un archivo");
-        GuardarBT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarBTActionPerformed(evt);
-            }
-        });
-        Botones.add(GuardarBT);
-
-        getContentPane().add(Botones);
 
         Panel_Principal.setBackground(new java.awt.Color(255, 255, 255));
         Panel_Principal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -362,7 +311,61 @@ public class Ingreso_Productos extends javax.swing.JFrame {
 
         Panel_Principal.add(Panel_Ingreso_Productos_Existente, "card3");
 
-        getContentPane().add(Panel_Principal);
+        P_I.add(Panel_Principal);
+
+        Botones.setLayout(new javax.swing.BoxLayout(Botones, javax.swing.BoxLayout.X_AXIS));
+
+        jButton2.setText("Refrescar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        Botones.add(jButton2);
+
+        Productos_ExistentesBT.setText("Agregar existencias a productos existentes");
+        Productos_ExistentesBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Productos_ExistentesBTActionPerformed(evt);
+            }
+        });
+        Botones.add(Productos_ExistentesBT);
+
+        Nuevos_ProductosBT.setText("Ingreso de productos nuevos");
+        Nuevos_ProductosBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Nuevos_ProductosBTActionPerformed(evt);
+            }
+        });
+        Botones.add(Nuevos_ProductosBT);
+
+        Ver_TablaBT.setText("Ver Tabla");
+        Ver_TablaBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ver_TablaBTActionPerformed(evt);
+            }
+        });
+        Botones.add(Ver_TablaBT);
+
+        jButton1.setText("Leer inventario de un archivo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        Botones.add(jButton1);
+
+        GuardarBT.setText("Guardar inventario en un archivo");
+        GuardarBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarBTActionPerformed(evt);
+            }
+        });
+        Botones.add(GuardarBT);
+
+        P_I.add(Botones);
+
+        getContentPane().add(P_I);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -618,6 +621,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Componentes_Ver;
     private javax.swing.JButton GuardarBT;
     private javax.swing.JButton Nuevos_ProductosBT;
+    private javax.swing.JPanel P_I;
     private javax.swing.JPanel Panel_Ingreso_Productos_Existente;
     private javax.swing.JPanel Panel_Ingreso_Productos_Nuevos;
     private javax.swing.JPanel Panel_Principal;

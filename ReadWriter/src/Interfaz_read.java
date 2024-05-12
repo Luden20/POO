@@ -1,6 +1,8 @@
 import java.io.*;
+import javax.swing.JFileChooser;
 public class Interfaz_read extends javax.swing.JFrame {
 
+    
     public Interfaz_read() {
         initComponents();
     }
@@ -14,7 +16,6 @@ public class Interfaz_read extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jFileChooser1 = new javax.swing.JFileChooser();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,10 +42,6 @@ public class Interfaz_read extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.insets = new java.awt.Insets(30, 30, 30, 30);
         jPanel2.add(jScrollPane1, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        jPanel2.add(jFileChooser1, gridBagConstraints);
 
         jButton1.setFont(new java.awt.Font("Tw Cen MT", 2, 24)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icone-de-dossier-symbole-png-ros.png"))); // NOI18N
@@ -66,7 +63,8 @@ public class Interfaz_read extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         if (jFileChooser1.showOpenDialog(null) == jFileChooser1.APPROVE_OPTION) {
+         JFileChooser jFileChooser1 = new JFileChooser();
+        if (jFileChooser1.showOpenDialog(null) == jFileChooser1.APPROVE_OPTION) {
                     File file = jFileChooser1.getSelectedFile();
                     try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                         String line;
@@ -92,7 +90,6 @@ public class Interfaz_read extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

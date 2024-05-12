@@ -72,17 +72,21 @@ public class Inventariado {
             System.err.println("Error al leer el archivo: " + e.getMessage());
         }
     }
-       public void GuardarInventariado(FileWriter v)
-    {
-        String a="";
-        try { 
-            FileWriter e=v;
-            BufferedWriter bw = new BufferedWriter(e);
-             for (Map.Entry<String, Categoria> entry : Inventario.entrySet()) 
+        public String getContenidoStr()
+        {
+            String a="";
+            for (Map.Entry<String, Categoria> entry : Inventario.entrySet()) 
              {
                  a=a+entry.getValue().get_AllProductosStr();
              }
-            bw.write(a);
+            return a;
+        }
+       public void GuardarInventariado(FileWriter v)
+    {
+        try { 
+            FileWriter e=v;
+            BufferedWriter bw = new BufferedWriter(e);
+            bw.write(getContenidoStr());
             bw.flush();
         }
 

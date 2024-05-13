@@ -26,7 +26,7 @@ public class Factura {
    //Este ultumo se le agrega a la factura
    public void agregarProducto(Producto prod,int CantidadComprada)
    {
-       Producto aux=new Producto(prod.getCodigo(),prod.getNombre(),prod.getPrecioUnitarioDouble(),prod.getDescripcion(),0);
+       Producto aux=new Producto(prod.getCodigo(),prod.getNombre(),prod.getMarca(),prod.getPrecioUnitarioDouble(),prod.getDescripcion(),0);
        aux.AumentarCantidad(CantidadComprada);
        if(Carrito.containsKey(aux.getNombre()))
        {

@@ -1,14 +1,11 @@
 package proyecto_tienda_electronica;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.File;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
 public class Inventariado {
@@ -37,7 +34,7 @@ public class Inventariado {
         {
             Inventario.put(Cat,new Categoria(Cat));
         }
-    }/*
+    }
     public void agregar_Producto(Producto prd,String cat)
     {
         if(!Existe_Categoria(cat))
@@ -46,35 +43,69 @@ public class Inventariado {
         }
         getCategoria(cat).agregarProducto(prd);
     }
-    */
-    /*
-    public void ingresar_datos(FileReader v)
-    {
-        try
+        public void GuardarTodo(File Archivo)
         {
-            FileReader e=v;
-            BufferedReader b=new BufferedReader(e);
-            String x;
-            while((x=b.readLine())!=null)
+            try{
+                RandomAccessFile Arc=new RandomAccessFile(Archivo,"rw");
+                Arc.setLength(0);//Importante, borro todo lo que haya en el archivo seleccionado para escribir sin
+                Arc.seek(Arc.length());//Me voy hasta bien el final del archivo
+                for (Map.Entry<String, Categoria> entry : Inventario.entrySet()) 
+                {
+                    entry.getValue().Escribir(Arc);
+                }
+                Arc.close();
+            }
+            catch(IOException e)
             {
-                System.out.println("linea leida");
-                StringTokenizer st=new StringTokenizer(x,",");
-                String Categoria=st.nextToken();
-                String Codigo=st.nextToken();
-                String Nombre=st.nextToken();
-                double Precio = Double.parseDouble(st.nextToken()); 
-                String Descripcion = st.nextToken();
-                int Cantidad = Integer.parseInt(st.nextToken());
-                Producto aux=new Producto(Codigo,Nombre,Precio,Descripcion,Cantidad);
-                agregar_Producto(aux,Categoria);
+                JOptionPane.showMessageDialog(null, "Error al guardar", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-        catch (IOException e) {
-            // Manejar cualquier error de lectura de archivo
-            System.err.println("Error al leer el archivo: " + e.getMessage());
+        public void Leer(File Archivo)
+        {
+            try{
+                RandomAccessFile Arc=new RandomAccessFile(Archivo,"rw");
+                Arc.seek(0);
+                while(Arc.getFilePointer()<Arc.length())//Mientras mi puntero sea menor que la longitud seguire leyendo
+                {
+                    String Cat="";
+                    for(int i =0;i<30;i++)
+                    {
+                        Cat=Cat+Arc.readChar();
+                    }
+                    String Codigo="";
+                    for(int i =0;i<10;i++)
+                    {
+                        Codigo=Codigo+Arc.readChar();
+                    }
+                    String Nombre="";
+                    for(int i =0;i<30;i++)
+                    {
+                        Nombre=Nombre+Arc.readChar();
+                    }
+                    String Marca="";
+                    for(int i =0;i<30;i++)
+                    {
+                        Marca=Marca+Arc.readChar();
+                    }
+                    double Pre=Arc.readDouble();
+                    String Des="";
+                    for(int i =0;i<80;i++)
+                    {
+                        Des=Des+Arc.readChar();
+                    }
+                    int cant=Arc.readInt();
+                    Producto aux=new Producto(Codigo,Nombre,Marca,Pre,Des,cant);
+                    agregar_Producto(aux,Cat);
+                }
+                Arc.close();
+                
+                JOptionPane.showMessageDialog(null, "Leido con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+            }
+            catch(IOException e)
+            {
+                JOptionPane.showMessageDialog(null, "Error al cargar", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
-    }*/
-    public void 
         public String getContenidoStr()
         {
             String a="";
@@ -84,19 +115,6 @@ public class Inventariado {
              }
             return a;
         }
-       public void GuardarInventariado(FileWriter v)
-    {
-        try { 
-            FileWriter e=v;
-            BufferedWriter bw = new BufferedWriter(e);
-            bw.write(getContenidoStr());
-            bw.flush();
-        }
-
-          catch (IOException e) { 
-             JOptionPane.showMessageDialog(null, "Error al escribir en el archivo: " + e.getMessage(), "Ta mal >:V", JOptionPane.ERROR_MESSAGE);
-         }
-    }
     public Object[] getListado(boolean x)
     {
         LinkedList<String> lista=new LinkedList<String>();

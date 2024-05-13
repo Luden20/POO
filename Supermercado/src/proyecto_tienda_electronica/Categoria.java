@@ -1,5 +1,7 @@
 package proyecto_tienda_electronica;
 
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -34,6 +36,20 @@ public class Categoria {
     public String getNombre()
     {
         return this.Nombre;
+    }
+    public void Escribir(RandomAccessFile Arc)
+    {
+             for (Map.Entry<String, Producto> entry : ProductosAlmacenados.entrySet()) 
+                {  
+               try{
+                   Arc.writeChars(getNombre());
+                }
+                catch(IOException e)
+                {
+
+                }
+                entry.getValue().EscribirProducto(Arc);
+                }
     }
     public Object[] getListado()
     {

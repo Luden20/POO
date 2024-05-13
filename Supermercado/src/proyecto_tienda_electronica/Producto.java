@@ -49,7 +49,7 @@ public class Producto {
     }
     public int getBytesPorRegistro()
     {
-        return 162;
+        return 192;
     }
     public String getMarca()
     {

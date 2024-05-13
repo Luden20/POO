@@ -68,32 +68,39 @@ public class Inventariado {
                 while(Arc.getFilePointer()<Arc.length())//Mientras mi puntero sea menor que la longitud seguire leyendo
                 {
                     String Cat="";
-                    for(int i =0;i<30;i++)
+                    for(int i =0;i<15;i++)
                     {
                         Cat=Cat+Arc.readChar();
                     }
+                    System.out.println("cat"+Cat);
                     String Codigo="";
-                    for(int i =0;i<10;i++)
+                    for(int i =0;i<5;i++)
                     {
                         Codigo=Codigo+Arc.readChar();
                     }
+                    System.out.println("cod"+Codigo);
                     String Nombre="";
-                    for(int i =0;i<30;i++)
+                    for(int i =0;i<15;i++)
                     {
                         Nombre=Nombre+Arc.readChar();
                     }
+                    System.out.println("nom"+Nombre);
                     String Marca="";
-                    for(int i =0;i<30;i++)
+                    for(int i =0;i<15;i++)
                     {
                         Marca=Marca+Arc.readChar();
                     }
+                    System.out.println("mar"+Marca);
                     double Pre=Arc.readDouble();
+                    System.out.println("pre"+Pre);
                     String Des="";
-                    for(int i =0;i<80;i++)
+                    for(int i =0;i<40;i++)
                     {
                         Des=Des+Arc.readChar();
                     }
+                    System.out.println("Des"+Des);
                     int cant=Arc.readInt();
+                    System.out.println("CATN"+cant);
                     Producto aux=new Producto(Codigo,Nombre,Marca,Pre,Des,cant);
                     agregar_Producto(aux,Cat);
                 }
@@ -103,7 +110,7 @@ public class Inventariado {
             }
             catch(IOException e)
             {
-                JOptionPane.showMessageDialog(null, "Error al cargar", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
         public String getContenidoStr()

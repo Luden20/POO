@@ -80,9 +80,7 @@
     </Container>
     <Container class="javax.swing.JPanel" name="Botones">
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout">
-        <Property name="axis" type="int" value="0"/>
-      </Layout>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
       <SubComponents>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
@@ -178,7 +176,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/proyecto_tienda_electronica/text-file-outlined-interface-symbol_icon-icons.com_57502.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Leer inventario de un archivo"/>
+            <Property name="text" type="java.lang.String" value="Cargar inventario de un archivo"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>

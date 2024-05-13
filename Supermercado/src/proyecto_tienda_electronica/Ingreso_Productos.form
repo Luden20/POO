@@ -93,9 +93,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="b0" green="6e" red="4a" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/proyecto_tienda_electronica/4213447-arrow-load-loading-refresh-reload-restart-sync_115423.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Refrescar"/>
           </Properties>
           <Events>
@@ -112,9 +109,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="b0" green="6e" red="4a" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/proyecto_tienda_electronica/add_circle_create_expand_new_plus_icon_123218.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Agregar existencias a productos existentes"/>
           </Properties>
@@ -133,9 +127,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="b0" green="6e" red="4a" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/proyecto_tienda_electronica/add_circle_create_expand_new_plus_icon_123218.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Ingreso de productos nuevos"/>
           </Properties>
           <Events>
@@ -152,9 +143,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="b0" green="6e" red="4a" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/proyecto_tienda_electronica/table-grid_icon-icons.com_73384.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ver Tabla"/>
           </Properties>
@@ -173,9 +161,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="b0" green="6e" red="4a" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/proyecto_tienda_electronica/text-file-outlined-interface-symbol_icon-icons.com_57502.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Cargar inventario de un archivo"/>
           </Properties>
           <Events>
@@ -192,9 +177,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="b0" green="6e" red="4a" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/proyecto_tienda_electronica/text-file-outlined-interface-symbol_icon-icons.com_57502.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Guardar inventario en un archivo"/>
           </Properties>
@@ -272,9 +254,10 @@
                 <Component class="javax.swing.JTable" name="Tabla">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="5" rowCount="4">
+                      <Table columnCount="6" rowCount="5">
                         <Column editable="true" title="Codigo" type="java.lang.String"/>
                         <Column editable="true" title="Nombre" type="java.lang.String"/>
+                        <Column editable="true" title="Marca" type="java.lang.String"/>
                         <Column editable="true" title="Cantidad" type="java.lang.String"/>
                         <Column editable="true" title="Precio" type="java.lang.String"/>
                         <Column editable="true" title="Descripcion" type="java.lang.String"/>

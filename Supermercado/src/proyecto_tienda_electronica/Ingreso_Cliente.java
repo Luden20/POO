@@ -118,7 +118,6 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         Ingresar_Cliente.setBackground(new java.awt.Color(240, 230, 207));
         Ingresar_Cliente.setFont(new java.awt.Font("Lucida Sans", 3, 36)); // NOI18N
         Ingresar_Cliente.setForeground(new java.awt.Color(74, 110, 176));
-        Ingresar_Cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/login-square-arrow-button-outline_icon-icons.com_73220.png"))); // NOI18N
         Ingresar_Cliente.setText("Ingresar");
         Ingresar_Cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -69,6 +69,9 @@ public class Consulta extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         PRECIO = new javax.swing.JScrollPane();
         PRECIO_TA = new javax.swing.JTextArea();
+        jLabel14 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        MarcaTA = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         DescripcionTA = new javax.swing.JTextArea();
@@ -113,7 +116,6 @@ public class Consulta extends javax.swing.JFrame {
         Panel_Superior.add(UsuarioTx);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/shop_117803.png"))); // NOI18N
         Panel_Superior.add(jLabel2);
 
         getContentPane().add(Panel_Superior);
@@ -182,6 +184,20 @@ public class Consulta extends javax.swing.JFrame {
 
         Panel_Ver.add(PRECIO);
 
+        jLabel14.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(17, 76, 95));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Marca");
+        Panel_Ver.add(jLabel14);
+
+        MarcaTA.setEditable(false);
+        MarcaTA.setColumns(20);
+        MarcaTA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
+        MarcaTA.setRows(5);
+        jScrollPane7.setViewportView(MarcaTA);
+
+        Panel_Ver.add(jScrollPane7);
+
         jLabel7.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(17, 76, 95));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -217,7 +233,6 @@ public class Consulta extends javax.swing.JFrame {
         PagarB.setBackground(new java.awt.Color(240, 230, 207));
         PagarB.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         PagarB.setForeground(new java.awt.Color(74, 110, 176));
-        PagarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/shopping-cart-add-button_icon-icons.com_56132 (1).png"))); // NOI18N
         PagarB.setText("Agregar");
         PagarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -339,7 +354,6 @@ public class Consulta extends javax.swing.JFrame {
         PagarBT.setBackground(new java.awt.Color(240, 230, 207));
         PagarBT.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         PagarBT.setForeground(new java.awt.Color(74, 110, 176));
-        PagarBT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/pay_cash_payment_money_dollar_bill_icon_143267.png"))); // NOI18N
         PagarBT.setText("Pagar");
         PagarBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -436,6 +450,7 @@ public class Consulta extends javax.swing.JFrame {
        DescripcionTA.setText(aux.getDescripcion());
        //Aqui creo un combo box que va desde 1 hasta las existencias , todo se hace una funcion aparte
        CantidadCB.setModel(ModeloCantidad(aux.getCantidadINT())); 
+       MarcaTA.setText(aux.getMarca());
        mostrarDatos();
     }
     public void mostrarDatos()
@@ -444,6 +459,7 @@ public class Consulta extends javax.swing.JFrame {
         CEDULA_TA.setText(clientefinal.getCedula());
         NOMBRE_TA.setText(clientefinal.getNombre());
         DIRECCION_TA.setText(clientefinal.getDireccion());
+        
     }
     //Es una funcion que devuelve un modelo para una combo box desde el 1 hasta el numero de parametro
     public static DefaultComboBoxModel<String> ModeloCantidad(int i) {
@@ -493,6 +509,7 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CategoriaCB;
     private javax.swing.JTextArea DIRECCION_TA;
     private javax.swing.JTextArea DescripcionTA;
+    private javax.swing.JTextArea MarcaTA;
     private javax.swing.JTextArea NOMBRE_TA;
     private javax.swing.JScrollPane PRECIO;
     private javax.swing.JTextArea PRECIO_TA;
@@ -512,6 +529,7 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -528,6 +546,7 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     // End of variables declaration//GEN-END:variables
     private Inventariado inventariado;
     private Cliente clientefinal;

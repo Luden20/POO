@@ -3,17 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package proyecto_tienda_electronica;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.LinkedHashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
 /*
 import org.jfree.chart.ChartFactory;
@@ -34,7 +28,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     public Ingreso_Productos(Inventariado aux) {
         initComponents();
         TC = new DefaultTableModel();
-        String ids [] = {"Codigo","Nombre","Cantidad","Precio","Descripcion"};
+        String ids [] = {"Codigo","Nombre","Marca","Cantidad","Precio","Descripcion"};
         TC.setColumnIdentifiers(ids);
         Tabla.setModel(TC);
         inventariado = aux;
@@ -139,7 +133,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(242, 230, 207));
         jButton2.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(74, 110, 176));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/4213447-arrow-load-loading-refresh-reload-restart-sync_115423.png"))); // NOI18N
         jButton2.setText("Refrescar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,7 +144,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Productos_ExistentesBT.setBackground(new java.awt.Color(242, 230, 207));
         Productos_ExistentesBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         Productos_ExistentesBT.setForeground(new java.awt.Color(74, 110, 176));
-        Productos_ExistentesBT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/add_circle_create_expand_new_plus_icon_123218.png"))); // NOI18N
         Productos_ExistentesBT.setText("Agregar existencias a productos existentes");
         Productos_ExistentesBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +155,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Nuevos_ProductosBT.setBackground(new java.awt.Color(242, 230, 207));
         Nuevos_ProductosBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         Nuevos_ProductosBT.setForeground(new java.awt.Color(74, 110, 176));
-        Nuevos_ProductosBT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/add_circle_create_expand_new_plus_icon_123218.png"))); // NOI18N
         Nuevos_ProductosBT.setText("Ingreso de productos nuevos");
         Nuevos_ProductosBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,7 +166,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Ver_TablaBT.setBackground(new java.awt.Color(242, 230, 207));
         Ver_TablaBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         Ver_TablaBT.setForeground(new java.awt.Color(74, 110, 176));
-        Ver_TablaBT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/table-grid_icon-icons.com_73384.png"))); // NOI18N
         Ver_TablaBT.setText("Ver Tabla");
         Ver_TablaBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,7 +177,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(242, 230, 207));
         jButton1.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(74, 110, 176));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/text-file-outlined-interface-symbol_icon-icons.com_57502.png"))); // NOI18N
         jButton1.setText("Cargar inventario de un archivo");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,7 +188,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         GuardarBT.setBackground(new java.awt.Color(242, 230, 207));
         GuardarBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         GuardarBT.setForeground(new java.awt.Color(74, 110, 176));
-        GuardarBT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/text-file-outlined-interface-symbol_icon-icons.com_57502.png"))); // NOI18N
         GuardarBT.setText("Guardar inventario en un archivo");
         GuardarBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,17 +217,18 @@ public class Ingreso_Productos extends javax.swing.JFrame {
 
         Tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Codigo", "Nombre", "Cantidad", "Precio", "Descripcion"
+                "Codigo", "Nombre", "Marca", "Cantidad", "Precio", "Descripcion"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {

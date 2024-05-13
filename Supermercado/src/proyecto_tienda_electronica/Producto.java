@@ -114,7 +114,7 @@ public class Producto {
     }
     public String[] getAllCompleto()
     {
-        return new String[]{getCodigo(),getNombre(),getCantidad(),getPrecioUnitario(),getDescripcion()};
+        return new String[]{getCodigo(),getNombre(),getMarca(),getCantidad(),getPrecioUnitario(),getDescripcion()};
     }
     public double CalcularPrecioTotal()
     {

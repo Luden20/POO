@@ -120,7 +120,6 @@ public class Password extends javax.swing.JFrame {
         IngresarBT.setBackground(new java.awt.Color(242, 230, 207));
         IngresarBT.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
         IngresarBT.setForeground(new java.awt.Color(74, 110, 176));
-        IngresarBT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/login-square-arrow-button-outline_icon-icons.com_73220.png"))); // NOI18N
         IngresarBT.setText("Ingresar");
         IngresarBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

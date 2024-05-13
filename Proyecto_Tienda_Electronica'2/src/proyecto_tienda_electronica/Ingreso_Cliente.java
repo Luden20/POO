@@ -36,6 +36,8 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -53,24 +55,35 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1920, 1080));
         setMinimumSize(new java.awt.Dimension(1920, 1080));
         setPreferredSize(new java.awt.Dimension(1920, 1080));
-        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(7, 153, 182));
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
+
+        jLabel7.setBackground(new java.awt.Color(7, 153, 182));
+        jLabel7.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(242, 230, 207));
+        jLabel7.setText("Budget Galaxy Store");
+        jPanel2.add(jLabel7);
+
+        getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
+
+        jPanel1.setBackground(new java.awt.Color(156, 210, 211));
         jPanel1.setLayout(new java.awt.GridLayout(6, 2, 0, 150));
 
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel1.setForeground(new java.awt.Color(74, 110, 176));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Bienvenido");
         jPanel1.add(jLabel1);
 
         jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel2.setForeground(new java.awt.Color(74, 110, 176));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ingrese sus datos");
         jPanel1.add(jLabel2);
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(17, 76, 95));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Nombre");
         jPanel1.add(jLabel3);
@@ -79,6 +92,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         jPanel1.add(NombreTF);
 
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(17, 76, 95));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Cedula");
         jPanel1.add(jLabel4);
@@ -87,6 +101,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         jPanel1.add(CedulaTF);
 
         jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(17, 76, 95));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Direccion");
         jPanel1.add(jLabel5);
@@ -95,12 +110,15 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         jPanel1.add(DireccionTF);
 
         jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(17, 76, 95));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Estos datos se usaran para la facturacion");
         jPanel1.add(jLabel6);
 
-        Ingresar_Cliente.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
-        Ingresar_Cliente.setForeground(new java.awt.Color(0, 153, 153));
+        Ingresar_Cliente.setBackground(new java.awt.Color(240, 230, 207));
+        Ingresar_Cliente.setFont(new java.awt.Font("Lucida Sans", 3, 36)); // NOI18N
+        Ingresar_Cliente.setForeground(new java.awt.Color(74, 110, 176));
+        Ingresar_Cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/login-square-arrow-button-outline_icon-icons.com_73220.png"))); // NOI18N
         Ingresar_Cliente.setText("Ingresar");
         Ingresar_Cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +127,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         });
         jPanel1.add(Ingresar_Cliente);
 
-        getContentPane().add(jPanel1);
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -183,7 +201,9 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
     private Inventariado inventariado;
 }

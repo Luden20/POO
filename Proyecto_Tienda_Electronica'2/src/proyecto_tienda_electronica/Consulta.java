@@ -100,13 +100,13 @@ public class Consulta extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
 
-        Panel_Superior.setBackground(new java.awt.Color(102, 153, 255));
+        Panel_Superior.setBackground(new java.awt.Color(7, 153, 182));
         Panel_Superior.setAlignmentY(0.25F);
         Panel_Superior.setMaximumSize(new java.awt.Dimension(32767, 327));
         Panel_Superior.setLayout(new java.awt.GridLayout(1, 2));
 
         UsuarioTx.setFont(new java.awt.Font("Lucida Sans", 3, 36)); // NOI18N
-        UsuarioTx.setForeground(new java.awt.Color(51, 0, 51));
+        UsuarioTx.setForeground(new java.awt.Color(255, 255, 255));
         UsuarioTx.setText("Bienvenido usuario");
         Panel_Superior.add(UsuarioTx);
 
@@ -118,7 +118,7 @@ public class Consulta extends javax.swing.JFrame {
 
         Panel_Principal.setLayout(new javax.swing.BoxLayout(Panel_Principal, javax.swing.BoxLayout.X_AXIS));
 
-        Panel_Ver.setBackground(new java.awt.Color(204, 204, 204));
+        Panel_Ver.setBackground(new java.awt.Color(156, 210, 211));
         Panel_Ver.setLayout(new java.awt.GridLayout(8, 3, 15, 30));
 
         CategoriaCB.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
@@ -139,8 +139,9 @@ public class Consulta extends javax.swing.JFrame {
         Panel_Ver.add(ProductosCB);
 
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(17, 76, 95));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CODIGO");
+        jLabel1.setText("Codigo");
         Panel_Ver.add(jLabel1);
 
         CODIGO_TA.setEditable(false);
@@ -152,8 +153,9 @@ public class Consulta extends javax.swing.JFrame {
         Panel_Ver.add(CODIGO);
 
         jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(17, 76, 95));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("PRODUCTO");
+        jLabel5.setText("Producto");
         Panel_Ver.add(jLabel5);
 
         PRODUCTO_TA.setEditable(false);
@@ -165,8 +167,9 @@ public class Consulta extends javax.swing.JFrame {
         Panel_Ver.add(jScrollPane6);
 
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(17, 76, 95));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("PRECIO");
+        jLabel4.setText("Precio");
         Panel_Ver.add(jLabel4);
 
         PRECIO_TA.setEditable(false);
@@ -178,6 +181,7 @@ public class Consulta extends javax.swing.JFrame {
         Panel_Ver.add(PRECIO);
 
         jLabel7.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(17, 76, 95));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Descripcion");
         Panel_Ver.add(jLabel7);
@@ -191,6 +195,7 @@ public class Consulta extends javax.swing.JFrame {
         Panel_Ver.add(jScrollPane2);
 
         jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(17, 76, 95));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Cantidad");
         Panel_Ver.add(jLabel6);
@@ -207,8 +212,9 @@ public class Consulta extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Panel_Ver.add(jLabel9);
 
+        PagarB.setBackground(new java.awt.Color(240, 230, 207));
         PagarB.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        PagarB.setForeground(new java.awt.Color(0, 51, 255));
+        PagarB.setForeground(new java.awt.Color(74, 110, 176));
         PagarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/shopping-cart-add-button_icon-icons.com_56132 (1).png"))); // NOI18N
         PagarB.setText("Agregar");
         PagarB.addActionListener(new java.awt.event.ActionListener() {
@@ -220,7 +226,7 @@ public class Consulta extends javax.swing.JFrame {
 
         Panel_Principal.add(Panel_Ver);
 
-        Panel_Informacion.setBackground(new java.awt.Color(102, 204, 0));
+        Panel_Informacion.setBackground(new java.awt.Color(17, 76, 95));
         Panel_Informacion.setLayout(new javax.swing.BoxLayout(Panel_Informacion, javax.swing.BoxLayout.PAGE_AXIS));
 
         TB_Factura.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
@@ -247,11 +253,11 @@ public class Consulta extends javax.swing.JFrame {
 
         Panel_Informacion.add(jScrollPane1);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(17, 76, 95));
         jPanel1.setLayout(new java.awt.GridLayout(6, 2, 0, 30));
 
         jLabel8.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setForeground(new java.awt.Color(156, 210, 211));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Cedula");
         jPanel1.add(jLabel8);
@@ -265,7 +271,7 @@ public class Consulta extends javax.swing.JFrame {
         jPanel1.add(jScrollPane5);
 
         jLabel11.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setForeground(new java.awt.Color(156, 210, 211));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Nombre");
         jPanel1.add(jLabel11);
@@ -279,7 +285,7 @@ public class Consulta extends javax.swing.JFrame {
         jPanel1.add(jScrollPane4);
 
         jLabel12.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setForeground(new java.awt.Color(156, 210, 211));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Direccion");
         jPanel1.add(jLabel12);
@@ -293,23 +299,25 @@ public class Consulta extends javax.swing.JFrame {
         jPanel1.add(jScrollPane3);
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(156, 210, 211));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Total a pagar");
         jPanel1.add(jLabel3);
 
         PTotalJL.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        PTotalJL.setForeground(new java.awt.Color(255, 255, 255));
+        PTotalJL.setForeground(new java.awt.Color(156, 210, 211));
         PTotalJL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PTotalJL.setText("Total");
         jPanel1.add(PTotalJL);
 
         jLabel13.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(156, 210, 211));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(jLabel13);
 
+        PagarBT.setBackground(new java.awt.Color(240, 230, 207));
         PagarBT.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        PagarBT.setForeground(new java.awt.Color(0, 153, 153));
+        PagarBT.setForeground(new java.awt.Color(74, 110, 176));
         PagarBT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/pay_cash_payment_money_dollar_bill_icon_143267.png"))); // NOI18N
         PagarBT.setText("Pagar");
         PagarBT.addActionListener(new java.awt.event.ActionListener() {
@@ -347,13 +355,13 @@ public class Consulta extends javax.swing.JFrame {
         if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
             File file = jFileChooser3.getSelectedFile();
             if (!file.getName().toLowerCase().endsWith(".txt")) {
-                // Si el usuario no agregó la extensión .txt, se la añadimos.
                 file = new File(file.getParentFile(), file.getName() + ".txt");
             }
             try {
                 FileWriter e = new FileWriter(file);
                 Facturafinal.GuardarFactura(e);
                 JOptionPane.showMessageDialog(null, "Factura guardada con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                dispose();
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(null, "Error al guardar: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }

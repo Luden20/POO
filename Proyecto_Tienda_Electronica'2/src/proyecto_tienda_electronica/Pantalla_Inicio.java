@@ -44,13 +44,15 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(156, 210, 211));
         jPanel1.setLayout(new java.awt.GridLayout(3, 4, 40, 80));
         jPanel1.add(jLabel1);
         jPanel1.add(jLabel2);
 
+        jButton2.setBackground(new java.awt.Color(242, 230, 207));
         jButton2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 0, 0));
+        jButton2.setForeground(new java.awt.Color(74, 110, 176));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/management_inventory_icon_216505.png"))); // NOI18N
         jButton2.setText("Gestion de la tienda");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,8 +61,10 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2);
 
+        Tienda.setBackground(new java.awt.Color(242, 230, 207));
         Tienda.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        Tienda.setForeground(new java.awt.Color(51, 51, 255));
+        Tienda.setForeground(new java.awt.Color(74, 110, 176));
+        Tienda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/ecommerce_home_market_mart_shop_shopping_store_icon_123207.png"))); // NOI18N
         Tienda.setText("Tienda");
         Tienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -71,7 +71,7 @@ public class Factura {
             {
                 bw.write(entry.getValue().getAllStr()+"\n");
             }
-           bw.write("Total"+getTotalProd()+"USD\n");
+           bw.write("Total: "+getTotalProd()+"USD\n");
            bw.write("Gracias por comprar con nosotros =D");
            bw.flush();
        }

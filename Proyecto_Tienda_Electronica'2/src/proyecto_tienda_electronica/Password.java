@@ -55,19 +55,20 @@ public class Password extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Panel_Superior.setBackground(new java.awt.Color(51, 153, 255));
+        Panel_Superior.setBackground(new java.awt.Color(7, 153, 182));
         Panel_Superior.setForeground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
-        Panel_Superior.setLayout(new java.awt.GridLayout());
+        Panel_Superior.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel4.setFont(new java.awt.Font("Lucida Sans", 3, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setBackground(new java.awt.Color(7, 153, 182));
+        jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(242, 230, 207));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Ingrese el usuario y contraseña adecuados para entrar");
         Panel_Superior.add(jLabel4);
 
         getContentPane().add(Panel_Superior, java.awt.BorderLayout.PAGE_START);
 
-        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(7, 153, 182));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -82,10 +83,13 @@ public class Password extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_END);
 
+        Panel_Ingreso.setBackground(new java.awt.Color(156, 210, 211));
         Panel_Ingreso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Panel_Ingreso.setLayout(new java.awt.GridLayout(6, 4, 45, 45));
 
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(17, 76, 95));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Usuario");
         Panel_Ingreso.add(jLabel1);
 
@@ -93,6 +97,8 @@ public class Password extends javax.swing.JFrame {
         Panel_Ingreso.add(UserTF);
 
         jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(17, 76, 95));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Password");
         Panel_Ingreso.add(jLabel2);
 
@@ -111,9 +117,10 @@ public class Password extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         Panel_Ingreso.add(jLabel3);
 
-        IngresarBT.setBackground(new java.awt.Color(153, 255, 255));
+        IngresarBT.setBackground(new java.awt.Color(242, 230, 207));
         IngresarBT.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        IngresarBT.setForeground(new java.awt.Color(0, 153, 255));
+        IngresarBT.setForeground(new java.awt.Color(74, 110, 176));
+        IngresarBT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto_tienda_electronica/login-square-arrow-button-outline_icon-icons.com_73220.png"))); // NOI18N
         IngresarBT.setText("Ingresar");
         IngresarBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

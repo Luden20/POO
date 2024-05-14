@@ -29,6 +29,10 @@ public class Categoria {
     {
         ProductosAlmacenados.put(agregado.getNombre(),agregado);
     }
+    public int Cantidad()
+    {
+        return ProductosAlmacenados.size();
+    }
     public Producto getProducto(String Nombre)
     {
         return ProductosAlmacenados.get(Nombre);

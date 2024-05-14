@@ -6,6 +6,7 @@ package proyecto_tienda_electronica;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -19,7 +20,18 @@ public class Producto {
     private double Precio;                                //       8 bytes
     private String Descripcion;// Descripcion hasta 40 caracteres 80 bytes
     private int Cantidad;//                                        4 bytes
+    private ImageIcon Imagen;
     //                                                            162 bytes por registro+30 por categoria=192
+    public Producto(String Cod,String Nom,String Marca,double Pre,String Desc,int Cant,ImageIcon imagen)
+    {
+        this.Codigo=Cod;
+        this.Nombre=Nom;
+        this.Marca=Marca;
+        this.Precio=Pre;
+        this.Descripcion=Desc;
+        this.Cantidad=Cant;
+        this.Imagen=imagen;
+    }
     public Producto(String Cod,String Nom,String Marca,double Pre,String Desc,int Cant)
     {
         this.Codigo=Cod;
@@ -28,6 +40,7 @@ public class Producto {
         this.Precio=Pre;
         this.Descripcion=Desc;
         this.Cantidad=Cant;
+        this.Imagen=null;
     }
 
     public void EscribirProducto(RandomAccessFile Archivo)
@@ -50,6 +63,10 @@ public class Producto {
     public int getBytesPorRegistro()
     {
         return 192;
+    }
+    public ImageIcon getImagen()
+    {
+        return Imagen;
     }
     public String getMarca()
     {

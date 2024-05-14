@@ -52,6 +52,7 @@ public class Consulta extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         Panel_Superior = new javax.swing.JPanel();
         UsuarioTx = new javax.swing.JLabel();
@@ -79,6 +80,7 @@ public class Consulta extends javax.swing.JFrame {
         CantidadCB = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         PagarB = new javax.swing.JButton();
+        IMAGEN = new javax.swing.JLabel();
         Panel_Informacion = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -123,7 +125,7 @@ public class Consulta extends javax.swing.JFrame {
         Panel_Principal.setLayout(new javax.swing.BoxLayout(Panel_Principal, javax.swing.BoxLayout.X_AXIS));
 
         Panel_Ver.setBackground(new java.awt.Color(156, 210, 211));
-        Panel_Ver.setLayout(new java.awt.GridLayout(8, 3, 15, 30));
+        Panel_Ver.setLayout(new java.awt.GridBagLayout());
 
         CategoriaCB.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         CategoriaCB.addActionListener(new java.awt.event.ActionListener() {
@@ -131,7 +133,15 @@ public class Consulta extends javax.swing.JFrame {
                 CategoriaCBActionPerformed(evt);
             }
         });
-        Panel_Ver.add(CategoriaCB);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(CategoriaCB, gridBagConstraints);
 
         ProductosCB.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         ProductosCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una categoria", " " }));
@@ -140,13 +150,29 @@ public class Consulta extends javax.swing.JFrame {
                 ProductosCBActionPerformed(evt);
             }
         });
-        Panel_Ver.add(ProductosCB);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(ProductosCB, gridBagConstraints);
 
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(17, 76, 95));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Codigo");
-        Panel_Ver.add(jLabel1);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 1;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(jLabel1, gridBagConstraints);
 
         CODIGO_TA.setEditable(false);
         CODIGO_TA.setColumns(20);
@@ -154,13 +180,27 @@ public class Consulta extends javax.swing.JFrame {
         CODIGO_TA.setRows(5);
         CODIGO.setViewportView(CODIGO_TA);
 
-        Panel_Ver.add(CODIGO);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(CODIGO, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(17, 76, 95));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Producto");
-        Panel_Ver.add(jLabel5);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(jLabel5, gridBagConstraints);
 
         PRODUCTO_TA.setEditable(false);
         PRODUCTO_TA.setColumns(20);
@@ -168,13 +208,28 @@ public class Consulta extends javax.swing.JFrame {
         PRODUCTO_TA.setRows(5);
         jScrollPane6.setViewportView(PRODUCTO_TA);
 
-        Panel_Ver.add(jScrollPane6);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(jScrollPane6, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(17, 76, 95));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Precio");
-        Panel_Ver.add(jLabel4);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 1;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(jLabel4, gridBagConstraints);
 
         PRECIO_TA.setEditable(false);
         PRECIO_TA.setColumns(20);
@@ -182,13 +237,27 @@ public class Consulta extends javax.swing.JFrame {
         PRECIO_TA.setRows(5);
         PRECIO.setViewportView(PRECIO_TA);
 
-        Panel_Ver.add(PRECIO);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(PRECIO, gridBagConstraints);
 
         jLabel14.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(17, 76, 95));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Marca");
-        Panel_Ver.add(jLabel14);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(jLabel14, gridBagConstraints);
 
         MarcaTA.setEditable(false);
         MarcaTA.setColumns(20);
@@ -196,13 +265,27 @@ public class Consulta extends javax.swing.JFrame {
         MarcaTA.setRows(5);
         jScrollPane7.setViewportView(MarcaTA);
 
-        Panel_Ver.add(jScrollPane7);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(jScrollPane7, gridBagConstraints);
 
         jLabel7.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(17, 76, 95));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Descripcion");
-        Panel_Ver.add(jLabel7);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(jLabel7, gridBagConstraints);
 
         DescripcionTA.setEditable(false);
         DescripcionTA.setColumns(20);
@@ -210,13 +293,28 @@ public class Consulta extends javax.swing.JFrame {
         DescripcionTA.setRows(5);
         jScrollPane2.setViewportView(DescripcionTA);
 
-        Panel_Ver.add(jScrollPane2);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(jScrollPane2, gridBagConstraints);
 
         jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(17, 76, 95));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Cantidad");
-        Panel_Ver.add(jLabel6);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 1;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(jLabel6, gridBagConstraints);
 
         CantidadCB.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
         CantidadCB.addActionListener(new java.awt.event.ActionListener() {
@@ -224,11 +322,18 @@ public class Consulta extends javax.swing.JFrame {
                 CantidadCBActionPerformed(evt);
             }
         });
-        Panel_Ver.add(CantidadCB);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(CantidadCB, gridBagConstraints);
 
         jLabel9.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Panel_Ver.add(jLabel9);
+        Panel_Ver.add(jLabel9, new java.awt.GridBagConstraints());
 
         PagarB.setBackground(new java.awt.Color(240, 230, 207));
         PagarB.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -239,7 +344,20 @@ public class Consulta extends javax.swing.JFrame {
                 PagarBActionPerformed(evt);
             }
         });
-        Panel_Ver.add(PagarB);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        Panel_Ver.add(PagarB, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        Panel_Ver.add(IMAGEN, gridBagConstraints);
 
         Panel_Principal.add(Panel_Ver);
 
@@ -451,6 +569,7 @@ public class Consulta extends javax.swing.JFrame {
        //Aqui creo un combo box que va desde 1 hasta las existencias , todo se hace una funcion aparte
        CantidadCB.setModel(ModeloCantidad(aux.getCantidadINT())); 
        MarcaTA.setText(aux.getMarca());
+       IMAGEN.setIcon(aux.getImagen());
        mostrarDatos();
     }
     public void mostrarDatos()
@@ -509,6 +628,7 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CategoriaCB;
     private javax.swing.JTextArea DIRECCION_TA;
     private javax.swing.JTextArea DescripcionTA;
+    private javax.swing.JLabel IMAGEN;
     private javax.swing.JTextArea MarcaTA;
     private javax.swing.JTextArea NOMBRE_TA;
     private javax.swing.JScrollPane PRECIO;

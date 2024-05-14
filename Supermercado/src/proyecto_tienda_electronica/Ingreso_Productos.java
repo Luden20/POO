@@ -3,10 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package proyecto_tienda_electronica;
+import java.awt.Image;
 import java.io.File;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 /*
@@ -84,6 +86,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         CBCantidad = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         TFDescripcion1 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         Panel_Ingreso_Productos_Existente = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         ButtonIngresoExistente = new javax.swing.JButton();
@@ -251,10 +254,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel1, gridBagConstraints);
 
         BotonIngresoNuevo.setBackground(new java.awt.Color(240, 230, 207));
@@ -269,10 +270,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(BotonIngresoNuevo, gridBagConstraints);
 
         jLabel17.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -282,20 +281,16 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel17, gridBagConstraints);
 
         CategoriaTF.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(CategoriaTF, gridBagConstraints);
 
         jLabel9.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -305,10 +300,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel9, gridBagConstraints);
 
         CBCategoria.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -321,10 +314,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(CBCategoria, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -332,12 +323,11 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Codigo");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel3, gridBagConstraints);
 
         TFCodigo.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -347,12 +337,11 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(TFCodigo, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -360,22 +349,20 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Nombre");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel4, gridBagConstraints);
 
         TFNombre.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(TFNombre, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -383,22 +370,20 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Precio");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel5, gridBagConstraints);
 
         TFPrecio.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(TFPrecio, gridBagConstraints);
 
         jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -406,22 +391,20 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Descripcion");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel6, gridBagConstraints);
 
         TFMarca.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(TFMarca, gridBagConstraints);
 
         jLabel15.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -429,12 +412,11 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Cantidad");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel15, gridBagConstraints);
 
         CBCantidad.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -445,12 +427,11 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(CBCantidad, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -458,23 +439,35 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Marca");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel10, gridBagConstraints);
 
         TFDescripcion1.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        gridBagConstraints.weighty = 0.7;
+        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(TFDescripcion1, gridBagConstraints);
+
+        jButton3.setText("Agregar Imagen");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 1;
+        gridBagConstraints.weightx = 1.0;
+        Panel_Ingreso_Productos_Nuevos.add(jButton3, gridBagConstraints);
 
         Panel_Principal.add(Panel_Ingreso_Productos_Nuevos, "card2");
 
@@ -604,7 +597,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             cat = CBCategoria.getSelectedItem().toString();
         }
         Producto prd;
-        prd = new Producto(TFCodigo.getText(), TFNombre.getText(),TFMarca.getText(), Double.parseDouble(TFPrecio.getText()), TFMarca.getText(), Integer.parseInt(CBCantidad.getSelectedItem().toString()));
+        prd = new Producto(TFCodigo.getText(), TFNombre.getText(),TFMarca.getText(), Double.parseDouble(TFPrecio.getText()), TFMarca.getText(), Integer.parseInt(CBCantidad.getSelectedItem().toString()),aux);
         inventariado.agregar_Producto(prd, cat);
         JOptionPane.showMessageDialog(null, "Ingreso\n"+prd, "Mensaje", JOptionPane.INFORMATION_MESSAGE);
         
@@ -700,6 +693,19 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Refrescar();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser jFileChooser3 = new JFileChooser();
+            jFileChooser3.setDialogTitle("Selecciona una imagen los datos");
+            if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                File file = jFileChooser3.getSelectedFile();
+                aux=new ImageIcon(file.getAbsolutePath()); 
+                Image xd = aux.getImage().getScaledInstance(350, 350, Image.SCALE_SMOOTH);
+                aux=new ImageIcon(xd);
+                Refrescar();
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -750,6 +756,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         TFPrecio.setText("");
         TFMarca.setText("");
         CBCantidad.setSelectedIndex(0);
+        aux=null;
         Refrescar();
     }
     
@@ -797,6 +804,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JButton Ver_TablaBT;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -817,4 +825,5 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private Inventariado inventariado;
     private int Componentes, Consolas, Celulares, Computadores;
     private  DefaultTableModel TC;
+    private ImageIcon aux;
 }

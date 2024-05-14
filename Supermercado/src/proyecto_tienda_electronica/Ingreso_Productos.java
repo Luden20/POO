@@ -11,6 +11,9 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+
+
 /*
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
@@ -586,26 +589,42 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private void BotonIngresoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIngresoNuevoActionPerformed
     // TODO add your handling code here:
     String cat;
-    if (validar()) 
-    {
-        if("NaN".equals(CBCategoria.getSelectedItem().toString()))
-        {
-             cat=CategoriaTF.getText().toString();          
-        }
-        else
-        {
-            cat = CBCategoria.getSelectedItem().toString();
-        }
-        Producto prd;
-        prd = new Producto(TFCodigo.getText(), TFNombre.getText(),TFMarca.getText(), Double.parseDouble(TFPrecio.getText()), TFMarca.getText(), Integer.parseInt(CBCantidad.getSelectedItem().toString()),aux);
-        inventariado.agregar_Producto(prd, cat);
-        JOptionPane.showMessageDialog(null, "Ingreso\n"+prd, "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-        
-        reset();
-    } 
-    else {
-        JOptionPane.showMessageDialog(this, "Error en el Ingreso de datos", "ERROR", JOptionPane.ERROR_MESSAGE);
-    }
+            if (validar()) 
+            {
+                // Verificar si todos los valores a guardar son menores a 15 caracteres
+                if (validarLongitud()) 
+                {
+                    if ("NaN".equals(CBCategoria.getSelectedItem().toString())) 
+                    {
+                        cat = CategoriaTF.getText().toString();          
+                    } 
+                    else 
+                    {
+                        cat = CBCategoria.getSelectedItem().toString();
+                    }
+                    // Rellenar con espacios si los valores son menores a 15 caracteres
+                    Producto prd = new Producto
+                    (
+                        rellenarEspacios(TFCodigo.getText(), 5),
+                        rellenarEspacios(TFNombre.getText(), 15),
+                        rellenarEspacios(TFMarca.getText(), 15),
+                        Double.parseDouble(TFPrecio.getText()),
+                        rellenarEspacios(TFDescripcion1.getText(), 40),
+                        Integer.parseInt(CBCantidad.getSelectedItem().toString())
+                    );
+                    inventariado.agregar_Producto(prd, cat);
+                    JOptionPane.showMessageDialog(null, "Ingreso\n"+prd, "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                    reset();
+                } 
+                else 
+                {
+                    JOptionPane.showMessageDialog(this, "Al menos uno de los valores a guardar supera los caracteres establecidos.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
+            } 
+            else 
+            {
+                JOptionPane.showMessageDialog(this, "Error en el Ingreso de datos", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
 
     }//GEN-LAST:event_BotonIngresoNuevoActionPerformed
 
@@ -775,8 +794,93 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         CBCategoriaIngreso.setModel(new DefaultComboBoxModel(inventariado.getListado(true)));
         Componentes_Ver.setModel(new DefaultComboBoxModel(inventariado.getListado(true)));
     }
+    
+    private boolean validarLongitud() 
+    {
+    return TFCodigo.getText().length() <= 5 &&
+           TFNombre.getText().length() <= 15 &&
+           TFMarca.getText().length() <= 15 &&
+           TFDescripcion1.getText().length() <= 40;
+    }
+    
+    private String rellenarEspacios(String str, int longitud) 
+    {
+        while (str.length() < longitud) 
+        {
+            str += " ";
+        }
+        return str;
+    }
+    
+    /*
+    //Falta importar la biblioteca Jfreechart?
+    import java.util.LinkedHashMap;
+    import javax.swing.JOptionPane;
+    import org.jfree.chart.ChartFactory;
+    import org.jfree.chart.JFreeChart;
+    import org.jfree.data.general.DefaultPieDataset; 
+    import org.jfree.chart.plot.PiePlot; 
+    import org.jfree.chart.ChartFrame;
+    import org.jfree.data.category.DefaultCategoryDataset;
+    */
+    
+    /*
+    //Grafico de barras
+    public void graficoBarras() 
+    {
+        // Creación del conjunto de datos
+        DefaultCategoryDataset datos = new DefaultCategoryDataset();
 
+        // Recorrer el inventario y agregar la cantidad de productos de cada categoría
+        for (Map.Entry<String, Categoria> entry : Inventario.entrySet()) 
+        {
+            String categoria = entry.getKey();
+            Categoria cat = entry.getValue();
+            int cantidadProductos = cat.ProductosAlmacenados.size(); // Obtener la cantidad de productos
 
+            // Agregar la cantidad de productos al conjunto de datos
+            datos.addValue(cantidadProductos, "Cantidad", categoria);
+        }
+
+        // Creación del gráfico de barras
+        JFreeChart grafico = ChartFactory.createBarChart("Productos por Categoría", "Categoría", "Cantidad", datos);
+
+        // Crear el marco para el gráfico
+        ChartFrame frame = new ChartFrame("Gráfico de barras", grafico);
+        frame.setVisible(true);
+        frame.setSize(800, 600);
+    }
+    */
+    
+    /*
+    //Grafico de pastel
+    public void graficoPastel() 
+    {
+        // Creación del conjunto de datos
+        DefaultPieDataset datos = new DefaultPieDataset();
+
+        // Recorrer el inventario y agregar la cantidad de productos de cada categoría
+        for (Map.Entry<String, Categoria> entry : Inventario.entrySet()) 
+        {
+            String categoria = entry.getKey();
+            Categoria cat = entry.getValue();
+            int cantidadProductos = cat.ProductosAlmacenados.size(); // Obtener la cantidad de productos
+
+            // Agregar la cantidad de productos al conjunto de datos
+            datos.addValue(cantidadProductos, "Cantidad", categoria);
+        }
+
+        // Creación del gráfico de barras
+        JFreeChart grafico = ChartFactory.createPieChart("Productos por Categoría", "Categoría", "Cantidad", datos);
+
+        // Crear el marco para el gráfico
+        ChartFrame frame = new ChartFrame("Gráfico de pastel", grafico);
+        frame.setVisible(true);
+        frame.setSize(800, 600);
+    }
+    */
+
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonIngresoNuevo;
     private javax.swing.JPanel Botones;

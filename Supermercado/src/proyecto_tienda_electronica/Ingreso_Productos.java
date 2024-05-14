@@ -596,11 +596,11 @@ public class Ingreso_Productos extends javax.swing.JFrame {
                 {
                     if ("NaN".equals(CBCategoria.getSelectedItem().toString())) 
                     {
-                        cat = CategoriaTF.getText().toString();          
+                        cat = rellenarEspacios(CategoriaTF.getText(),15);          
                     } 
                     else 
                     {
-                        cat = CBCategoria.getSelectedItem().toString();
+                        cat = rellenarEspacios(CBCategoria.getSelectedItem().toString(),15);
                     }
                     // Rellenar con espacios si los valores son menores a 15 caracteres
                     Producto prd = new Producto
@@ -610,7 +610,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
                         rellenarEspacios(TFMarca.getText(), 15),
                         Double.parseDouble(TFPrecio.getText()),
                         rellenarEspacios(TFDescripcion1.getText(), 40),
-                        Integer.parseInt(CBCantidad.getSelectedItem().toString())
+                        Integer.parseInt(CBCantidad.getSelectedItem().toString()),
+                        aux
                     );
                     inventariado.agregar_Producto(prd, cat);
                     JOptionPane.showMessageDialog(null, "Ingreso\n"+prd, "Mensaje", JOptionPane.INFORMATION_MESSAGE);
@@ -805,9 +806,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     
     private String rellenarEspacios(String str, int longitud) 
     {
-        while (str.length() < longitud) 
+      for (int i =str.length();i < longitud;i++) 
         {
-            str += " ";
+            str =str+ "";
         }
         return str;
     }

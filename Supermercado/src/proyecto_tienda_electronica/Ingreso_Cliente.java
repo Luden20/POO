@@ -35,6 +35,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -49,82 +50,170 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         DireccionTF = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         Ingresar_Cliente = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 0, 153));
-        setMaximumSize(new java.awt.Dimension(1920, 1080));
         setMinimumSize(new java.awt.Dimension(1920, 1080));
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
-        jPanel2.setBackground(new java.awt.Color(7, 153, 182));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel7.setBackground(new java.awt.Color(7, 153, 182));
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(242, 230, 207));
-        jLabel7.setText("Gadget Galaxy Store");
+        jLabel7.setForeground(new java.awt.Color(169, 169, 169));
+        jLabel7.setText("Supermercados \"Toñito\"");
         jPanel2.add(jLabel7);
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
-        jPanel1.setBackground(new java.awt.Color(156, 210, 211));
-        jPanel1.setLayout(new java.awt.GridLayout(6, 2, 0, 150));
+        jPanel1.setBackground(new java.awt.Color(239, 239, 239));
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
+        jLabel1.setBackground(new java.awt.Color(169, 169, 169));
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(74, 110, 176));
+        jLabel1.setForeground(new java.awt.Color(169, 169, 169));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Bienvenido");
-        jPanel1.add(jLabel1);
+        jLabel1.setText("¡Bienvenido a Supermercados Toñito!");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipady = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(51, 431, 0, 0);
+        jPanel1.add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(74, 110, 176));
+        jLabel2.setForeground(new java.awt.Color(169, 169, 169));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ingrese sus datos");
-        jPanel1.add(jLabel2);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipady = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(73, 758, 0, 0);
+        jPanel1.add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(17, 76, 95));
+        jLabel3.setForeground(new java.awt.Color(169, 169, 169));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Nombre");
-        jPanel1.add(jLabel3);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipady = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(59, 655, 0, 0);
+        jPanel1.add(jLabel3, gridBagConstraints);
 
+        NombreTF.setBackground(new java.awt.Color(202, 235, 242));
         NombreTF.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
-        jPanel1.add(NombreTF);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.ipadx = 320;
+        gridBagConstraints.ipady = -2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(52, 61, 0, 178);
+        jPanel1.add(NombreTF, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(17, 76, 95));
+        jLabel4.setForeground(new java.awt.Color(169, 169, 169));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Cedula");
-        jPanel1.add(jLabel4);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipady = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(52, 655, 0, 0);
+        jPanel1.add(jLabel4, gridBagConstraints);
 
+        CedulaTF.setBackground(new java.awt.Color(202, 235, 242));
         CedulaTF.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
-        jPanel1.add(CedulaTF);
+        CedulaTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CedulaTFActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.ipadx = 320;
+        gridBagConstraints.ipady = -2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(59, 61, 0, 178);
+        jPanel1.add(CedulaTF, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(17, 76, 95));
+        jLabel5.setForeground(new java.awt.Color(169, 169, 169));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Direccion");
-        jPanel1.add(jLabel5);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipady = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(51, 655, 0, 0);
+        jPanel1.add(jLabel5, gridBagConstraints);
 
+        DireccionTF.setBackground(new java.awt.Color(202, 235, 242));
         DireccionTF.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
-        jPanel1.add(DireccionTF);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.ipadx = 320;
+        gridBagConstraints.ipady = -2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(51, 61, 0, 178);
+        jPanel1.add(DireccionTF, gridBagConstraints);
 
         jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(17, 76, 95));
+        jLabel6.setForeground(java.awt.Color.darkGray);
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Estos datos se usaran para la facturacion");
-        jPanel1.add(jLabel6);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.ipady = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(57, 416, 136, 0);
+        jPanel1.add(jLabel6, gridBagConstraints);
 
-        Ingresar_Cliente.setBackground(new java.awt.Color(240, 230, 207));
+        Ingresar_Cliente.setBackground(new java.awt.Color(255, 59, 63));
         Ingresar_Cliente.setFont(new java.awt.Font("Lucida Sans", 3, 36)); // NOI18N
-        Ingresar_Cliente.setForeground(new java.awt.Color(74, 110, 176));
+        Ingresar_Cliente.setForeground(new java.awt.Color(239, 239, 239));
         Ingresar_Cliente.setText("Ingresar");
         Ingresar_Cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Ingresar_ClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(Ingresar_Cliente);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 10;
+        gridBagConstraints.ipadx = 268;
+        gridBagConstraints.ipady = -3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(67, 756, 0, 0);
+        jPanel1.add(Ingresar_Cliente, gridBagConstraints);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supermarket (1).png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridheight = 2;
+        jPanel1.add(jLabel8, gridBagConstraints);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -149,6 +238,10 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_Ingresar_ClienteActionPerformed
+
+    private void CedulaTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CedulaTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CedulaTFActionPerformed
     public boolean Validar()
     {
         return !NombreTF.getText().isEmpty() && !CedulaTF.getText().isEmpty() && !DireccionTF.getText().isEmpty();
@@ -201,6 +294,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

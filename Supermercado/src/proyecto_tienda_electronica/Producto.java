@@ -66,10 +66,6 @@ catch(IOException e)
 }
 
 }
-public int getBytesPorRegistro()
-{
-return 192;
-}
 public ImageIcon getImagen()
 {
 return Imagen;
@@ -123,10 +119,6 @@ Cantidad=0;
 public void setCantidad(int cantidad) {
 this.Cantidad = cantidad;
 }
-public String getAllGuardar()
-{
-    return getCodigo()+","+getNombre()+","+getPrecioUnitario()+","+getDescripcion()+","+getCantidad();
-}
 public String[] getAll()
 {
 return new String[]{getCodigo(),getNombre(),getCantidad(),getPrecioUnitario(),String.format("%.2f", CalcularPrecioTotal())};
@@ -142,6 +134,10 @@ return new String[]{getCodigo(),getNombre(),getMarca(),getCantidad(),getPrecioUn
 public double CalcularPrecioTotal()
 {
 return (double)Cantidad*Precio;
+}
+public void ModificarImagen(ImageIcon imagen)
+{
+ this.Imagen=imagen;
 }
 @Override
 public String toString() {

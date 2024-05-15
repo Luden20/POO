@@ -3,15 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package proyecto_tienda_electronica;
+import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+    import java.util.Map;
+    import javax.swing.JOptionPane;
+    import org.jfree.chart.ChartFactory;
+    import org.jfree.chart.JFreeChart;
+    import org.jfree.data.general.DefaultPieDataset; 
+    import org.jfree.chart.ChartFrame;
+    import org.jfree.data.category.DefaultCategoryDataset;
 
 
 /*
@@ -66,6 +73,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         GuardarBT = new javax.swing.JButton();
         VerFacturaBT = new javax.swing.JButton();
+        VerBarrasBT = new javax.swing.JButton();
+        VerPastelBT1 = new javax.swing.JButton();
         Panel_Principal = new javax.swing.JPanel();
         Panel_Tabla = new javax.swing.JPanel();
         Componentes_Ver = new javax.swing.JComboBox<>();
@@ -104,6 +113,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         CBProductoIngreso = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         CBCantidadIngreso = new javax.swing.JComboBox<>();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -139,7 +149,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1);
 
-        Botones.setLayout(new javax.swing.BoxLayout(Botones, javax.swing.BoxLayout.LINE_AXIS));
+        Botones.setLayout(new javax.swing.BoxLayout(Botones, javax.swing.BoxLayout.X_AXIS));
 
         jButton2.setBackground(new java.awt.Color(242, 230, 207));
         jButton2.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
@@ -155,7 +165,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Productos_ExistentesBT.setBackground(new java.awt.Color(242, 230, 207));
         Productos_ExistentesBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         Productos_ExistentesBT.setForeground(new java.awt.Color(74, 110, 176));
-        Productos_ExistentesBT.setText("Agregar existencias a productos existentes");
+        Productos_ExistentesBT.setText("Modificar Productos Existentes");
         Productos_ExistentesBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Productos_ExistentesBTActionPerformed(evt);
@@ -166,7 +176,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Nuevos_ProductosBT.setBackground(new java.awt.Color(242, 230, 207));
         Nuevos_ProductosBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         Nuevos_ProductosBT.setForeground(new java.awt.Color(74, 110, 176));
-        Nuevos_ProductosBT.setText("Ingreso de productos nuevos");
+        Nuevos_ProductosBT.setText("Ingresar Productos Nuevos");
         Nuevos_ProductosBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nuevos_ProductosBTActionPerformed(evt);
@@ -177,7 +187,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Ver_TablaBT.setBackground(new java.awt.Color(242, 230, 207));
         Ver_TablaBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         Ver_TablaBT.setForeground(new java.awt.Color(74, 110, 176));
-        Ver_TablaBT.setText("Ver Tabla");
+        Ver_TablaBT.setText("VerTabla");
         Ver_TablaBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Ver_TablaBTActionPerformed(evt);
@@ -188,7 +198,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(242, 230, 207));
         jButton1.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(74, 110, 176));
-        jButton1.setText("Cargar inventario de un archivo");
+        jButton1.setText("Cargar inventario");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -199,7 +209,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         GuardarBT.setBackground(new java.awt.Color(242, 230, 207));
         GuardarBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         GuardarBT.setForeground(new java.awt.Color(74, 110, 176));
-        GuardarBT.setText("Guardar inventario en un archivo");
+        GuardarBT.setText("Guardar inventario");
         GuardarBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GuardarBTActionPerformed(evt);
@@ -217,6 +227,28 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             }
         });
         Botones.add(VerFacturaBT);
+
+        VerBarrasBT.setBackground(new java.awt.Color(242, 230, 207));
+        VerBarrasBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
+        VerBarrasBT.setForeground(new java.awt.Color(74, 110, 176));
+        VerBarrasBT.setText("Ver G.Barras");
+        VerBarrasBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerBarrasBTActionPerformed(evt);
+            }
+        });
+        Botones.add(VerBarrasBT);
+
+        VerPastelBT1.setBackground(new java.awt.Color(242, 230, 207));
+        VerPastelBT1.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
+        VerPastelBT1.setForeground(new java.awt.Color(74, 110, 176));
+        VerPastelBT1.setText("Ver G.Barras");
+        VerPastelBT1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerPastelBT1ActionPerformed(evt);
+            }
+        });
+        Botones.add(VerPastelBT1);
 
         getContentPane().add(Botones);
 
@@ -267,7 +299,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(255, 204, 204));
         jButton5.setFont(new java.awt.Font("Lucida Sans", 3, 24)); // NOI18N
-        jButton5.setText("Seleccionar Factura");
+        jButton5.setText("jButton5");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -292,10 +324,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Ingreso de Productos Nuevos");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
         Panel_Ingreso_Productos_Nuevos.add(jLabel1, gridBagConstraints);
 
         BotonIngresoNuevo.setBackground(new java.awt.Color(240, 230, 207));
@@ -308,10 +338,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 15;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(BotonIngresoNuevo, gridBagConstraints);
 
         jLabel17.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -320,17 +349,15 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel17.setText("Categoria (Si no existe)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel17, gridBagConstraints);
 
         CategoriaTF.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(CategoriaTF, gridBagConstraints);
 
         jLabel9.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -339,9 +366,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel9.setText("Categoria (Si ya existe)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel9, gridBagConstraints);
 
         CBCategoria.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -353,9 +379,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(CBCategoria, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -363,11 +388,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Codigo");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel3, gridBagConstraints);
 
         TFCodigo.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -377,11 +400,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(TFCodigo, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -389,20 +410,16 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Nombre");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel4, gridBagConstraints);
 
         TFNombre.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 9;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(TFNombre, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -410,20 +427,16 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Precio");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 13;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel5, gridBagConstraints);
 
         TFPrecio.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 13;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(TFPrecio, gridBagConstraints);
 
         jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -432,19 +445,15 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel6.setText("Descripcion");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel6, gridBagConstraints);
 
         TFMarca.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 11;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(TFMarca, gridBagConstraints);
 
         jLabel15.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -452,11 +461,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Cantidad");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel15, gridBagConstraints);
 
         CBCantidad.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -467,11 +474,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(CBCantidad, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
@@ -479,20 +484,16 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Marca");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 11;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jLabel10, gridBagConstraints);
 
         TFDescripcion1.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(TFDescripcion1, gridBagConstraints);
 
         jButton3.setText("Agregar Imagen");
@@ -503,10 +504,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridy = 12;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.weightx = 1.0;
         Panel_Ingreso_Productos_Nuevos.add(jButton3, gridBagConstraints);
 
         Panel_Principal.add(Panel_Ingreso_Productos_Nuevos, "card2");
@@ -574,6 +573,14 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Panel_Ingreso_Productos_Existente.add(CBCantidadIngreso);
 
+        jButton4.setText("Ingresar Imagen");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        Panel_Ingreso_Productos_Existente.add(jButton4);
+
         Panel_Principal.add(Panel_Ingreso_Productos_Existente, "card3");
 
         getContentPane().add(Panel_Principal);
@@ -594,7 +601,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         }
     
         CBProductoIngreso.setModel(new DefaultComboBoxModel<>(productosString));
-        Refrescar();
+        //Refrescar();
     }//GEN-LAST:event_CBCategoriaIngresoActionPerformed
 
     private void ButtonIngresoExistenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonIngresoExistenteActionPerformed
@@ -609,7 +616,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             Producto producto = categoria.getProducto(productoSeleccionado);
 
             producto.AumentarCantidad(cantidadIngresada);
+            producto.ModificarImagen(aux);
             inventariado.getCategoria(Componentes_Ver.getSelectedItem().toString()).mostrarTabla(TC);
+            JOptionPane.showMessageDialog(null, "Producto actualizado con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
             Refrescar();
         }
         else
@@ -677,7 +686,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private void Componentes_VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Componentes_VerActionPerformed
         // TODO add your handling code here:
         inventariado.getCategoria(Componentes_Ver.getSelectedItem().toString()).mostrarTabla(TC);
-        Refrescar();
+        //Refrescar();
     }//GEN-LAST:event_Componentes_VerActionPerformed
 
     private void CBProductoIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBProductoIngresoActionPerformed
@@ -759,7 +768,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
                 aux=new ImageIcon(file.getAbsolutePath()); 
                 Image xd = aux.getImage().getScaledInstance(350, 350, Image.SCALE_SMOOTH);
                 aux=new ImageIcon(xd);
-                Refrescar();
+                jButton3.setBackground(Color.green);
+                JOptionPane.showMessageDialog(null, "Imagen cargada con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -791,6 +802,30 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser jFileChooser3 = new JFileChooser();
+            jFileChooser3.setDialogTitle("Selecciona una imagen los datos");
+            if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                File file = jFileChooser3.getSelectedFile();
+                aux=new ImageIcon(file.getAbsolutePath()); 
+                Image xd = aux.getImage().getScaledInstance(350, 350, Image.SCALE_SMOOTH);
+                aux=new ImageIcon(xd);
+                JOptionPane.showMessageDialog(null, "Imagen cargada con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                jButton4.setBackground(Color.green);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void VerBarrasBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerBarrasBTActionPerformed
+        // TODO add your handling code here:
+        inventariado.graficoBarras();
+    }//GEN-LAST:event_VerBarrasBTActionPerformed
+
+    private void VerPastelBT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerPastelBT1ActionPerformed
+        // TODO add your handling code here:
+        inventariado.graficoPastel();
+    }//GEN-LAST:event_VerPastelBT1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -851,7 +886,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         String[] elementos = new String [i];
         for (int x = 0; x < i; x++)
         {
-            elementos[x] = String.valueOf(x + 1);
+            elementos[x] = String.valueOf(x );
         }
         return new DefaultComboBoxModel<>(elementos);
     }
@@ -860,6 +895,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         CBCategoria.setModel(new DefaultComboBoxModel(inventariado.getListado(true)));
         CBCategoriaIngreso.setModel(new DefaultComboBoxModel(inventariado.getListado(true)));
         Componentes_Ver.setModel(new DefaultComboBoxModel(inventariado.getListado(true)));
+        aux=null;
+        jButton3.setBackground(Color.white);
+        jButton4.setBackground(Color.white);
     }
     
     private boolean validarLongitud() 
@@ -879,73 +917,14 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         return str;
     }
     
-    /*
+    
     //Falta importar la biblioteca Jfreechart?
-    import java.util.LinkedHashMap;
-    import javax.swing.JOptionPane;
-    import org.jfree.chart.ChartFactory;
-    import org.jfree.chart.JFreeChart;
-    import org.jfree.data.general.DefaultPieDataset; 
-    import org.jfree.chart.plot.PiePlot; 
-    import org.jfree.chart.ChartFrame;
-    import org.jfree.data.category.DefaultCategoryDataset;
-    */
+
     
-    /*
-    //Grafico de barras
-    public void graficoBarras() 
-    {
-        // Creación del conjunto de datos
-        DefaultCategoryDataset datos = new DefaultCategoryDataset();
-
-        // Recorrer el inventario y agregar la cantidad de productos de cada categoría
-        for (Map.Entry<String, Categoria> entry : Inventario.entrySet()) 
-        {
-            String categoria = entry.getKey();
-            Categoria cat = entry.getValue();
-            int cantidadProductos = cat.ProductosAlmacenados.size(); // Obtener la cantidad de productos
-
-            // Agregar la cantidad de productos al conjunto de datos
-            datos.addValue(cantidadProductos, "Cantidad", categoria);
-        }
-
-        // Creación del gráfico de barras
-        JFreeChart grafico = ChartFactory.createBarChart("Productos por Categoría", "Categoría", "Cantidad", datos);
-
-        // Crear el marco para el gráfico
-        ChartFrame frame = new ChartFrame("Gráfico de barras", grafico);
-        frame.setVisible(true);
-        frame.setSize(800, 600);
-    }
-    */
     
-    /*
-    //Grafico de pastel
-    public void graficoPastel() 
-    {
-        // Creación del conjunto de datos
-        DefaultPieDataset datos = new DefaultPieDataset();
-
-        // Recorrer el inventario y agregar la cantidad de productos de cada categoría
-        for (Map.Entry<String, Categoria> entry : Inventario.entrySet()) 
-        {
-            String categoria = entry.getKey();
-            Categoria cat = entry.getValue();
-            int cantidadProductos = cat.ProductosAlmacenados.size(); // Obtener la cantidad de productos
-
-            // Agregar la cantidad de productos al conjunto de datos
-            datos.addValue(cantidadProductos, "Cantidad", categoria);
-        }
-
-        // Creación del gráfico de barras
-        JFreeChart grafico = ChartFactory.createPieChart("Productos por Categoría", "Categoría", "Cantidad", datos);
-
-        // Crear el marco para el gráfico
-        ChartFrame frame = new ChartFrame("Gráfico de pastel", grafico);
-        frame.setVisible(true);
-        frame.setSize(800, 600);
-    }
-    */
+    
+ 
+    
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -974,11 +953,14 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JTextField TFNombre;
     private javax.swing.JTextField TFPrecio;
     private javax.swing.JTable Tabla;
+    private javax.swing.JButton VerBarrasBT;
     private javax.swing.JButton VerFacturaBT;
+    private javax.swing.JButton VerPastelBT1;
     private javax.swing.JButton Ver_TablaBT;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

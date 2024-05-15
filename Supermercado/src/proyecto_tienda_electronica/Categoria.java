@@ -65,15 +65,6 @@ public class Categoria {
             }
         return lista.toArray();
     }
-    public String get_AllProductosStr()
-    {
-        String a="";
-        for (Map.Entry<String, Producto> entry : ProductosAlmacenados.entrySet()) 
-            {
-                a=a+getNombre()+","+entry.getValue().getAllGuardar()+"\n";
-            }
-        return a;
-    }
     public void mostrarTabla(DefaultTableModel TC)
    {
        TC.setRowCount(0);

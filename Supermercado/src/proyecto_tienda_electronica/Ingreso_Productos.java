@@ -265,7 +265,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
 
         Panel_Factura.setLayout(new java.awt.BorderLayout());
 
-        jButton5.setText("jButton5");
+        jButton5.setBackground(new java.awt.Color(255, 204, 204));
+        jButton5.setFont(new java.awt.Font("Lucida Sans", 3, 24)); // NOI18N
+        jButton5.setText("Seleccionar Factura");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -781,9 +783,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
                 FAC.setText("");
                 File file = jFileChooser3.getSelectedFile();
-                file = new File(file.getParentFile(), file.getName() + ".dat");
                 Factura f=new Factura(new Cliente());
                 x=f.Leer(file);
+                System.out.println(x);
                 FAC.setText(x);
                 Refrescar();
         }
@@ -872,7 +874,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     {
       for (int i =str.length();i < longitud;i++) 
         {
-            str =str+ "";
+            str =str+ " ";
         }
         return str;
     }

@@ -47,6 +47,7 @@ public class Categoria {
                 {  
                try{
                    Arc.writeChars(getNombre());
+                   System.out.println(getNombre());
                 }
                 catch(IOException e)
                 {

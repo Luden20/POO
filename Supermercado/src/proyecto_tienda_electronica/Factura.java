@@ -77,12 +77,14 @@ public class Factura {
        String x="Error";
        try
        {
-           
+           System.out.println("leyendo");
            RandomAccessFile Arc=new RandomAccessFile(Archivo,"rw");
            x="";
            while(Arc.getFilePointer()<Arc.length())
            {
+               System.out.println("leyendo");
                x=x+Arc.readChar();
+               System.out.println(x);
            }
            Arc.close();
        }
@@ -96,7 +98,7 @@ public class Factura {
    {
            String x="";
            x=x+"FACTURA BUDGET GALAXY\n";
-           x=x+Comprador.get_Datos();
+           x=x+Comprador.get_Datos()+"\n";
            x=x+"PRODUCTOS\n";
                   for (Map.Entry<String, Producto> entry : Carrito.entrySet()) 
             {

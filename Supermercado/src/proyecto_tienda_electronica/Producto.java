@@ -48,11 +48,17 @@ public void EscribirProducto(RandomAccessFile Archivo)
 try
 {
     Archivo.writeChars(getCodigo());
+    System.out.println(getCodigo());
     Archivo.writeChars(getNombre());
+    System.out.println(getNombre());
     Archivo.writeChars(getMarca());
+    System.out.println(getMarca());
     Archivo.writeDouble(getPrecioUnitarioDouble());
+    System.out.println(getPrecioUnitarioDouble()+"");
     Archivo.writeChars(getDescripcion());
+    System.out.println(getDescripcion());
     Archivo.writeInt(getCantidadINT());
+    System.out.println(""+getCantidadINT());
 }
 catch(IOException e)
 {

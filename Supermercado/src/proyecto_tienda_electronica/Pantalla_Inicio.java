@@ -43,16 +43,15 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         Tienda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
+        getContentPane().setLayout(new java.awt.GridLayout());
 
-        jPanel1.setBackground(new java.awt.Color(156, 210, 211));
         jPanel1.setLayout(new java.awt.GridBagLayout());
         jPanel1.add(jLabel1, new java.awt.GridBagConstraints());
         jPanel1.add(jLabel2, new java.awt.GridBagConstraints());
 
-        jButton2.setBackground(new java.awt.Color(242, 230, 207));
+        jButton2.setBackground(new java.awt.Color(255, 59, 63));
         jButton2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(74, 110, 176));
+        jButton2.setForeground(new java.awt.Color(242, 242, 242));
         jButton2.setText("Gestion de la tienda");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,9 +64,9 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 27, 0);
         jPanel1.add(jButton2, gridBagConstraints);
 
-        Tienda.setBackground(new java.awt.Color(242, 230, 207));
+        Tienda.setBackground(new java.awt.Color(255, 59, 63));
         Tienda.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        Tienda.setForeground(new java.awt.Color(74, 110, 176));
+        Tienda.setForeground(new java.awt.Color(242, 242, 242));
         Tienda.setText("Tienda");
         Tienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

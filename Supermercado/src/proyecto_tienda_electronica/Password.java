@@ -55,26 +55,26 @@ public class Password extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Panel_Superior.setBackground(new java.awt.Color(7, 153, 182));
+        Panel_Superior.setBackground(new java.awt.Color(255, 255, 255));
         Panel_Superior.setForeground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
         Panel_Superior.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel4.setBackground(new java.awt.Color(7, 153, 182));
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(242, 230, 207));
+        jLabel4.setForeground(new java.awt.Color(64, 64, 64));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Ingrese el usuario y contraseña adecuados para entrar");
         Panel_Superior.add(jLabel4);
 
         getContentPane().add(Panel_Superior, java.awt.BorderLayout.PAGE_START);
 
-        jPanel1.setBackground(new java.awt.Color(7, 153, 182));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1920, Short.MAX_VALUE)
+            .addGap(0, 2862, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,50 +83,98 @@ public class Password extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_END);
 
-        Panel_Ingreso.setBackground(new java.awt.Color(156, 210, 211));
         Panel_Ingreso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Panel_Ingreso.setLayout(new java.awt.GridLayout(6, 4, 45, 45));
 
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(17, 76, 95));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Usuario");
-        Panel_Ingreso.add(jLabel1);
 
+        UserTF.setBackground(new java.awt.Color(202, 235, 242));
         UserTF.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        Panel_Ingreso.add(UserTF);
 
         jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(17, 76, 95));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Password");
-        Panel_Ingreso.add(jLabel2);
 
+        Password.setBackground(new java.awt.Color(202, 235, 242));
         Password.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordActionPerformed(evt);
             }
         });
-        Panel_Ingreso.add(Password);
-        Panel_Ingreso.add(jLabel5);
-        Panel_Ingreso.add(jLabel6);
-        Panel_Ingreso.add(jLabel7);
-        Panel_Ingreso.add(jLabel8);
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        Panel_Ingreso.add(jLabel3);
 
-        IngresarBT.setBackground(new java.awt.Color(242, 230, 207));
+        IngresarBT.setBackground(new java.awt.Color(255, 59, 63));
         IngresarBT.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        IngresarBT.setForeground(new java.awt.Color(74, 110, 176));
+        IngresarBT.setForeground(new java.awt.Color(242, 242, 242));
         IngresarBT.setText("Ingresar");
         IngresarBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IngresarBTActionPerformed(evt);
             }
         });
-        Panel_Ingreso.add(IngresarBT);
+
+        javax.swing.GroupLayout Panel_IngresoLayout = new javax.swing.GroupLayout(Panel_Ingreso);
+        Panel_Ingreso.setLayout(Panel_IngresoLayout);
+        Panel_IngresoLayout.setHorizontalGroup(
+            Panel_IngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_IngresoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(UserTF, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(Panel_IngresoLayout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(Panel_IngresoLayout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(Panel_IngresoLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(IngresarBT, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        Panel_IngresoLayout.setVerticalGroup(
+            Panel_IngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_IngresoLayout.createSequentialGroup()
+                .addGroup(Panel_IngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_IngresoLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addGroup(Panel_IngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(UserTF, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(116, 116, 116)
+                        .addGroup(Panel_IngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(Panel_IngresoLayout.createSequentialGroup()
+                        .addGap(310, 310, 310)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(Panel_IngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_IngresoLayout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(IngresarBT, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Panel_IngresoLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(Panel_IngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(44, 44, 44))
+        );
 
         getContentPane().add(Panel_Ingreso, java.awt.BorderLayout.CENTER);
 

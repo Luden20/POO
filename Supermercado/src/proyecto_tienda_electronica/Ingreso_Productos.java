@@ -299,7 +299,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(255, 204, 204));
         jButton5.setFont(new java.awt.Font("Lucida Sans", 3, 24)); // NOI18N
-        jButton5.setText("jButton5");
+        jButton5.setText("Seleccionar Factura");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);

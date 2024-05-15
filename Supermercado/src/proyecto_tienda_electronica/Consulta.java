@@ -501,23 +501,17 @@ public class Consulta extends javax.swing.JFrame {
     private void PagarBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarBTActionPerformed
         JFileChooser jFileChooser3 = new JFileChooser();
         jFileChooser3.setAcceptAllFileFilterUsed(false); 
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de texto (*.txt)", "txt");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de datos (*.dat)", "dat");
         jFileChooser3.addChoosableFileFilter(filter); 
         jFileChooser3.setDialogTitle("Selecciona una carpeta para guardar la factura");
 
         if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
             File file = jFileChooser3.getSelectedFile();
-            if (!file.getName().toLowerCase().endsWith(".txt")) {
-                file = new File(file.getParentFile(), file.getName() + ".txt");
+            if (!file.getName().toLowerCase().endsWith(".dat")) {
+                file = new File(file.getParentFile(), file.getName() + ".dat");
             }
-            try {
-                FileWriter e = new FileWriter(file);
-                Facturafinal.GuardarFactura(e);
-                JOptionPane.showMessageDialog(null, "Factura guardada con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                Facturafinal.Escribir(file);               
                 dispose();
-            } catch (IOException e) {
-                JOptionPane.showMessageDialog(null, "Error al guardar: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            }
         }
 
     }//GEN-LAST:event_PagarBTActionPerformed

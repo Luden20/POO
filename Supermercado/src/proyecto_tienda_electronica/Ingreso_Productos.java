@@ -65,11 +65,16 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Ver_TablaBT = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         GuardarBT = new javax.swing.JButton();
+        VerFacturaBT = new javax.swing.JButton();
         Panel_Principal = new javax.swing.JPanel();
         Panel_Tabla = new javax.swing.JPanel();
         Componentes_Ver = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
+        Panel_Factura = new javax.swing.JPanel();
+        jButton5 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        FAC = new javax.swing.JTextArea();
         Panel_Ingreso_Productos_Nuevos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         BotonIngresoNuevo = new javax.swing.JButton();
@@ -202,6 +207,17 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(GuardarBT);
 
+        VerFacturaBT.setBackground(new java.awt.Color(242, 230, 207));
+        VerFacturaBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
+        VerFacturaBT.setForeground(new java.awt.Color(74, 110, 176));
+        VerFacturaBT.setText("Ver Facturas");
+        VerFacturaBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerFacturaBTActionPerformed(evt);
+            }
+        });
+        Botones.add(VerFacturaBT);
+
         getContentPane().add(Botones);
 
         Panel_Principal.setBackground(new java.awt.Color(255, 255, 255));
@@ -246,6 +262,25 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Panel_Tabla.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         Panel_Principal.add(Panel_Tabla, "card4");
+
+        Panel_Factura.setLayout(new java.awt.BorderLayout());
+
+        jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        Panel_Factura.add(jButton5, java.awt.BorderLayout.PAGE_START);
+
+        FAC.setEditable(false);
+        FAC.setColumns(20);
+        FAC.setRows(5);
+        jScrollPane3.setViewportView(FAC);
+
+        Panel_Factura.add(jScrollPane3, java.awt.BorderLayout.CENTER);
+
+        Panel_Principal.add(Panel_Factura, "card5");
 
         Panel_Ingreso_Productos_Nuevos.setBackground(new java.awt.Color(156, 210, 211));
         Panel_Ingreso_Productos_Nuevos.setLayout(new java.awt.GridBagLayout());
@@ -726,6 +761,35 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void VerFacturaBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerFacturaBTActionPerformed
+        // TODO add your handling code here:
+        Panel_Principal.removeAll();
+        Panel_Principal.add(Panel_Factura);
+        Panel_Principal.repaint();
+        Panel_Principal.revalidate();
+        Refrescar();
+    }//GEN-LAST:event_VerFacturaBTActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        String x="";
+        JFileChooser jFileChooser3 = new JFileChooser();
+            jFileChooser3.setDialogTitle("Selecciona un archivo para cargar los datos");
+            jFileChooser3.setAcceptAllFileFilterUsed(false); 
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de datos(*.dat)", "dat");
+            jFileChooser3.addChoosableFileFilter(filter); 
+            if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                FAC.setText("");
+                File file = jFileChooser3.getSelectedFile();
+                file = new File(file.getParentFile(), file.getName() + ".dat");
+                Factura f=new Factura(new Cliente());
+                x=f.Leer(file);
+                FAC.setText(x);
+                Refrescar();
+        }
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -893,8 +957,10 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CBProductoIngreso;
     private javax.swing.JTextField CategoriaTF;
     private javax.swing.JComboBox<String> Componentes_Ver;
+    private javax.swing.JTextArea FAC;
     private javax.swing.JButton GuardarBT;
     private javax.swing.JButton Nuevos_ProductosBT;
+    private javax.swing.JPanel Panel_Factura;
     private javax.swing.JPanel Panel_Ingreso_Productos_Existente;
     private javax.swing.JPanel Panel_Ingreso_Productos_Nuevos;
     private javax.swing.JPanel Panel_Principal;
@@ -906,10 +972,12 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JTextField TFNombre;
     private javax.swing.JTextField TFPrecio;
     private javax.swing.JTable Tabla;
+    private javax.swing.JButton VerFacturaBT;
     private javax.swing.JButton Ver_TablaBT;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -926,6 +994,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
     private Inventariado inventariado;
     private int Componentes, Consolas, Celulares, Computadores;

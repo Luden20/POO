@@ -1,9 +1,8 @@
 package proyecto_tienda_electronica;
 
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.File;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -59,25 +58,51 @@ public class Factura {
                 TC.addRow(entry.getValue().getAll());
             }
    }
-   public void GuardarFactura(FileWriter v)
+   public void Escribir(File Arc)
    {
-       try { 
-           FileWriter e=v;
-           BufferedWriter bw = new BufferedWriter(e);
-           bw.write("FACTURA BUDGET GALAXY\n");
-           bw.write(Comprador.get_Datos());
-           bw.write("PRODUCTOS\n");
+       try
+        {
+            RandomAccessFile Archivo=new RandomAccessFile(Arc,"rw");
+            Archivo.writeChars(InfoFactura());
+            JOptionPane.showMessageDialog(null, "Factura guardada con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+        }
+        catch(IOException e)
+        {
+         System.out.println("FALLO");
+        }
+   }
+   public String Leer(File Archivo)
+   {
+       String x="Error";
+       try
+       {
+           
+           RandomAccessFile Arc=new RandomAccessFile(Archivo,"rw");
+           x="";
+           while(Arc.getFilePointer()<Arc.length())
+           {
+               x=x+Arc.readChar();
+           }
+       }
+       catch(IOException e)
+       {
+           JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+       }
+       return x;
+   }
+   public String InfoFactura()
+   {
+           String x="";
+           x=x+"FACTURA BUDGET GALAXY\n";
+           x=x+Comprador.get_Datos();
+           x=x+"PRODUCTOS\n";
                   for (Map.Entry<String, Producto> entry : Carrito.entrySet()) 
             {
-                bw.write(entry.getValue().getAllStr()+"\n");
+                x=x+entry.getValue().getAllStr()+"\n";
             }
-           bw.write("Total: "+getTotalProd()+"USD\n");
-           bw.write("Gracias por comprar con nosotros =D");
-           bw.flush();
-       }
+           x=x+"Total: "+getTotalProd()+"USD\n";
+           x=x+"Gracias por comprar con nosotros =D";
+           return x;
              
-         catch (IOException e) { 
-            JOptionPane.showMessageDialog(null, "Error al escribir en el archivo: " + e.getMessage(), "Ta mal >:V", JOptionPane.ERROR_MESSAGE);
-        }
    }
 }

@@ -12,6 +12,12 @@ public class Cliente {
         this.Cedula=C;
         this.Direccion=D;
     }
+    public Cliente()
+    {
+        this.Nombre="";
+        this.Cedula="";
+        this.Direccion="";
+    }
     public String getNombre()
     {
         return this.Nombre;

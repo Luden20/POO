@@ -58,12 +58,13 @@ public class Factura {
                 TC.addRow(entry.getValue().getAll());
             }
    }
-   public void Escribir(File Arc)
+   public void Escribir(File Archivo)
    {
        try
         {
-            RandomAccessFile Archivo=new RandomAccessFile(Arc,"rw");
-            Archivo.writeChars(InfoFactura());
+            RandomAccessFile Arc=new RandomAccessFile(Archivo,"rw");
+            Arc.writeChars(InfoFactura());
+            Arc.close();
             JOptionPane.showMessageDialog(null, "Factura guardada con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
         }
         catch(IOException e)
@@ -83,6 +84,7 @@ public class Factura {
            {
                x=x+Arc.readChar();
            }
+           Arc.close();
        }
        catch(IOException e)
        {

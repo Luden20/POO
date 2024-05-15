@@ -232,6 +232,8 @@ public class Consulta extends javax.swing.JFrame {
             }
         });
 
+        IMAGEN.setText("IMAGEN");
+
         Panel_Informacion.setBackground(new java.awt.Color(64, 64, 64));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

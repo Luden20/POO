@@ -501,6 +501,9 @@
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="IMAGEN">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="IMAGEN"/>
+              </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="Panel_Informacion">
               <Properties>

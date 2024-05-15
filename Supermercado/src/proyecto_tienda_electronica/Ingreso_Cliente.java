@@ -61,7 +61,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(169, 169, 169));
+        jLabel7.setForeground(new java.awt.Color(64, 64, 64));
         jLabel7.setText("Supermercados \"Toñito\"");
         jPanel2.add(jLabel7);
 
@@ -72,20 +72,20 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(169, 169, 169));
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(169, 169, 169));
+        jLabel1.setForeground(new java.awt.Color(64, 64, 64));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("¡Bienvenido a Supermercados Toñito!");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.ipady = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(51, 431, 0, 0);
         jPanel1.add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(169, 169, 169));
+        jLabel2.setForeground(new java.awt.Color(64, 64, 64));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ingrese sus datos");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -98,7 +98,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         jPanel1.add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(169, 169, 169));
+        jLabel3.setForeground(new java.awt.Color(64, 64, 64));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Nombre");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -123,7 +123,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         jPanel1.add(NombreTF, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(169, 169, 169));
+        jLabel4.setForeground(new java.awt.Color(64, 64, 64));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Cedula");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -152,7 +152,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         jPanel1.add(CedulaTF, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(169, 169, 169));
+        jLabel5.setForeground(new java.awt.Color(64, 64, 64));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Direccion");
         gridBagConstraints = new java.awt.GridBagConstraints();

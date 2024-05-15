@@ -59,6 +59,7 @@ public class Inventariado {
                     entry.getValue().Escribir(Arc);
                 }
                 Arc.close();
+                JOptionPane.showMessageDialog(null, "Escrito con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
             }
             catch(IOException e)
             {

@@ -149,7 +149,6 @@ public class Consulta extends javax.swing.JFrame {
         CODIGO_TA.setBackground(new java.awt.Color(202, 235, 242));
         CODIGO_TA.setColumns(20);
         CODIGO_TA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
-        CODIGO_TA.setForeground(new java.awt.Color(202, 235, 242));
         CODIGO_TA.setRows(5);
         CODIGO.setViewportView(CODIGO_TA);
 
@@ -174,7 +173,7 @@ public class Consulta extends javax.swing.JFrame {
         PRECIO_TA.setEditable(false);
         PRECIO_TA.setBackground(new java.awt.Color(202, 235, 242));
         PRECIO_TA.setColumns(20);
-        PRECIO_TA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
+        PRECIO_TA.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
         PRECIO_TA.setForeground(new java.awt.Color(202, 235, 242));
         PRECIO_TA.setRows(5);
         PRECIO.setViewportView(PRECIO_TA);

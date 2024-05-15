@@ -207,7 +207,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         GuardarBT.setBackground(new java.awt.Color(255, 59, 63));
         GuardarBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         GuardarBT.setForeground(new java.awt.Color(242, 242, 242));
-        GuardarBT.setText("Guardar inventario");
+        GuardarBT.setText("Guardar inventario/Seleccionar Archivo");
         GuardarBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GuardarBTActionPerformed(evt);
@@ -470,12 +470,11 @@ public class Ingreso_Productos extends javax.swing.JFrame {
                             .addComponent(TFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
                         .addGap(294, 294, 294)
-                        .addComponent(jLabel2)))
-                .addContainerGap(30, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(BotonIngresoNuevo)
-                .addGap(350, 350, 350))
+                        .addComponent(jLabel2))
+                    .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
+                        .addGap(427, 427, 427)
+                        .addComponent(BotonIngresoNuevo)))
+                .addContainerGap(1118, Short.MAX_VALUE))
         );
         Panel_Ingreso_Productos_NuevosLayout.setVerticalGroup(
             Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -521,9 +520,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
                         .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TFMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGap(65, 65, 65)
                 .addComponent(BotonIngresoNuevo)
-                .addGap(48, 48, 48))
+                .addContainerGap(646, Short.MAX_VALUE))
         );
 
         Panel_Principal.add(Panel_Ingreso_Productos_Nuevos, "card2");
@@ -763,8 +762,18 @@ public class Ingreso_Productos extends javax.swing.JFrame {
                         Integer.parseInt(CBCantidad.getSelectedItem().toString()),
                         aux
                     );
-                    inventariado.agregar_Producto(prd, cat);
-                    JOptionPane.showMessageDialog(null, "Ingreso\n"+prd, "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                    
+                    if(faux!=null)
+                    {
+                        inventariado.agregar_Producto(prd, cat);
+                        inventariado.GuardarTodo(faux);
+                        JOptionPane.showMessageDialog(null, "Ingreso\n"+prd, "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(this, "Seleccione un archivo sobre el que escribir", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
+                    
                     reset();
                 } 
                 else 
@@ -851,9 +860,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de datos(*.dat)", "dat");
             jFileChooser3.addChoosableFileFilter(filter); 
             if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-                File file = jFileChooser3.getSelectedFile();
-                file = new File(file.getParentFile(), file.getName() + ".dat");
-                inventariado.GuardarTodo(file);           
+                faux = jFileChooser3.getSelectedFile();
+                faux = new File(faux.getParentFile(), faux.getName() + ".dat");
+                inventariado.GuardarTodo(faux);           
                 Refrescar();
         }
     }//GEN-LAST:event_GuardarBTActionPerformed
@@ -1090,4 +1099,5 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private int Componentes, Consolas, Celulares, Computadores;
     private  DefaultTableModel TC;
     private ImageIcon aux;
+    private File faux;
 }

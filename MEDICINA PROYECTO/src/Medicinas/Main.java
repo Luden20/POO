@@ -3,7 +3,7 @@ package Medicinas;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.LinkedHashMap;
+import java.util.LinkedHashMap;  
 import Medicinas.Almacenamiento_Medicinas;
 
 public class Main {
@@ -20,7 +20,7 @@ public class Main {
         a.Ingresar("kkkkkk", "xxxxxxxxxx", "PPPPPPPPPPPPPPP", "FFFFFFFFFFFFFFF", 11, 9291.91, "asM1ANI1", "D2M2ANI2","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         //System.out.println(a.get("NNNNNNNNNNNNNNN", "CANTIDAD"));
         a.getListadoCategorias(true);
-        Pantalla_Inicio ab=new Pantalla_Inicio(a);
+        MenuCliente ab=new MenuCliente(a);
         ab.setTitle("Menu");
         ab.setVisible(true);            
     }

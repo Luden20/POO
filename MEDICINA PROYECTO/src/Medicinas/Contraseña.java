@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
+
 public class Contraseña extends javax.swing.JFrame {
     private String guardarUsuario;
     private String guardarContraseña;

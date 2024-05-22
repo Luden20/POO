@@ -79,7 +79,7 @@
           <Color blue="cc" green="99" red="0" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Medicinas/cruz-2831364_960_720-_2_.png"/>
+          <Image iconType="3" name="/cruz-2831364_960_720-_2_.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="FARMACIAS DR. ALFONSO"/>
       </Properties>

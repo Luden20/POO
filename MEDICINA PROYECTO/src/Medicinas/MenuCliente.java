@@ -72,7 +72,7 @@ public class MenuCliente extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 204));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Medicinas/cruz-2831364_960_720-_2_.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cruz-2831364_960_720-_2_.png"))); // NOI18N
         jLabel1.setText("FARMACIAS DR. ALFONSO");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 33, 0);

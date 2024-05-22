@@ -52,7 +52,7 @@ public class Contraseña extends javax.swing.JFrame {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 92;
-        gridBagConstraints.insets = new java.awt.Insets(0, 2, 0, 2);
+        gridBagConstraints.insets = new java.awt.Insets(0, 2, 0, 45);
         getContentPane().add(jTextField1, gridBagConstraints);
 
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +64,7 @@ public class Contraseña extends javax.swing.JFrame {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.ipadx = 94;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 5);
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 43);
         getContentPane().add(jPasswordField1, gridBagConstraints);
 
         jButton1.setText("INGRESAR");
@@ -78,7 +78,7 @@ public class Contraseña extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 20;
         gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 20, 20);
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 20, 55);
         getContentPane().add(jButton1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -122,35 +122,40 @@ public class Contraseña extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-    private void cargarCredenciales() {
-        List<File> files = new ArrayList<>();
-        File dir = new File("D:\\Users\\USUARIO\\Desktop\\CLASES\\4to Semestre\\POO");
-        if (dir.isDirectory()) {
-            File[] fileList = dir.listFiles();
-            if (fileList != null) {
-                for (File file : fileList) {
-                    if (file.isFile()) {
-                        files.add(file);
-                    }
+private void cargarCredenciales() {
+    List<File> files = new ArrayList<>();
+    File dir = new File("D:\\Users\\USUARIO\\Desktop\\CLASES\\4to Semestre\\POO");
+    if (dir.isDirectory()) {
+        File[] fileList = dir.listFiles();
+        if (fileList != null) {
+            for (File file : fileList) {
+                if (file.isFile()) {
+                    files.add(file);
                 }
             }
         }
-        if (!files.isEmpty()) {
-            Random random = new Random();
-            File randomFile = files.get(random.nextInt(files.size()));
-
-            // Leer el archivo seleccionado
-            try (BufferedReader br = new BufferedReader(new FileReader(randomFile))) {
-                guardarUsuario = br.readLine();
-                guardarContraseña = br.readLine();
-            } catch (IOException e) {
-                JOptionPane.showMessageDialog(null, "Error al leer el archivo de credenciales", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "No se encontraron archivos de credenciales", "Error", JOptionPane.ERROR_MESSAGE);
-        }
     }
-    
+
+    if (!files.isEmpty()) {
+        Random random = new Random();
+        File randomFile = files.get(random.nextInt(files.size()));
+
+        // Leer el archivo seleccionado
+        try (BufferedReader br = new BufferedReader(new FileReader(randomFile))) {
+            guardarUsuario = br.readLine();
+            guardarContraseña = br.readLine();
+
+            // Verificar que se hayan leído correctamente las credenciales
+            if (guardarUsuario == null || guardarContraseña == null) {
+                throw new IOException("El archivo no contiene las credenciales necesarias.");
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error al leer el archivo de credenciales: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "No se encontraron archivos de credenciales", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
     /**
      * @param args the command line arguments
      */

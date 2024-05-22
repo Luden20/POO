@@ -35,6 +35,7 @@ public class Contraseña extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 0));
         jLabel1.setText("INGRESO DE PERSONAL");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -67,6 +68,9 @@ public class Contraseña extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 43);
         getContentPane().add(jPasswordField1, gridBagConstraints);
 
+        jButton1.setBackground(new java.awt.Color(0, 153, 0));
+        jButton1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("INGRESAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +86,7 @@ public class Contraseña extends javax.swing.JFrame {
         getContentPane().add(jButton1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 51, 0));
         jLabel2.setText("USUARIO");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -90,6 +95,7 @@ public class Contraseña extends javax.swing.JFrame {
         getContentPane().add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 51, 0));
         jLabel3.setText("CONTRASEÑA");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;

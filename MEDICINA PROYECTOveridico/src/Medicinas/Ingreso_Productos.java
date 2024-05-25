@@ -40,9 +40,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
      */
     public Ingreso_Productos(Almacenamiento_Medicinas aux) {
         initComponents();
-        TC = new DefaultTableModel();
-        String ids [] = {"Codigo","Nombre","Fabricante","Cantidad","Precio","FE","FA","Descripcion"};
-        TC.setColumnIdentifiers(ids);
+        TC = new DefaultTableModel();    
         Tabla.setModel(TC);
         Medicinas = aux;
         Componentes = 0;
@@ -74,7 +72,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         GuardarBT = new javax.swing.JButton();
         VerBarrasBT = new javax.swing.JButton();
-        VerPastelBT1 = new javax.swing.JButton();
         Panel_Principal = new javax.swing.JPanel();
         Panel_Tabla = new javax.swing.JPanel();
         Componentes_Ver = new javax.swing.JComboBox<>();
@@ -218,24 +215,13 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         VerBarrasBT.setBackground(new java.awt.Color(255, 59, 63));
         VerBarrasBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         VerBarrasBT.setForeground(new java.awt.Color(242, 242, 242));
-        VerBarrasBT.setText("Ver G.Barras");
+        VerBarrasBT.setText("Estadisticas");
         VerBarrasBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VerBarrasBTActionPerformed(evt);
             }
         });
         Botones.add(VerBarrasBT);
-
-        VerPastelBT1.setBackground(new java.awt.Color(255, 59, 63));
-        VerPastelBT1.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
-        VerPastelBT1.setForeground(new java.awt.Color(242, 242, 242));
-        VerPastelBT1.setText("Ver G.Barras");
-        VerPastelBT1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VerPastelBT1ActionPerformed(evt);
-            }
-        });
-        Botones.add(VerPastelBT1);
 
         getContentPane().add(Botones);
 
@@ -910,14 +896,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void VerBarrasBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerBarrasBTActionPerformed
-        // TODO add your handling code here:
-        //Medicinas.graficoBarras();
+        Medicinas.graficoBarrasProductosyCategorias();
     }//GEN-LAST:event_VerBarrasBTActionPerformed
-
-    private void VerPastelBT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerPastelBT1ActionPerformed
-        // TODO add your handling code here:
-        //Medicinas.graficoPastel();
-    }//GEN-LAST:event_VerPastelBT1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1049,7 +1029,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JTextField TFPrecio;
     private javax.swing.JTable Tabla;
     private javax.swing.JButton VerBarrasBT;
-    private javax.swing.JButton VerPastelBT1;
     private javax.swing.JButton Ver_TablaBT;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

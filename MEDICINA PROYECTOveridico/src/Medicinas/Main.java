@@ -18,11 +18,9 @@ public class Main {
         a.Ingresar("cccccc", "llllllllll", "NNNNNNNNNNNNNNN", "FFFFFFFFFFFFFF1", 99, 9999.99, "D1/M1/ANI1", "D2/M2/ANI2","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         a.Ingresar("kkkkkk", "xxxxxxxxxx", "OOOOOOOOOOOOOOO", "FFFFFFFFFFFFFFF", 44, 9999.99, "D1/M3/ANI1", "D2/M2/ANI2","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         a.Ingresar("kkkkkk", "xxxxxxxxxx", "PPPPPPPPPPPPPPP", "FFFFFFFFFFFFFF1", 11, 9291.91, "D2/M1/ANI1", "D2/M2/ANI2","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-       // a.getListadoCategorias(true);
-        a.graficoBarrasDeDiferentesDeTomandoCuentaCantidadyPrecio("FABRICANTE");
-        //Pantalla_Inicio ab=new Pantalla_Inicio(a);
-        //ab.setTitle("Menu");
-        //ab.setVisible(true);            
+        Pantalla_Inicio ab=new Pantalla_Inicio(a);
+        ab.setTitle("Menu");
+        ab.setVisible(true);            
     }
     
 }

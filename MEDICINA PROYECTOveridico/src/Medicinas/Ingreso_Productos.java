@@ -102,6 +102,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         TFFechaVencimiento = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
+        Panel_Estadisticas = new javax.swing.JPanel();
         Panel_Ingreso_Productos_Existente = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         ButtonIngresoExistente = new javax.swing.JButton();
@@ -434,13 +435,17 @@ public class Ingreso_Productos extends javax.swing.JFrame {
                             .addComponent(jLabel16)
                             .addComponent(jLabel18)
                             .addComponent(jLabel19))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TFFechaVencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TFFechaElaboracion, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CBCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TFDescripcion1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TFFechaVencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CBCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TFDescripcion1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(TFFechaElaboracion, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
                         .addGap(427, 427, 427)
                         .addComponent(BotonIngresoNuevo))
@@ -486,9 +491,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
                             .addComponent(TFDescripcion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TFFechaElaboracion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TFFechaElaboracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
@@ -516,6 +521,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         );
 
         Panel_Principal.add(Panel_Ingreso_Productos_Nuevos, "card2");
+
+        Panel_Estadisticas.setLayout(new java.awt.GridBagLayout());
+        Panel_Principal.add(Panel_Estadisticas, "card3");
 
         Panel_Ingreso_Productos_Existente.setLayout(new java.awt.GridBagLayout());
 
@@ -896,7 +904,10 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void VerBarrasBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerBarrasBTActionPerformed
-        Medicinas.graficoBarrasProductosyCategorias();
+        Panel_Principal.removeAll();
+        Panel_Principal.add(Panel_Estadisticas);
+        Panel_Principal.repaint();
+        Panel_Principal.revalidate();
     }//GEN-LAST:event_VerBarrasBTActionPerformed
 
     /**
@@ -1015,6 +1026,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Componentes_Ver;
     private javax.swing.JButton GuardarBT;
     private javax.swing.JButton Nuevos_ProductosBT;
+    private javax.swing.JPanel Panel_Estadisticas;
     private javax.swing.JPanel Panel_Ingreso_Productos_Existente;
     private javax.swing.JPanel Panel_Ingreso_Productos_Nuevos;
     private javax.swing.JPanel Panel_Principal;

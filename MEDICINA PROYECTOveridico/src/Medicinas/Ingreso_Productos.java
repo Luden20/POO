@@ -119,11 +119,12 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(1, 82, 73));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setFont(new java.awt.Font("Lucida Sans", 3, 36)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Manejo de inventario");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -137,17 +138,17 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addComponent(jLabel7)
-                .addContainerGap())
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
 
         Botones.setLayout(new javax.swing.BoxLayout(Botones, javax.swing.BoxLayout.X_AXIS));
 
-        jButton2.setBackground(new java.awt.Color(255, 59, 63));
+        jButton2.setBackground(new java.awt.Color(87, 188, 144));
         jButton2.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(242, 242, 242));
         jButton2.setText("Refrescar");
@@ -158,7 +159,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(jButton2);
 
-        Productos_ExistentesBT.setBackground(new java.awt.Color(255, 59, 63));
+        Productos_ExistentesBT.setBackground(new java.awt.Color(87, 188, 144));
         Productos_ExistentesBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         Productos_ExistentesBT.setForeground(new java.awt.Color(242, 242, 242));
         Productos_ExistentesBT.setText("Modificar Productos Existentes");
@@ -169,7 +170,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(Productos_ExistentesBT);
 
-        Nuevos_ProductosBT.setBackground(new java.awt.Color(255, 59, 63));
+        Nuevos_ProductosBT.setBackground(new java.awt.Color(87, 188, 144));
         Nuevos_ProductosBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         Nuevos_ProductosBT.setForeground(new java.awt.Color(242, 242, 242));
         Nuevos_ProductosBT.setText("Ingresar Productos Nuevos");
@@ -180,7 +181,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(Nuevos_ProductosBT);
 
-        Ver_TablaBT.setBackground(new java.awt.Color(255, 59, 63));
+        Ver_TablaBT.setBackground(new java.awt.Color(87, 188, 144));
         Ver_TablaBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         Ver_TablaBT.setForeground(new java.awt.Color(242, 242, 242));
         Ver_TablaBT.setText("VerTabla");
@@ -191,7 +192,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(Ver_TablaBT);
 
-        jButton1.setBackground(new java.awt.Color(255, 59, 63));
+        jButton1.setBackground(new java.awt.Color(87, 188, 144));
         jButton1.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(242, 242, 242));
         jButton1.setText("Cargar inventario");
@@ -202,7 +203,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(jButton1);
 
-        GuardarBT.setBackground(new java.awt.Color(255, 59, 63));
+        GuardarBT.setBackground(new java.awt.Color(87, 188, 144));
         GuardarBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         GuardarBT.setForeground(new java.awt.Color(242, 242, 242));
         GuardarBT.setText("Guardar inventario/Seleccionar Archivo");
@@ -213,7 +214,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(GuardarBT);
 
-        VerBarrasBT.setBackground(new java.awt.Color(255, 59, 63));
+        VerBarrasBT.setBackground(new java.awt.Color(87, 188, 144));
         VerBarrasBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         VerBarrasBT.setForeground(new java.awt.Color(242, 242, 242));
         VerBarrasBT.setText("Estadisticas");

@@ -80,7 +80,6 @@ public class Consulta extends javax.swing.JFrame {
         IMAGEN = new javax.swing.JLabel();
         Panel_Informacion = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TB_Factura = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
@@ -97,6 +96,7 @@ public class Consulta extends javax.swing.JFrame {
         PTotalJL = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         PagarBT = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         FE = new javax.swing.JTextArea();
         jScrollPane9 = new javax.swing.JScrollPane();
@@ -241,11 +241,6 @@ public class Consulta extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jLabel10.setFont(new java.awt.Font("Lucida Sans", 3, 48)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping-cart-add-button_icon-icons.com_56132 (1).png"))); // NOI18N
-        jLabel10.setText("Carrito");
-
         TB_Factura.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
         TB_Factura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -362,10 +357,13 @@ public class Consulta extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -387,23 +385,28 @@ public class Consulta extends javax.swing.JFrame {
                         .addComponent(PagarBT, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
+        jLabel10.setFont(new java.awt.Font("Lucida Sans", 3, 48)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping-cart-add-button_icon-icons.com_56132 (1).png"))); // NOI18N
+        jLabel10.setText("Carrito");
+
         javax.swing.GroupLayout Panel_InformacionLayout = new javax.swing.GroupLayout(Panel_Informacion);
         Panel_Informacion.setLayout(Panel_InformacionLayout);
         Panel_InformacionLayout.setHorizontalGroup(
             Panel_InformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(Panel_InformacionLayout.createSequentialGroup()
-                .addGap(486, 486, 486)
-                .addComponent(jLabel10))
+                .addGap(253, 253, 253)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 972, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel10)
         );
         Panel_InformacionLayout.setVerticalGroup(
             Panel_InformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_InformacionLayout.createSequentialGroup()
-                .addGroup(Panel_InformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -457,7 +460,7 @@ public class Consulta extends javax.swing.JFrame {
                                         .addGroup(Panel_VerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(Panel_VerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel14)
                                     .addComponent(jLabel7)
@@ -532,7 +535,7 @@ public class Consulta extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(Panel_Informacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Panel_Principal.add(Panel_Ver);

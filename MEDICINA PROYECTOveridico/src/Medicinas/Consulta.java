@@ -56,26 +56,7 @@ public class Consulta extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Panel_Principal = new javax.swing.JPanel();
         Panel_Ver = new javax.swing.JPanel();
-        Panel_Informacion = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TB_Factura = new javax.swing.JTable();
-        jLabel10 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        CEDULA_TA = new javax.swing.JTextArea();
-        jLabel11 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        NOMBRE_TA = new javax.swing.JTextArea();
-        jLabel12 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        DIRECCION_TA = new javax.swing.JTextArea();
-        jLabel3 = new javax.swing.JLabel();
-        PTotalJL = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        PagarBT = new javax.swing.JButton();
-        jLabel18 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         CategoriaCB = new javax.swing.JComboBox<>();
         ProductosCB = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
@@ -104,7 +85,25 @@ public class Consulta extends javax.swing.JFrame {
         FA = new javax.swing.JTextArea();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        JLFondoIzq = new javax.swing.JLabel();
+        Panel_Informacion = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TB_Factura = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        CEDULA_TA = new javax.swing.JTextArea();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        NOMBRE_TA = new javax.swing.JTextArea();
+        jLabel12 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        DIRECCION_TA = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
+        PTotalJL = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        PagarBT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1920, 1080));
@@ -130,7 +129,198 @@ public class Consulta extends javax.swing.JFrame {
 
         Panel_Principal.setLayout(new javax.swing.BoxLayout(Panel_Principal, javax.swing.BoxLayout.X_AXIS));
 
-        Panel_Ver.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Panel_Ver.setLayout(new javax.swing.BoxLayout(Panel_Ver, javax.swing.BoxLayout.LINE_AXIS));
+
+        jPanel3.setBackground(new java.awt.Color(0, 255, 219));
+        jPanel3.setForeground(new java.awt.Color(204, 255, 153));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CategoriaCB.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        CategoriaCB.setForeground(new java.awt.Color(44, 62, 80));
+        CategoriaCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Una Categoria" }));
+        CategoriaCB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
+        CategoriaCB.setOpaque(true);
+        CategoriaCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CategoriaCBActionPerformed(evt);
+            }
+        });
+        jPanel3.add(CategoriaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 456, 80));
+
+        ProductosCB.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        ProductosCB.setForeground(new java.awt.Color(44, 62, 80));
+        ProductosCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un Producto" }));
+        ProductosCB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
+        ProductosCB.setOpaque(true);
+        ProductosCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductosCBActionPerformed(evt);
+            }
+        });
+        jPanel3.add(ProductosCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 450, 40));
+
+        jLabel1.setBackground(new java.awt.Color(165, 165, 175));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Codigo");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
+
+        CODIGO.setBackground(new java.awt.Color(255, 255, 255));
+        CODIGO.setForeground(new java.awt.Color(44, 62, 80));
+
+        CODIGO_TA.setEditable(false);
+        CODIGO_TA.setBackground(new java.awt.Color(255, 255, 255));
+        CODIGO_TA.setColumns(20);
+        CODIGO_TA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
+        CODIGO_TA.setRows(5);
+        CODIGO_TA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
+        CODIGO.setViewportView(CODIGO_TA);
+
+        jPanel3.add(CODIGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 290, 40));
+
+        jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Producto");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+
+        PRODUCTO_TA.setEditable(false);
+        PRODUCTO_TA.setBackground(new java.awt.Color(202, 235, 242));
+        PRODUCTO_TA.setColumns(20);
+        PRODUCTO_TA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
+        PRODUCTO_TA.setRows(5);
+        PRODUCTO_TA.setText("Producto Ta?");
+        jScrollPane6.setViewportView(PRODUCTO_TA);
+
+        jPanel3.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 272, 40));
+
+        jLabel4.setBackground(new java.awt.Color(165, 165, 175));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Precio");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
+
+        PRECIO_TA.setEditable(false);
+        PRECIO_TA.setBackground(new java.awt.Color(255, 255, 255));
+        PRECIO_TA.setColumns(20);
+        PRECIO_TA.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        PRECIO_TA.setForeground(new java.awt.Color(44, 62, 80));
+        PRECIO_TA.setRows(5);
+        PRECIO_TA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
+        PRECIO.setViewportView(PRECIO_TA);
+
+        jPanel3.add(PRECIO, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 290, 40));
+
+        jLabel14.setBackground(new java.awt.Color(165, 165, 175));
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Marca");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
+
+        MarcaTA.setEditable(false);
+        MarcaTA.setBackground(new java.awt.Color(255, 255, 255));
+        MarcaTA.setColumns(20);
+        MarcaTA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
+        MarcaTA.setForeground(new java.awt.Color(44, 62, 80));
+        MarcaTA.setRows(5);
+        MarcaTA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
+        jScrollPane7.setViewportView(MarcaTA);
+
+        jPanel3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 290, 40));
+
+        jLabel7.setBackground(new java.awt.Color(165, 165, 175));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Descripcion");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
+
+        DescripcionTA.setEditable(false);
+        DescripcionTA.setBackground(new java.awt.Color(255, 255, 255));
+        DescripcionTA.setColumns(20);
+        DescripcionTA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
+        DescripcionTA.setForeground(new java.awt.Color(44, 62, 80));
+        DescripcionTA.setRows(5);
+        DescripcionTA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
+        jScrollPane2.setViewportView(DescripcionTA);
+
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 360, 119));
+
+        jLabel6.setBackground(new java.awt.Color(165, 165, 175));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Expira");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 740, -1, -1));
+
+        CantidadCB.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        CantidadCB.setForeground(new java.awt.Color(44, 62, 80));
+        CantidadCB.setOpaque(true);
+        CantidadCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CantidadCBActionPerformed(evt);
+            }
+        });
+        jPanel3.add(CantidadCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 570, 110, 40));
+
+        jLabel9.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 205, -1, -1));
+
+        PagarB.setBackground(new java.awt.Color(0, 128, 128));
+        PagarB.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        PagarB.setForeground(new java.awt.Color(255, 255, 255));
+        PagarB.setText("Agregar al Carrito");
+        PagarB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PagarBActionPerformed(evt);
+            }
+        });
+        jPanel3.add(PagarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 650, 250, 102));
+
+        IMAGEN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.add(IMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 365, 343));
+
+        FE.setEditable(false);
+        FE.setBackground(new java.awt.Color(255, 255, 255));
+        FE.setColumns(20);
+        FE.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
+        FE.setForeground(new java.awt.Color(44, 62, 80));
+        FE.setRows(5);
+        FE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
+        jScrollPane8.setViewportView(FE);
+
+        jPanel3.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 650, 200, 40));
+
+        FA.setEditable(false);
+        FA.setBackground(new java.awt.Color(255, 255, 255));
+        FA.setColumns(20);
+        FA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
+        FA.setForeground(new java.awt.Color(44, 62, 80));
+        FA.setRows(5);
+        FA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
+        jScrollPane9.setViewportView(FA);
+
+        jPanel3.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 730, 200, 40));
+
+        jLabel15.setBackground(new java.awt.Color(165, 165, 175));
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("Cantidad");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, -1, -1));
+
+        jLabel16.setBackground(new java.awt.Color(165, 165, 175));
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Elaborado");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, -1, -1));
+
+        Panel_Ver.add(jPanel3);
 
         Panel_Informacion.setBackground(new java.awt.Color(119, 201, 212));
         Panel_Informacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -178,7 +368,7 @@ public class Consulta extends javax.swing.JFrame {
         jLabel10.setText("Carrito");
         Panel_Informacion.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
@@ -254,202 +444,9 @@ public class Consulta extends javax.swing.JFrame {
         });
         jPanel1.add(PagarBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 235, 58));
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondodarkblue.jpg"))); // NOI18N
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 630));
-
         Panel_Informacion.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 600, 460));
 
-        Panel_Ver.add(Panel_Informacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(917, 0, -1, 860));
-
-        CategoriaCB.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        CategoriaCB.setForeground(new java.awt.Color(44, 62, 80));
-        CategoriaCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Una Categoria" }));
-        CategoriaCB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
-        CategoriaCB.setOpaque(true);
-        CategoriaCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CategoriaCBActionPerformed(evt);
-            }
-        });
-        Panel_Ver.add(CategoriaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 456, 80));
-
-        ProductosCB.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        ProductosCB.setForeground(new java.awt.Color(44, 62, 80));
-        ProductosCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un Producto" }));
-        ProductosCB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
-        ProductosCB.setOpaque(true);
-        ProductosCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ProductosCBActionPerformed(evt);
-            }
-        });
-        Panel_Ver.add(ProductosCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 450, 40));
-
-        jLabel1.setBackground(new java.awt.Color(165, 165, 175));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Codigo");
-        Panel_Ver.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
-
-        CODIGO.setBackground(new java.awt.Color(255, 255, 255));
-        CODIGO.setForeground(new java.awt.Color(44, 62, 80));
-
-        CODIGO_TA.setEditable(false);
-        CODIGO_TA.setBackground(new java.awt.Color(255, 255, 255));
-        CODIGO_TA.setColumns(20);
-        CODIGO_TA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
-        CODIGO_TA.setRows(5);
-        CODIGO_TA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
-        CODIGO.setViewportView(CODIGO_TA);
-
-        Panel_Ver.add(CODIGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 290, 40));
-
-        jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(64, 64, 64));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Producto");
-        Panel_Ver.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 830, -1, -1));
-
-        PRODUCTO_TA.setEditable(false);
-        PRODUCTO_TA.setBackground(new java.awt.Color(202, 235, 242));
-        PRODUCTO_TA.setColumns(20);
-        PRODUCTO_TA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
-        PRODUCTO_TA.setRows(5);
-        PRODUCTO_TA.setText("Producto Ta?");
-        jScrollPane6.setViewportView(PRODUCTO_TA);
-
-        Panel_Ver.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 820, 272, 40));
-
-        jLabel4.setBackground(new java.awt.Color(165, 165, 175));
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Precio");
-        Panel_Ver.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
-
-        PRECIO_TA.setEditable(false);
-        PRECIO_TA.setBackground(new java.awt.Color(255, 255, 255));
-        PRECIO_TA.setColumns(20);
-        PRECIO_TA.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
-        PRECIO_TA.setForeground(new java.awt.Color(44, 62, 80));
-        PRECIO_TA.setRows(5);
-        PRECIO_TA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
-        PRECIO.setViewportView(PRECIO_TA);
-
-        Panel_Ver.add(PRECIO, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 290, 40));
-
-        jLabel14.setBackground(new java.awt.Color(165, 165, 175));
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Marca");
-        Panel_Ver.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
-
-        MarcaTA.setEditable(false);
-        MarcaTA.setBackground(new java.awt.Color(255, 255, 255));
-        MarcaTA.setColumns(20);
-        MarcaTA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
-        MarcaTA.setForeground(new java.awt.Color(44, 62, 80));
-        MarcaTA.setRows(5);
-        MarcaTA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
-        jScrollPane7.setViewportView(MarcaTA);
-
-        Panel_Ver.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 290, 40));
-
-        jLabel7.setBackground(new java.awt.Color(165, 165, 175));
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Descripcion");
-        Panel_Ver.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
-
-        DescripcionTA.setEditable(false);
-        DescripcionTA.setBackground(new java.awt.Color(255, 255, 255));
-        DescripcionTA.setColumns(20);
-        DescripcionTA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
-        DescripcionTA.setForeground(new java.awt.Color(44, 62, 80));
-        DescripcionTA.setRows(5);
-        DescripcionTA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
-        jScrollPane2.setViewportView(DescripcionTA);
-
-        Panel_Ver.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 360, 119));
-
-        jLabel6.setBackground(new java.awt.Color(165, 165, 175));
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Expira");
-        Panel_Ver.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 740, -1, -1));
-
-        CantidadCB.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        CantidadCB.setForeground(new java.awt.Color(44, 62, 80));
-        CantidadCB.setOpaque(true);
-        CantidadCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CantidadCBActionPerformed(evt);
-            }
-        });
-        Panel_Ver.add(CantidadCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 570, 110, 40));
-
-        jLabel9.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Panel_Ver.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 205, -1, -1));
-
-        PagarB.setBackground(new java.awt.Color(0, 128, 128));
-        PagarB.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        PagarB.setForeground(new java.awt.Color(255, 255, 255));
-        PagarB.setText("Agregar al Carrito");
-        PagarB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PagarBActionPerformed(evt);
-            }
-        });
-        Panel_Ver.add(PagarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 650, 250, 102));
-
-        IMAGEN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Panel_Ver.add(IMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 365, 343));
-
-        FE.setEditable(false);
-        FE.setBackground(new java.awt.Color(255, 255, 255));
-        FE.setColumns(20);
-        FE.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
-        FE.setForeground(new java.awt.Color(44, 62, 80));
-        FE.setRows(5);
-        FE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
-        jScrollPane8.setViewportView(FE);
-
-        Panel_Ver.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 650, 200, 40));
-
-        FA.setEditable(false);
-        FA.setBackground(new java.awt.Color(255, 255, 255));
-        FA.setColumns(20);
-        FA.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
-        FA.setForeground(new java.awt.Color(44, 62, 80));
-        FA.setRows(5);
-        FA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
-        jScrollPane9.setViewportView(FA);
-
-        Panel_Ver.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 730, 200, 40));
-
-        jLabel15.setBackground(new java.awt.Color(165, 165, 175));
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("Cantidad");
-        Panel_Ver.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, -1, -1));
-
-        jLabel16.setBackground(new java.awt.Color(165, 165, 175));
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("Elaborado");
-        Panel_Ver.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, -1, -1));
-
-        JLFondoIzq.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        JLFondoIzq.setForeground(new java.awt.Color(255, 255, 255));
-        JLFondoIzq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo med bueno.jpg"))); // NOI18N
-        Panel_Ver.add(JLFondoIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 860));
+        Panel_Ver.add(Panel_Informacion);
 
         Panel_Principal.add(Panel_Ver);
 
@@ -616,7 +613,6 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JTextArea FA;
     private javax.swing.JTextArea FE;
     private javax.swing.JLabel IMAGEN;
-    private javax.swing.JLabel JLFondoIzq;
     private javax.swing.JTextArea MarcaTA;
     private javax.swing.JTextArea NOMBRE_TA;
     private javax.swing.JScrollPane PRECIO;
@@ -640,7 +636,6 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -651,6 +646,7 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

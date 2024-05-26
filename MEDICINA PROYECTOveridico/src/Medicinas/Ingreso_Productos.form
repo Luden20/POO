@@ -330,93 +330,94 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="463" max="-2" attributes="0"/>
+                              <Component id="BotonIngresoNuevo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
-                                                  </Group>
                                                   <Group type="102" alignment="1" attributes="0">
                                                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                                                   </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="CategoriaTF" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
+                                                  <Component id="CBCategoria" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Group type="102" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" attributes="0">
-                                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                                                      <Component id="TFNombre" min="-2" pref="198" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="TFPrecio" min="-2" pref="202" max="-2" attributes="0"/>
-                                          <Component id="CategoriaTF" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
-                                          <Component id="CBCategoria" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
-                                          <Component id="TFFabricante" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="TFFechaVencimiento" min="-2" pref="175" max="-2" attributes="0"/>
-                                          <Component id="CBCantidad" min="-2" pref="175" max="-2" attributes="0"/>
-                                          <Component id="TFDescripcion1" min="-2" pref="175" max="-2" attributes="0"/>
-                                          <Component id="TFCodigo" min="-2" pref="175" max="-2" attributes="0"/>
-                                      </Group>
+                                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="TFFechaElaboracion" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="TFFabricante" min="-2" pref="202" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                                              <Component id="TFPrecio" min="-2" pref="202" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="427" max="-2" attributes="0"/>
-                              <Component id="BotonIngresoNuevo" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="294" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TFNombre" min="-2" pref="198" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="CBCantidad" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <Component id="TFCodigo" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <Component id="TFFechaVencimiento" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <Component id="TFDescripcion1" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <Component id="TFFechaElaboracion" min="-2" pref="175" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                      </Group>
+                      <EmptySpace pref="902" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="445" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jButton3" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="773" max="-2" attributes="0"/>
-                              <Component id="jButton3" min="-2" pref="175" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="809" max="-2" attributes="0"/>
+                              <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
                               <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="970" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -425,55 +426,36 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="TFNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="CBCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="CategoriaTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel17" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="TFCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="TFDescripcion1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel18" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="TFFechaElaboracion" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="TFNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="TFCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="CBCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel9" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="TFDescripcion1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="CategoriaTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel17" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="jLabel18" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="TFFechaElaboracion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="TFPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel5" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="TFFechaVencimiento" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Component id="TFFechaVencimiento" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel19" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="TFPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel5" min="-2" pref="28" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="TFFabricante" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -482,15 +464,14 @@
                                   <Component id="jLabel16" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jLabel19" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                      <Component id="BotonIngresoNuevo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel15" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton3" min="-2" pref="28" max="-2" attributes="0"/>
-                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="BotonIngresoNuevo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="125" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -835,7 +816,7 @@
                   <Color blue="40" green="40" red="40" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Ingreso de Productos Nuevos"/>
+                <Property name="text" type="java.lang.String" value="Ingreso de Medicinas Nuevas"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
@@ -869,7 +850,7 @@
                   <Color blue="40" green="40" red="40" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="FECHA1"/>
+                <Property name="text" type="java.lang.String" value="Fecha elaboracion"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="TFFechaVencimiento">
@@ -891,7 +872,7 @@
                   <Color blue="40" green="40" red="40" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="FECHA2"/>
+                <Property name="text" type="java.lang.String" value="Fecha vencimiento"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -1003,7 +984,7 @@
                   <Color blue="40" green="40" red="40" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Producto"/>
+                <Property name="text" type="java.lang.String" value="Medicina"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -1202,7 +1183,7 @@
                   <Color blue="40" green="40" red="40" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Ingreso de Productos"/>
+                <Property name="text" type="java.lang.String" value="Actualizar info Medicinas"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">

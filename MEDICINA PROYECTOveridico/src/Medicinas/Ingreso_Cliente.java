@@ -7,7 +7,11 @@ package Medicinas;
 import java.util.LinkedHashMap;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import Medicinas.Almacenamiento_Medicinas;
+import rsscalelabel.RSScaleLabel;
+import java.awt.Dimension;
 
 /**
  *
@@ -22,6 +26,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
     public Ingreso_Cliente(Almacenamiento_Medicinas aux) {
         initComponents();
         this.inventariado=aux;
+        
     }
 
     private Ingreso_Cliente() {
@@ -39,7 +44,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        Cliente_Ingreso = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -51,11 +56,11 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         Ingresar_Cliente = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 0, 153));
         setMinimumSize(new java.awt.Dimension(1920, 1080));
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new java.awt.GridLayout(1, 0));
@@ -68,37 +73,37 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
-        jPanel1.setBackground(new java.awt.Color(239, 239, 239));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Cliente_Ingreso.setBackground(new java.awt.Color(239, 239, 239));
+        Cliente_Ingreso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(169, 169, 169));
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(64, 64, 64));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("¡Bienvenido a Farmacias Doctoñito!");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, 47));
+        Cliente_Ingreso.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 47));
 
         jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(64, 64, 64));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ingrese sus datos");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, -1, 47));
+        Cliente_Ingreso.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, -1, 47));
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(64, 64, 64));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Nombre");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, 47));
+        Cliente_Ingreso.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, -1, 47));
 
         NombreTF.setBackground(new java.awt.Color(202, 235, 242));
         NombreTF.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
-        jPanel1.add(NombreTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 300, 47));
+        Cliente_Ingreso.add(NombreTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 410, 300, 47));
 
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(64, 64, 64));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Cedula");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, -1, 47));
+        Cliente_Ingreso.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, -1, 47));
 
         CedulaTF.setBackground(new java.awt.Color(202, 235, 242));
         CedulaTF.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
@@ -107,23 +112,23 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
                 CedulaTFActionPerformed(evt);
             }
         });
-        jPanel1.add(CedulaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 300, 47));
+        Cliente_Ingreso.add(CedulaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 490, 300, 47));
 
         jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(64, 64, 64));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Direccion");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, -1, 47));
+        Cliente_Ingreso.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 560, -1, 47));
 
         DireccionTF.setBackground(new java.awt.Color(202, 235, 242));
         DireccionTF.setFont(new java.awt.Font("Lucida Sans", 0, 36)); // NOI18N
-        jPanel1.add(DireccionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 300, 47));
+        Cliente_Ingreso.add(DireccionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 560, 300, 47));
 
         jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         jLabel6.setForeground(java.awt.Color.darkGray);
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Estos datos se usaran para la facturacion");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, -1, 47));
+        Cliente_Ingreso.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 700, -1, 47));
 
         Ingresar_Cliente.setBackground(new java.awt.Color(255, 59, 63));
         Ingresar_Cliente.setFont(new java.awt.Font("Lucida Sans", 3, 36)); // NOI18N
@@ -134,15 +139,12 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
                 Ingresar_ClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(Ingresar_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 453, 47));
+        Cliente_Ingreso.add(Ingresar_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 640, 453, 47));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supermarket (1).png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 260, 250));
+        Cliente_Ingreso.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 260, 250));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo celeste.jpg"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 520));
-
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(Cliente_Ingreso, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -211,6 +213,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CedulaTF;
+    private javax.swing.JPanel Cliente_Ingreso;
     private javax.swing.JTextField DireccionTF;
     private javax.swing.JButton Ingresar_Cliente;
     private javax.swing.JTextField NombreTF;
@@ -222,8 +225,6 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
     private Almacenamiento_Medicinas inventariado;

@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
@@ -131,7 +132,7 @@ public class Contraseña extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 private void cargarCredenciales() {
     List<File> files = new ArrayList<>();
-    File dir = new File("D:\\Users\\USUARIO\\Desktop\\CLASES\\4to Semestre\\POO");
+    File dir = new File("D:\\Universidad\\4to Sync\\POO\\POO");
     if (dir.isDirectory()) {
         File[] fileList = dir.listFiles();
         if (fileList != null) {
@@ -145,10 +146,13 @@ private void cargarCredenciales() {
 
     if (!files.isEmpty()) {
         Random random = new Random();
-        File randomFile = files.get(random.nextInt(files.size()));
+       
+        //File randomFile = files.get(random.nextInt(files.size()));
 
         // Leer el archivo seleccionado
-        try (BufferedReader br = new BufferedReader(new FileReader(randomFile))) {
+        try  {
+            File randomFile =new File("D:\\Universidad\\4to Sync\\POO\\POO\\Credenciales.dat");
+            RandomAccessFile br = new RandomAccessFile(randomFile,"rw");
             guardarUsuario = br.readLine();
             guardarContraseña = br.readLine();
 
@@ -156,6 +160,7 @@ private void cargarCredenciales() {
             if (guardarUsuario == null || guardarContraseña == null) {
                 throw new IOException("El archivo no contiene las credenciales necesarias.");
             }
+            br.close();
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Error al leer el archivo de credenciales: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }

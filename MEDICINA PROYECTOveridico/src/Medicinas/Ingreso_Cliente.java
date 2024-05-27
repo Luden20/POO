@@ -43,7 +43,6 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
         Cliente_Ingreso = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -56,6 +55,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         Ingresar_Cliente = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 0, 153));
@@ -64,16 +64,9 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new java.awt.GridLayout(1, 0));
-
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(64, 64, 64));
-        jLabel7.setText("Farmacias \"Doctoñito\"");
-        jPanel2.add(jLabel7);
-
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
-        Cliente_Ingreso.setBackground(new java.awt.Color(239, 239, 239));
+        Cliente_Ingreso.setBackground(new java.awt.Color(255, 255, 255));
         Cliente_Ingreso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(169, 169, 169));
@@ -130,8 +123,8 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         jLabel6.setText("Estos datos se usaran para la facturacion");
         Cliente_Ingreso.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 700, -1, 47));
 
-        Ingresar_Cliente.setBackground(new java.awt.Color(255, 59, 63));
-        Ingresar_Cliente.setFont(new java.awt.Font("Lucida Sans", 3, 36)); // NOI18N
+        Ingresar_Cliente.setBackground(new java.awt.Color(0, 102, 255));
+        Ingresar_Cliente.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
         Ingresar_Cliente.setForeground(new java.awt.Color(239, 239, 239));
         Ingresar_Cliente.setText("Ingresar");
         Ingresar_Cliente.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +135,14 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         Cliente_Ingreso.add(Ingresar_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 640, 453, 47));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supermarket (1).png"))); // NOI18N
-        Cliente_Ingreso.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 260, 250));
+        Cliente_Ingreso.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 260, 260));
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cruz-2831364_960_720-_2_.png"))); // NOI18N
+        jLabel7.setText("Farmacias \"Doctoñito\"");
+        Cliente_Ingreso.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 640, 120));
 
         getContentPane().add(Cliente_Ingreso, java.awt.BorderLayout.CENTER);
 
@@ -158,6 +158,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
             a.setVisible(true);
             a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             a.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            
             dispose();
         }
         else

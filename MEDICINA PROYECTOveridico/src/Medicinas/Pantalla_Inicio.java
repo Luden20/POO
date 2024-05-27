@@ -42,16 +42,18 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         Tienda = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new java.awt.GridBagLayout());
         jPanel1.add(jLabel1, new java.awt.GridBagConstraints());
         jPanel1.add(jLabel2, new java.awt.GridBagConstraints());
 
-        jButton2.setBackground(new java.awt.Color(255, 59, 63));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(0, 102, 204));
+        jButton2.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(242, 242, 242));
         jButton2.setText("Gestion de Medicinas");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -61,12 +63,12 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 27, 0);
         jPanel1.add(jButton2, gridBagConstraints);
 
-        Tienda.setBackground(new java.awt.Color(255, 59, 63));
-        Tienda.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        Tienda.setBackground(new java.awt.Color(0, 102, 204));
+        Tienda.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         Tienda.setForeground(new java.awt.Color(242, 242, 242));
         Tienda.setText("Compra de Medicinas");
         Tienda.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +82,14 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
         jPanel1.add(Tienda, gridBagConstraints);
 
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Medicinas/cruz-2831364_960_720-_2_.png"))); // NOI18N
+        jLabel3.setText("FARMACIAS \"DOCTOÑITO\"");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(11, 17, 41, 17);
+        jPanel1.add(jLabel3, gridBagConstraints);
+
         getContentPane().add(jPanel1);
 
         pack();
@@ -92,11 +102,12 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         a.setVisible(true);
         a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         a.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
     }//GEN-LAST:event_TiendaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Password a=new Password(Medicinas);
+        Contraseña a=new Contraseña(Medicinas);
         a.setVisible(true);
         a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         a.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -142,6 +153,7 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
     private Almacenamiento_Medicinas Medicinas;

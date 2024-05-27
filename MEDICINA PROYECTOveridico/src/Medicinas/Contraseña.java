@@ -119,11 +119,11 @@ public class Contraseña extends javax.swing.JFrame {
         String userInput = jTextField1.getText();
         String passInput = new String(jPasswordField1.getPassword());
         if (guardarUsuario != null && guardarContraseña != null && guardarUsuario.equals(userInput) && guardarContraseña.equals(passInput)) {
-            MenuAdmin menuAdmin = new MenuAdmin(Medicinas);
-            menuAdmin.setVisible(true);
-            menuAdmin.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-            menuAdmin.setSize(800, 600);
-            menuAdmin.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            Ingreso_Productos a=new Ingreso_Productos(Medicinas);
+            a.setVisible(true);
+            a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            a.setSize(800,600);
+            a.setExtendedState(JFrame.MAXIMIZED_BOTH);
             dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectos", "Error", JOptionPane.ERROR_MESSAGE);

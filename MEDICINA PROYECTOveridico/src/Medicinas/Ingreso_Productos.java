@@ -11,15 +11,14 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
-    import java.util.Map;
-    import javax.swing.JOptionPane;
-    import org.jfree.chart.ChartFactory;
-    import org.jfree.chart.JFreeChart;
-    import org.jfree.data.general.DefaultPieDataset; 
-    import org.jfree.chart.ChartFrame;
-    import org.jfree.data.category.DefaultCategoryDataset;
-    import Medicinas.Almacenamiento_Medicinas;
+import java.util.Map;
+import javax.swing.JOptionPane;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset; 
+import org.jfree.chart.ChartFrame;
+import org.jfree.data.category.DefaultCategoryDataset;
+import Medicinas.Almacenamiento_Medicinas;
 
 
 /*

@@ -22,9 +22,9 @@ public class Consulta extends javax.swing.JFrame {
      * @param c
      * @param aux
      */
-    public Consulta(Cliente c,Almacenamiento_Medicinas aux) {
+    public Consulta(ALMACENAMIENTO_CLIENTES c,Almacenamiento_Medicinas aux,String Cedula) {
         initComponents();
-        File u=new File("D://fac.dat");
+        File u=new File("D://"+Ced+".dat");
         Factura=new Almacenamiento_Medicinas(u);
         Factura.Borrar();
         TC =new DefaultTableModel();
@@ -32,10 +32,11 @@ public class Consulta extends javax.swing.JFrame {
         TC.setColumnIdentifiers(ids);
         TB_Factura.setModel(TC);
         clientefinal=c;
+        Ced=Cedula;
         Medicinas=aux;
-        UsuarioTx.setText("Bienvenido "+c.getNombre()+" a Supermercados Toñito");
+        UsuarioTx.setText("Bienvenido "+c.get(Ced,"NOMBRE")+" a Farmacias Toñito");
         CategoriaCB.setModel(new DefaultComboBoxModel(Medicinas.getListadoCategorias(false)));
-        
+        mostrarDatos();
     }
 
     private Consulta() {
@@ -384,7 +385,7 @@ public class Consulta extends javax.swing.JFrame {
         CEDULA_TA.setRows(5);
         jScrollPane5.setViewportView(CEDULA_TA);
 
-        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 250, 40));
+        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 250, 60));
 
         jLabel11.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(242, 242, 242));
@@ -399,7 +400,7 @@ public class Consulta extends javax.swing.JFrame {
         NOMBRE_TA.setRows(5);
         jScrollPane4.setViewportView(NOMBRE_TA);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 250, 40));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 250, 50));
 
         jLabel12.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(242, 242, 242));
@@ -414,7 +415,7 @@ public class Consulta extends javax.swing.JFrame {
         DIRECCION_TA.setRows(5);
         jScrollPane3.setViewportView(DIRECCION_TA);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 250, 30));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 250, 50));
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(242, 242, 242));
@@ -557,9 +558,9 @@ public class Consulta extends javax.swing.JFrame {
     public void mostrarDatos()
     {
         //Muestros los datos del cliente
-        CEDULA_TA.setText(clientefinal.getCedula());
-        NOMBRE_TA.setText(clientefinal.getNombre());
-        DIRECCION_TA.setText(clientefinal.getDireccion());
+        CEDULA_TA.setText(Ced);
+        NOMBRE_TA.setText(clientefinal.get(Ced,"NOMBRE"));
+        DIRECCION_TA.setText(clientefinal.get(Ced,"DIRECCION"));
         
     }
     //Es una funcion que devuelve un modelo para una combo box desde el 1 hasta el numero de parametro
@@ -659,6 +660,7 @@ public class Consulta extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private Almacenamiento_Medicinas Medicinas;
     private Almacenamiento_Medicinas Factura;
-    private Cliente clientefinal;
-    private  DefaultTableModel TC;
+    private ALMACENAMIENTO_CLIENTES clientefinal;
+    private DefaultTableModel TC;
+    private String Ced;
 }

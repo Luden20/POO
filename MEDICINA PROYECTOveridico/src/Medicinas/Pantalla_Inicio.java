@@ -79,7 +79,7 @@ public class Pantalla_Inicio extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 33, 0);
         jPanel1.add(Tienda, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N

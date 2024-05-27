@@ -85,7 +85,7 @@ public class Ingreso_Cliente extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(64, 64, 64));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Nombre");
+        jLabel3.setText("Password");
         Cliente_Ingreso.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, -1, 47));
 
         NombreTF.setBackground(new java.awt.Color(202, 235, 242));

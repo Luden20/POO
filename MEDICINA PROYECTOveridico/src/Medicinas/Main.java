@@ -11,12 +11,16 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here       
         File u=new File("D://dato.dat");
+        File c=new File("D://cliente.dat");
         Almacenamiento_Medicinas a=new Almacenamiento_Medicinas(u);
         a.Borrar();
         a.Ingresar("cccccc", "llllllllll", "NNNNNNNNNNNNNNN", "FFFFFFFFFFFFFF1", 99, 9999.99, "D1/M1/ANI1", "D2/M2/ANI2","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         a.Ingresar("kkkkkk", "xxxxxxxxxx", "OOOOOOOOOOOOOOO", "FFFFFFFFFFFFFFF", 44, 9999.99, "D1/M3/ANI1", "D2/M2/ANI2","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         a.Ingresar("kkkkkk", "xxxxxxxxxx", "PPPPPPPPPPPPPPP", "FFFFFFFFFFFFFF1", 11, 9291.91, "D2/M1/ANI1", "D2/M2/ANI2","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        Pantalla_Inicio ab=new Pantalla_Inicio(a);
+        //a.graficoBarrasDeDiferentesDeTomandoCuentaCantidad("FE");
+        ALMACENAMIENTO_CLIENTES cl=new ALMACENAMIENTO_CLIENTES(c);
+        cl.Borrar();
+        Menu ab=new Menu(a,cl);
         ab.setTitle("Menu");
         ab.setVisible(true);            
     }

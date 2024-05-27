@@ -207,7 +207,7 @@ public class Almacenamiento_Medicinas {
         }
         return Puntero;
     }
-    public Object[] getListadoProductos(String Categoria)
+    public Object[] getListadoMedicinas(String Categoria)
     {
         ArrayList<String> listado = new ArrayList<String>();
         try(RandomAccessFile RAC=new RandomAccessFile(file,"rw"))

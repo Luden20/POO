@@ -3,6 +3,8 @@ package Medicinas;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -18,6 +20,14 @@ public class Almacenamiento_Medicinas {
     public Almacenamiento_Medicinas(File A)
     {
         file=A;
+    }
+    public void Copiar(File Dest)
+    {
+        try {
+            Files.copy(file.toPath(), Dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            } 
+        catch (IOException e) {
+        }
     }
     //ES IMPORTANTE DIFINIR BIEN QUE ATRIBUTOS HABARA Y QUE BYTES OCUPARAN
     //EL ORDEN ES IMPORTANTE

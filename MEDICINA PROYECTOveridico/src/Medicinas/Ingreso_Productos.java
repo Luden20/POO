@@ -59,7 +59,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -101,6 +100,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         TFFechaVencimiento = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         Panel_Estadisticas = new javax.swing.JPanel();
         Panel_Ingreso_Productos_Existente = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -113,6 +113,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         CBCantidadIngreso = new javax.swing.JComboBox<>();
         jButton4 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -269,411 +270,270 @@ public class Ingreso_Productos extends javax.swing.JFrame {
 
         Panel_Principal.add(Panel_Tabla, "card4");
 
-        BotonIngresoNuevo.setBackground(new java.awt.Color(255, 59, 63));
-        BotonIngresoNuevo.setFont(new java.awt.Font("Lucida Sans", 3, 24)); // NOI18N
-        BotonIngresoNuevo.setForeground(new java.awt.Color(242, 242, 242));
+        Panel_Ingreso_Productos_Nuevos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BotonIngresoNuevo.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        BotonIngresoNuevo.setForeground(new java.awt.Color(24, 18, 30));
         BotonIngresoNuevo.setText("Ingresar");
+        BotonIngresoNuevo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         BotonIngresoNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonIngresoNuevoActionPerformed(evt);
             }
         });
+        Panel_Ingreso_Productos_Nuevos.add(BotonIngresoNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, 190, 50));
 
+        jLabel17.setBackground(new java.awt.Color(205, 205, 205));
         jLabel17.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel17.setForeground(new java.awt.Color(24, 18, 30));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Categoria (Si no existe)");
+        Panel_Ingreso_Productos_Nuevos.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, 28));
 
-        CategoriaTF.setBackground(new java.awt.Color(202, 235, 242));
         CategoriaTF.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        CategoriaTF.setForeground(new java.awt.Color(24, 18, 30));
+        Panel_Ingreso_Productos_Nuevos.add(CategoriaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 202, -1));
 
+        jLabel9.setBackground(new java.awt.Color(205, 205, 205));
         jLabel9.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel9.setForeground(new java.awt.Color(24, 18, 30));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Categoria (Si ya existe)");
+        Panel_Ingreso_Productos_Nuevos.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 28));
 
-        CBCategoria.setBackground(new java.awt.Color(202, 235, 242));
         CBCategoria.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        CBCategoria.setForeground(new java.awt.Color(24, 18, 30));
         CBCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NaN" }));
         CBCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CBCategoriaActionPerformed(evt);
             }
         });
+        Panel_Ingreso_Productos_Nuevos.add(CBCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 202, -1));
 
+        jLabel3.setBackground(new java.awt.Color(205, 205, 205));
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel3.setForeground(new java.awt.Color(24, 18, 30));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Codigo");
+        Panel_Ingreso_Productos_Nuevos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, -1, 28));
 
-        TFCodigo.setBackground(new java.awt.Color(202, 235, 242));
         TFCodigo.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        TFCodigo.setForeground(new java.awt.Color(24, 18, 30));
         TFCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TFCodigoActionPerformed(evt);
             }
         });
+        Panel_Ingreso_Productos_Nuevos.add(TFCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 110, 175, -1));
 
+        jLabel4.setBackground(new java.awt.Color(205, 205, 205));
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel4.setForeground(new java.awt.Color(24, 18, 30));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Nombre");
+        Panel_Ingreso_Productos_Nuevos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, 28));
 
-        TFNombre.setBackground(new java.awt.Color(202, 235, 242));
         TFNombre.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        TFNombre.setForeground(new java.awt.Color(24, 18, 30));
+        Panel_Ingreso_Productos_Nuevos.add(TFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 202, -1));
 
+        jLabel5.setBackground(new java.awt.Color(205, 205, 205));
         jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel5.setForeground(new java.awt.Color(24, 18, 30));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Precio");
+        Panel_Ingreso_Productos_Nuevos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, 28));
 
-        TFPrecio.setBackground(new java.awt.Color(202, 235, 242));
         TFPrecio.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        TFPrecio.setForeground(new java.awt.Color(24, 18, 30));
+        Panel_Ingreso_Productos_Nuevos.add(TFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 202, -1));
 
+        jLabel6.setBackground(new java.awt.Color(205, 205, 205));
         jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel6.setForeground(new java.awt.Color(24, 18, 30));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Descripcion");
+        Panel_Ingreso_Productos_Nuevos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, -1, 28));
 
-        TFFabricante.setBackground(new java.awt.Color(202, 235, 242));
         TFFabricante.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        TFFabricante.setForeground(new java.awt.Color(24, 18, 30));
+        Panel_Ingreso_Productos_Nuevos.add(TFFabricante, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 202, -1));
 
+        jLabel15.setBackground(new java.awt.Color(205, 205, 205));
         jLabel15.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel15.setForeground(new java.awt.Color(24, 18, 30));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Imagen");
+        Panel_Ingreso_Productos_Nuevos.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, 28));
 
-        CBCantidad.setBackground(new java.awt.Color(202, 235, 242));
         CBCantidad.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        CBCantidad.setForeground(new java.awt.Color(24, 18, 30));
         CBCantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99" }));
         CBCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CBCantidadActionPerformed(evt);
             }
         });
+        Panel_Ingreso_Productos_Nuevos.add(CBCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 310, 175, -1));
 
+        jLabel10.setBackground(new java.awt.Color(205, 205, 205));
         jLabel10.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel10.setForeground(new java.awt.Color(24, 18, 30));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Fabricante");
+        Panel_Ingreso_Productos_Nuevos.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, 28));
 
-        TFDescripcion1.setBackground(new java.awt.Color(202, 235, 242));
         TFDescripcion1.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        TFDescripcion1.setForeground(new java.awt.Color(24, 18, 30));
+        Panel_Ingreso_Productos_Nuevos.add(TFDescripcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 160, 175, -1));
 
-        jButton3.setBackground(new java.awt.Color(202, 235, 242));
         jButton3.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(24, 18, 30));
         jButton3.setText("Agregar Imagen");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+        Panel_Ingreso_Productos_Nuevos.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 200, 28));
 
-        jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(24, 18, 30));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ingreso de Medicinas Nuevas");
+        Panel_Ingreso_Productos_Nuevos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
+        jLabel16.setBackground(new java.awt.Color(205, 205, 205));
         jLabel16.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel16.setForeground(new java.awt.Color(24, 18, 30));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Cantidad");
+        Panel_Ingreso_Productos_Nuevos.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, -1, 28));
 
-        TFFechaElaboracion.setBackground(new java.awt.Color(202, 235, 242));
         TFFechaElaboracion.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        TFFechaElaboracion.setForeground(new java.awt.Color(24, 18, 30));
+        Panel_Ingreso_Productos_Nuevos.add(TFFechaElaboracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 210, 175, -1));
 
+        jLabel18.setBackground(new java.awt.Color(205, 205, 205));
         jLabel18.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel18.setForeground(new java.awt.Color(24, 18, 30));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("Fecha elaboracion");
+        Panel_Ingreso_Productos_Nuevos.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, -1, 28));
 
-        TFFechaVencimiento.setBackground(new java.awt.Color(202, 235, 242));
         TFFechaVencimiento.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        TFFechaVencimiento.setForeground(new java.awt.Color(24, 18, 30));
+        Panel_Ingreso_Productos_Nuevos.add(TFFechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 260, 175, -1));
 
+        jLabel19.setBackground(new java.awt.Color(205, 205, 205));
         jLabel19.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel19.setForeground(new java.awt.Color(24, 18, 30));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Fecha vencimiento");
+        Panel_Ingreso_Productos_Nuevos.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, -1, 28));
 
-        javax.swing.GroupLayout Panel_Ingreso_Productos_NuevosLayout = new javax.swing.GroupLayout(Panel_Ingreso_Productos_Nuevos);
-        Panel_Ingreso_Productos_Nuevos.setLayout(Panel_Ingreso_Productos_NuevosLayout);
-        Panel_Ingreso_Productos_NuevosLayout.setHorizontalGroup(
-            Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                        .addGap(463, 463, 463)
-                        .addComponent(BotonIngresoNuevo)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                        .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                                .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                                                .addComponent(jLabel9)
-                                                .addGap(65, 65, 65))
-                                            .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                                                .addComponent(jLabel17)
-                                                .addGap(64, 64, 64)))
-                                        .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(CategoriaTF, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(CBCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                                        .addGap(76, 76, 76)
-                                        .addComponent(jLabel10))
-                                    .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                                        .addGap(79, 79, 79)
-                                        .addComponent(jLabel4)
-                                        .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                                                .addGap(140, 140, 140)
-                                                .addComponent(jLabel2))
-                                            .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                                                .addGap(134, 134, 134)
-                                                .addComponent(TFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addGap(43, 43, 43))
-                            .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                                .addGap(90, 90, 90)
-                                .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TFFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(141, 141, 141)
-                                        .addComponent(TFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel16))
-                        .addGap(59, 59, 59)
-                        .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CBCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TFFechaVencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TFDescripcion1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TFFechaElaboracion, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(902, Short.MAX_VALUE))
-            .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                .addGap(445, 445, 445)
-                .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel15)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Panel_Ingreso_Productos_NuevosLayout.setVerticalGroup(
-            Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel2)
-                .addGap(41, 41, 41)
-                .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CBCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TFDescripcion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CategoriaTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TFFechaElaboracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TFFechaVencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Panel_Ingreso_Productos_NuevosLayout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addGroup(Panel_Ingreso_Productos_NuevosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TFFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CBCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BotonIngresoNuevo)
-                .addContainerGap(125, Short.MAX_VALUE))
-        );
+        jLabel1.setForeground(new java.awt.Color(24, 18, 30));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/turquesa olas.jpg"))); // NOI18N
+        Panel_Ingreso_Productos_Nuevos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -60, -1, -1));
 
         Panel_Principal.add(Panel_Ingreso_Productos_Nuevos, "card2");
 
         Panel_Estadisticas.setLayout(new java.awt.GridBagLayout());
         Panel_Principal.add(Panel_Estadisticas, "card3");
 
-        Panel_Ingreso_Productos_Existente.setLayout(new java.awt.GridBagLayout());
+        Panel_Ingreso_Productos_Existente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel8.setForeground(new java.awt.Color(24, 18, 30));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Imagen");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipady = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(59, 40, 0, 0);
-        Panel_Ingreso_Productos_Existente.add(jLabel8, gridBagConstraints);
+        jLabel8.setToolTipText("");
+        Panel_Ingreso_Productos_Existente.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, 37));
 
-        ButtonIngresoExistente.setBackground(new java.awt.Color(255, 59, 63));
-        ButtonIngresoExistente.setFont(new java.awt.Font("Lucida Sans", 3, 24)); // NOI18N
-        ButtonIngresoExistente.setForeground(new java.awt.Color(242, 242, 242));
+        ButtonIngresoExistente.setBackground(new java.awt.Color(204, 255, 204));
+        ButtonIngresoExistente.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        ButtonIngresoExistente.setForeground(new java.awt.Color(51, 51, 51));
         ButtonIngresoExistente.setText("Ingresar");
         ButtonIngresoExistente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonIngresoExistenteActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 12;
-        gridBagConstraints.ipadx = 223;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(84, 129, 71, 0);
-        Panel_Ingreso_Productos_Existente.add(ButtonIngresoExistente, gridBagConstraints);
+        Panel_Ingreso_Productos_Existente.add(ButtonIngresoExistente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 540, 355, -1));
 
         jLabel11.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel11.setForeground(new java.awt.Color(24, 18, 30));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Categoria");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipady = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(60, 40, 0, 0);
-        Panel_Ingreso_Productos_Existente.add(jLabel11, gridBagConstraints);
+        jLabel11.setToolTipText("");
+        Panel_Ingreso_Productos_Existente.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, 37));
 
-        CBCategoriaIngreso.setBackground(new java.awt.Color(202, 235, 242));
         CBCategoriaIngreso.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        CBCategoriaIngreso.setForeground(new java.awt.Color(24, 18, 30));
+        CBCategoriaIngreso.setToolTipText("");
         CBCategoriaIngreso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CBCategoriaIngresoActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 13;
-        gridBagConstraints.ipadx = 209;
-        gridBagConstraints.ipady = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(60, 38, 0, 101);
-        Panel_Ingreso_Productos_Existente.add(CBCategoriaIngreso, gridBagConstraints);
+        Panel_Ingreso_Productos_Existente.add(CBCategoriaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 281, 37));
 
         jLabel12.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel12.setForeground(new java.awt.Color(24, 18, 30));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Medicina");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipady = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(51, 40, 0, 0);
-        Panel_Ingreso_Productos_Existente.add(jLabel12, gridBagConstraints);
+        jLabel12.setToolTipText("");
+        Panel_Ingreso_Productos_Existente.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, 37));
 
-        CBProductoIngreso.setBackground(new java.awt.Color(202, 235, 242));
         CBProductoIngreso.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        CBProductoIngreso.setForeground(new java.awt.Color(24, 18, 30));
+        CBProductoIngreso.setToolTipText("");
         CBProductoIngreso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CBProductoIngresoActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 13;
-        gridBagConstraints.ipadx = 209;
-        gridBagConstraints.ipady = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(49, 38, 0, 101);
-        Panel_Ingreso_Productos_Existente.add(CBProductoIngreso, gridBagConstraints);
+        Panel_Ingreso_Productos_Existente.add(CBProductoIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 281, 37));
 
         jLabel13.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel13.setForeground(new java.awt.Color(24, 18, 30));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Cantidad a ingresar");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipady = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(69, 40, 0, 0);
-        Panel_Ingreso_Productos_Existente.add(jLabel13, gridBagConstraints);
+        jLabel13.setToolTipText("");
+        Panel_Ingreso_Productos_Existente.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, 37));
 
-        CBCantidadIngreso.setBackground(new java.awt.Color(202, 235, 242));
         CBCantidadIngreso.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
+        CBCantidadIngreso.setForeground(new java.awt.Color(24, 18, 30));
         CBCantidadIngreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99" }));
+        CBCantidadIngreso.setToolTipText("");
         CBCantidadIngreso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CBCantidadIngresoActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 13;
-        gridBagConstraints.ipadx = 205;
-        gridBagConstraints.ipady = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(65, 42, 0, 101);
-        Panel_Ingreso_Productos_Existente.add(CBCantidadIngreso, gridBagConstraints);
+        Panel_Ingreso_Productos_Existente.add(CBCantidadIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 277, 37));
 
-        jButton4.setBackground(new java.awt.Color(202, 235, 242));
-        jButton4.setText("Ingreso de Imagen");
+        jButton4.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(24, 18, 30));
+        jButton4.setText("Ingresar Imagen");
+        jButton4.setToolTipText("");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 13;
-        gridBagConstraints.ipadx = 162;
-        gridBagConstraints.ipady = 14;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(53, 42, 0, 101);
-        Panel_Ingreso_Productos_Existente.add(jButton4, gridBagConstraints);
+        Panel_Ingreso_Productos_Existente.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, 280, 37));
 
-        jLabel14.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(64, 64, 64));
+        jLabel14.setFont(new java.awt.Font("Lucida Sans", 1, 30)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(24, 18, 30));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Actualizar info Medicinas");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 3;
-        gridBagConstraints.ipady = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(60, 16, 0, 0);
-        Panel_Ingreso_Productos_Existente.add(jLabel14, gridBagConstraints);
+        jLabel14.setText("Actualizar información de Medicinas");
+        jLabel14.setToolTipText("");
+        Panel_Ingreso_Productos_Existente.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 580, 37));
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/otro fondo turquesa.jpg"))); // NOI18N
+        Panel_Ingreso_Productos_Existente.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -60, -1, -1));
 
         Panel_Principal.add(Panel_Ingreso_Productos_Existente, "card3");
 
@@ -1039,6 +899,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1050,6 +911,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

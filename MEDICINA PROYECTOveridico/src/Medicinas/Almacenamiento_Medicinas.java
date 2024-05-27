@@ -24,7 +24,7 @@ public class Almacenamiento_Medicinas {
     public void Copiar(File Dest)
     {
         try {
-            Files.copy(file.toPath(), Dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(file.toPath(), Dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
             } 
         catch (IOException e) {
         }
@@ -68,9 +68,9 @@ public class Almacenamiento_Medicinas {
                 RAC.writeChars(Des);
                 RAC.writeChars(FD);
             }
-            else if (Existe(Nombre))
+            else if (Existe(Identificador()))
             {
-                AgregarCantidad(Nombre,Cantidad);
+                AgregarCantidad(Identificador(),Cantidad);
             }
             
             RAC.close();         
@@ -86,6 +86,7 @@ public class Almacenamiento_Medicinas {
         {
             if(Existe(Nombre))
             {
+                System.out.print("YA EXISTE SOLO SE AGREGA");
                 AgregarCantidad(Nombre,Cantidad);
             }
             else
@@ -117,6 +118,11 @@ public class Almacenamiento_Medicinas {
     {
         return 344;
     }
+    //AQUI SELECCIONAR EL ATRIBUTO A USAR COMO CLAVE DE UN REGISTRO
+    public String Identificador()
+    {
+        return "NOMBRE";
+    } 
     //CON ESTA DEFINO LOS BYTES DE CADA ATRIBUTO PARA USARLOS POR REFERNCIA EN LAS DEMAS FUNCIONES
     //BYTES DE Y CHARS DE DEBEN IR EN CONSONANCIA
         public long BytesDe(String AT)
@@ -192,7 +198,7 @@ public class Almacenamiento_Medicinas {
                 bytesHasta = -1;
                 break;
         }
-        System.out.println("Salte "+bytesHasta+" bytes");
+        //System.out.println("Salte "+bytesHasta+" bytes");
         return bytesHasta;
     }
     
@@ -246,7 +252,6 @@ public class Almacenamiento_Medicinas {
             default:
                 break;
         }
-        System.out.println("salto de "+aux+" bytes");
         return aux;
     }
     //SI HASTA AQUI TODO SE HA DEFINIDO BIEN , EL RESTO SE HACE SOLO
@@ -319,25 +324,25 @@ public class Almacenamiento_Medicinas {
         {
             while(RAC.getFilePointer()<RAC.length())
             {
-                RAC.skipBytes((int)BytesHasta("NOMBRE"));
+                RAC.skipBytes((int)BytesHasta(Identificador()));
                 String Nombre ="";
-                for(int i =0;i<CharsDe("NOMBRE");i++)
+                for(int i =0;i<CharsDe(Identificador());i++)
                 {
                     Nombre=Nombre+RAC.readChar();
                 }
                 if(!Nombre.equals(NB))
                 {
-                    RAC.skipBytes((int)BytesHastaFinalPartiendoDe("NOMBRE"));
+                    RAC.skipBytes((int)BytesHastaFinalPartiendoDe(Identificador()));
                 }
                 else
                 {
                     RAC.close();
-                    System.out.println("Existe");
+                    //System.out.println("Existe");
                     return true;
                 }
             }
             RAC.close();
-            System.out.println("No existe");
+            //System.out.println("No existe");
             return false;
         }
         catch(IOException e)
@@ -368,15 +373,15 @@ public class Almacenamiento_Medicinas {
             RAC.seek(0);
             while(RAC.getFilePointer()<RAC.length())
             {
-                RAC.skipBytes((int)BytesHasta("NOMBRE"));
+                RAC.skipBytes((int)BytesHasta(Identificador()));
                 String Nombre ="";
-                for(int i =0;i<CharsDe("NOMBRE");i++)
+                for(int i =0;i<CharsDe(Identificador());i++)
                 {
                     Nombre=Nombre+RAC.readChar();
                 }
                 if(!Nombre.equals(NB))
                 {
-                    RAC.skipBytes((int)BytesHastaFinalPartiendoDe("NOMBRE"));
+                    RAC.skipBytes((int)BytesHastaFinalPartiendoDe(Identificador()));
                 }
                 else
                 {
@@ -581,6 +586,8 @@ public class Almacenamiento_Medicinas {
     //TABLA QUE MUESTRA TODO SIN DISCRIMAR POR CATEGORIAS
     public void MostrarTabla(DefaultTableModel TC)
     {
+        String ids [] = {"Codigo","Nombre","Fabricante","Cantidad","Precio","FE","FA","Descripcion"};
+        TC.setColumnIdentifiers(ids);
         TC.setRowCount(0);
         try(RandomAccessFile RAC=new RandomAccessFile(file,"rw"))
         {
@@ -631,8 +638,7 @@ public class Almacenamiento_Medicinas {
                 {
                     DI=DI+RAC.readChar();
                 }
-                TC.addRow(new String[]{CODIGO,NOMBRE,FABRICANTE,CANTIDAD,PRECIO,FE,FA,DESCRIPCION});
-                
+                TC.addRow(new String[]{CODIGO,NOMBRE,FABRICANTE,CANTIDAD,PRECIO,FE,FA,DESCRIPCION});                
             }                
         }
         catch(IOException e)

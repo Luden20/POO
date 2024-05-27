@@ -4,21 +4,14 @@
  */
 package Medicinas;
 import java.awt.Color;
-import java.awt.Image;
 import java.io.File;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.util.Map;
 import javax.swing.JOptionPane;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.JFreeChart;
-import org.jfree.data.general.DefaultPieDataset; 
-import org.jfree.chart.ChartFrame;
-import org.jfree.data.category.DefaultCategoryDataset;
-import Medicinas.Almacenamiento_Medicinas;
+import java.util.StringTokenizer;
 
 
 /*
@@ -37,9 +30,14 @@ public class Ingreso_Productos extends javax.swing.JFrame {
      * @param aux
      * @param c
      */
-    public Ingreso_Productos(Almacenamiento_Medicinas aux) {
+    public Ingreso_Productos(Almacenamiento_Medicinas aux, ALMACENAMIENTO_CLIENTES Cliente) {
         initComponents();
+        this.Cliente=Cliente;
         TC = new DefaultTableModel();    
+        FC = new DefaultTableModel();
+        C = new DefaultTableModel();
+        TablaFactura.setModel(FC);
+        TablaClientes.setModel(C);
         Tabla.setModel(TC);
         Medicinas = aux;
         Componentes = 0;
@@ -67,10 +65,22 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Productos_ExistentesBT = new javax.swing.JButton();
         Nuevos_ProductosBT = new javax.swing.JButton();
         Ver_TablaBT = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        CARGARbt = new javax.swing.JButton();
         GuardarBT = new javax.swing.JButton();
         VerBarrasBT = new javax.swing.JButton();
+        VerFacturaBT = new javax.swing.JButton();
+        VerClientesBT = new javax.swing.JButton();
         Panel_Principal = new javax.swing.JPanel();
+        Panel_Factura = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        FacturaTF = new javax.swing.JTextArea();
+        CargarFacturaBT = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TablaFactura = new javax.swing.JTable();
+        Panel_Tabla_Clientes = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        TablaClientes = new javax.swing.JTable();
         Panel_Tabla = new javax.swing.JPanel();
         Componentes_Ver = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -93,7 +103,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         CBCantidad = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         TFDescripcion1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        IngresoImagenMNuevaBTT = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         TFFechaElaboracion = new javax.swing.JTextField();
@@ -111,7 +121,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         CBProductoIngreso = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         CBCantidadIngreso = new javax.swing.JComboBox<>();
-        jButton4 = new javax.swing.JButton();
+        IngresoImagenAM = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
 
@@ -162,7 +172,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Productos_ExistentesBT.setBackground(new java.awt.Color(87, 188, 144));
         Productos_ExistentesBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         Productos_ExistentesBT.setForeground(new java.awt.Color(242, 242, 242));
-        Productos_ExistentesBT.setText("Modificar Productos Existentes");
+        Productos_ExistentesBT.setText("Modificar Medicinas Existentes");
         Productos_ExistentesBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Productos_ExistentesBTActionPerformed(evt);
@@ -173,7 +183,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Nuevos_ProductosBT.setBackground(new java.awt.Color(87, 188, 144));
         Nuevos_ProductosBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         Nuevos_ProductosBT.setForeground(new java.awt.Color(242, 242, 242));
-        Nuevos_ProductosBT.setText("Ingresar Productos Nuevos");
+        Nuevos_ProductosBT.setText("Ingresar Medicinas Nuevos");
         Nuevos_ProductosBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nuevos_ProductosBTActionPerformed(evt);
@@ -192,21 +202,21 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(Ver_TablaBT);
 
-        jButton1.setBackground(new java.awt.Color(87, 188, 144));
-        jButton1.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(242, 242, 242));
-        jButton1.setText("Cargar inventario");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        CARGARbt.setBackground(new java.awt.Color(87, 188, 144));
+        CARGARbt.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
+        CARGARbt.setForeground(new java.awt.Color(242, 242, 242));
+        CARGARbt.setText("Cargar inventario");
+        CARGARbt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                CARGARbtActionPerformed(evt);
             }
         });
-        Botones.add(jButton1);
+        Botones.add(CARGARbt);
 
         GuardarBT.setBackground(new java.awt.Color(87, 188, 144));
         GuardarBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
         GuardarBT.setForeground(new java.awt.Color(242, 242, 242));
-        GuardarBT.setText("Guardar inventario/Seleccionar Archivo");
+        GuardarBT.setText("Guardar inventario");
         GuardarBT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GuardarBTActionPerformed(evt);
@@ -225,6 +235,28 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Botones.add(VerBarrasBT);
 
+        VerFacturaBT.setBackground(new java.awt.Color(87, 188, 144));
+        VerFacturaBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
+        VerFacturaBT.setForeground(new java.awt.Color(242, 242, 242));
+        VerFacturaBT.setText("Ver Facturas");
+        VerFacturaBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerFacturaBTActionPerformed(evt);
+            }
+        });
+        Botones.add(VerFacturaBT);
+
+        VerClientesBT.setBackground(new java.awt.Color(87, 188, 144));
+        VerClientesBT.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
+        VerClientesBT.setForeground(new java.awt.Color(242, 242, 242));
+        VerClientesBT.setText("Ver Clientes");
+        VerClientesBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerClientesBTActionPerformed(evt);
+            }
+        });
+        Botones.add(VerClientesBT);
+
         getContentPane().add(Botones);
 
         Panel_Principal.setBackground(new java.awt.Color(255, 255, 255));
@@ -234,6 +266,74 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Panel_Principal.setMinimumSize(new java.awt.Dimension(1920, 1080));
         Panel_Principal.setPreferredSize(new java.awt.Dimension(1920, 1080));
         Panel_Principal.setLayout(new java.awt.CardLayout());
+
+        Panel_Factura.setLayout(new javax.swing.BoxLayout(Panel_Factura, javax.swing.BoxLayout.PAGE_AXIS));
+
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
+
+        jScrollPane3.setMinimumSize(new java.awt.Dimension(3, 3));
+
+        FacturaTF.setColumns(20);
+        FacturaTF.setRows(5);
+        FacturaTF.setText("Aqui iran los detalles del cliente de la factura");
+        jScrollPane3.setViewportView(FacturaTF);
+
+        jPanel2.add(jScrollPane3);
+
+        CargarFacturaBT.setText("CARGAR FACTURA");
+        CargarFacturaBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CargarFacturaBTActionPerformed(evt);
+            }
+        });
+        jPanel2.add(CargarFacturaBT);
+
+        Panel_Factura.add(jPanel2);
+
+        TablaFactura.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(TablaFactura);
+
+        Panel_Factura.add(jScrollPane2);
+
+        Panel_Principal.add(Panel_Factura, "card6");
+
+        Panel_Tabla_Clientes.setLayout(new javax.swing.BoxLayout(Panel_Tabla_Clientes, javax.swing.BoxLayout.LINE_AXIS));
+
+        TablaClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Codigo", "Nombre", "Marca", "Cantidad", "Precio", "Descripcion"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(TablaClientes);
+
+        Panel_Tabla_Clientes.add(jScrollPane4);
+
+        Panel_Principal.add(Panel_Tabla_Clientes, "card4");
 
         Panel_Tabla.setLayout(new java.awt.BorderLayout());
 
@@ -388,15 +488,15 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         TFDescripcion1.setForeground(new java.awt.Color(24, 18, 30));
         Panel_Ingreso_Productos_Nuevos.add(TFDescripcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 160, 175, -1));
 
-        jButton3.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(24, 18, 30));
-        jButton3.setText("Agregar Imagen");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        IngresoImagenMNuevaBTT.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        IngresoImagenMNuevaBTT.setForeground(new java.awt.Color(24, 18, 30));
+        IngresoImagenMNuevaBTT.setText("Agregar Imagen");
+        IngresoImagenMNuevaBTT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                IngresoImagenMNuevaBTTActionPerformed(evt);
             }
         });
-        Panel_Ingreso_Productos_Nuevos.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 200, 28));
+        Panel_Ingreso_Productos_Nuevos.add(IngresoImagenMNuevaBTT, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 200, 28));
 
         jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(24, 18, 30));
@@ -514,16 +614,16 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         });
         Panel_Ingreso_Productos_Existente.add(CBCantidadIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 277, 37));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(24, 18, 30));
-        jButton4.setText("Ingresar Imagen");
-        jButton4.setToolTipText("");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        IngresoImagenAM.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        IngresoImagenAM.setForeground(new java.awt.Color(24, 18, 30));
+        IngresoImagenAM.setText("Ingresar Imagen");
+        IngresoImagenAM.setToolTipText("");
+        IngresoImagenAM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                IngresoImagenAMActionPerformed(evt);
             }
         });
-        Panel_Ingreso_Productos_Existente.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, 280, 37));
+        Panel_Ingreso_Productos_Existente.add(IngresoImagenAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, 280, 37));
 
         jLabel14.setFont(new java.awt.Font("Lucida Sans", 1, 30)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(24, 18, 30));
@@ -552,8 +652,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         for (int i = 0; i < productos.length; i++) 
         {
             productosString[i] = productos[i].toString();
-        }
-    
+        } 
         CBProductoIngreso.setModel(new DefaultComboBoxModel<>(productosString));
         //Refrescar();
     }//GEN-LAST:event_CBCategoriaIngresoActionPerformed
@@ -569,7 +668,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             Medicinas.AgregarCantidad(productoSeleccionado,cantidadIngresada);
             if(faux!=null)
             {
-                Medicinas.Cambiar(productoSeleccionado, "DI",rellenarEspacios(faux.getAbsolutePath(),50) );
+                Medicinas.Cambiar(productoSeleccionado, "DI",Utilidades.rellenarEspacios(faux.getAbsolutePath(),50) );
             }           
             Medicinas.MostrarTabla(Componentes_Ver.getSelectedItem().toString(),TC);
             JOptionPane.showMessageDialog(null, "Producto actualizado con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
@@ -596,7 +695,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
                 {
                     if ("NaN".equals(CBCategoria.getSelectedItem().toString())) 
                     {
-                        cat = rellenarEspacios(CategoriaTF.getText(),10);          
+                        cat = Utilidades.rellenarEspacios(CategoriaTF.getText(),10);          
                     } 
                     else 
                     {
@@ -607,31 +706,31 @@ public class Ingreso_Productos extends javax.swing.JFrame {
                     {
                         Medicinas.Ingresar
                         (
-                            rellenarEspacios(TFCodigo.getText(), 6),
+                            Utilidades.rellenarEspacios(TFCodigo.getText(), 6),
                             cat,                       
-                            rellenarEspacios(TFNombre.getText(), 15),
-                            rellenarEspacios(TFFabricante.getText(), 15),
+                            Utilidades.rellenarEspacios(TFNombre.getText(), 15),
+                            Utilidades.rellenarEspacios(TFFabricante.getText(), 15),
                             Integer.parseInt(CBCantidad.getSelectedItem().toString()),
                             Double.parseDouble(TFPrecio.getText()),
-                            rellenarEspacios(TFFechaElaboracion.getText(), 8),
-                            rellenarEspacios(TFFechaVencimiento.getText(), 8),
-                            rellenarEspacios(TFDescripcion1.getText(), 50),
-                            rellenarEspacios(faux.getAbsolutePath(),50)
+                            Utilidades.rellenarEspacios(TFFechaElaboracion.getText(), 10),
+                            Utilidades.rellenarEspacios(TFFechaVencimiento.getText(), 10),
+                            Utilidades.rellenarEspacios(TFDescripcion1.getText(), 50),
+                            Utilidades.rellenarEspacios(faux.getAbsolutePath(),50)
                         );
                     }
                     else
                     {
                         Medicinas.Ingresar
                         (
-                            rellenarEspacios(TFCodigo.getText(), 6),
+                            Utilidades.rellenarEspacios(TFCodigo.getText(), 6),
                             cat,                       
-                            rellenarEspacios(TFNombre.getText(), 15),
-                            rellenarEspacios(TFFabricante.getText(), 15),
+                            Utilidades.rellenarEspacios(TFNombre.getText(), 15),
+                            Utilidades.rellenarEspacios(TFFabricante.getText(), 15),
                             Integer.parseInt(CBCantidad.getSelectedItem().toString()),
                             Double.parseDouble(TFPrecio.getText()),
-                            rellenarEspacios(TFFechaElaboracion.getText(), 8),
-                            rellenarEspacios(TFFechaVencimiento.getText(), 8),
-                            rellenarEspacios(TFDescripcion1.getText(), 50)
+                            Utilidades.rellenarEspacios(TFFechaElaboracion.getText(), 8),
+                            Utilidades.rellenarEspacios(TFFechaVencimiento.getText(), 8),
+                            Utilidades.rellenarEspacios(TFDescripcion1.getText(), 50)
                         );
                     }
                     JOptionPane.showMessageDialog(null, "Ingreso Exitoso", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
@@ -699,33 +798,17 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Refrescar();
     }//GEN-LAST:event_Ver_TablaBTActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            /*JFileChooser jFileChooser3 = new JFileChooser();
-            jFileChooser3.setAcceptAllFileFilterUsed(false); 
-            FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de datos(*.dat)", "dat");
-            jFileChooser3.addChoosableFileFilter(filter); 
-            jFileChooser3.setDialogTitle("Selecciona un archivo para cargar los datos");
-            if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) 
-            {
-                File file = jFileChooser3.getSelectedFile();
-                 Medicinas.Leer(file); 
-                 Refrescar();
-            }*/
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void CARGARbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CARGARbtActionPerformed
+            File file=Utilidades.obtenerArchivo("dat", "Seleccione archivo para cargar");
+            Medicinas= new Almacenamiento_Medicinas(file); 
+            Refrescar();
+    }//GEN-LAST:event_CARGARbtActionPerformed
 
     private void GuardarBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarBTActionPerformed
-        // TODO add your handling code here:
+            File file=Utilidades.obtenerArchivo("dat", "Seleccione archivo para guardar");
+            Medicinas.Copiar(file);
+            Refrescar();
         
-            JFileChooser jFileChooser3 = new JFileChooser();
-            jFileChooser3.setDialogTitle("Selecciona un archivo para cargar los datos");
-            jFileChooser3.setAcceptAllFileFilterUsed(false); 
-            FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de datos(*.dat)", "dat");
-            jFileChooser3.addChoosableFileFilter(filter); 
-            if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-                faux = jFileChooser3.getSelectedFile();
-                faux = new File(faux.getParentFile(), faux.getName() + ".dat");         
-                Refrescar();
-        }
     }//GEN-LAST:event_GuardarBTActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -733,28 +816,21 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Refrescar();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        JFileChooser jFileChooser3 = new JFileChooser();
-            jFileChooser3.setDialogTitle("Selecciona una imagen los datos");
-            if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-                faux = jFileChooser3.getSelectedFile();
-                jButton3.setBackground(Color.green);
-                JOptionPane.showMessageDialog(null, "Imagen cargada con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+    private void IngresoImagenMNuevaBTTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoImagenMNuevaBTTActionPerformed
 
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        JFileChooser jFileChooser3 = new JFileChooser();
-            jFileChooser3.setDialogTitle("Selecciona una imagen los datos");
-            if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-                File file = jFileChooser3.getSelectedFile();
+                faux = Utilidades.obtenerArchivo("Seleccione un archivo de imagen");
+                IngresoImagenMNuevaBTT.setBackground(Color.green);
                 JOptionPane.showMessageDialog(null, "Imagen cargada con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-                jButton4.setBackground(Color.green);
-        }
-    }//GEN-LAST:event_jButton4ActionPerformed
+        
+    }//GEN-LAST:event_IngresoImagenMNuevaBTTActionPerformed
+
+    private void IngresoImagenAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoImagenAMActionPerformed
+
+                faux = Utilidades.obtenerArchivo("Seleccione una imagen");
+                JOptionPane.showMessageDialog(null, "Imagen cargada con exito", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                IngresoImagenAM.setBackground(Color.green);
+        
+    }//GEN-LAST:event_IngresoImagenAMActionPerformed
 
     private void VerBarrasBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerBarrasBTActionPerformed
         Panel_Principal.removeAll();
@@ -762,6 +838,40 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Panel_Principal.repaint();
         Panel_Principal.revalidate();
     }//GEN-LAST:event_VerBarrasBTActionPerformed
+
+    private void VerFacturaBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerFacturaBTActionPerformed
+        // TODO add your handling code here:
+        Panel_Principal.removeAll();
+        Panel_Principal.add(Panel_Factura);
+        Panel_Principal.repaint();
+        Panel_Principal.revalidate();
+        Refrescar();
+    }//GEN-LAST:event_VerFacturaBTActionPerformed
+
+    private void CargarFacturaBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarFacturaBTActionPerformed
+        // TODO add your handling code here:
+                File file=Utilidades.obtenerArchivo("dat", "Seleccione archivo para cargar");
+                Almacenamiento_Medicinas FA=new Almacenamiento_Medicinas(file);
+                String saux=file.getName();
+                StringTokenizer st=new StringTokenizer(saux,",");
+                String Ced=st.nextToken();
+                saux=st.nextToken();
+                st=new StringTokenizer(saux,".");
+                String FNum=st.nextToken();
+                FacturaTF.setText("Numero de Factura "+FNum+"\n"+Cliente.getInfoCliente(Ced));
+                FA.MostrarTabla(FC);
+                Refrescar();
+    }//GEN-LAST:event_CargarFacturaBTActionPerformed
+
+    private void VerClientesBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerClientesBTActionPerformed
+        // TODO add your handling code here:
+        Panel_Principal.removeAll();
+        Panel_Principal.add(Panel_Tabla_Clientes);
+        Panel_Principal.repaint();
+        Panel_Principal.revalidate();
+        Cliente.MostrarTabla(C);
+        Refrescar();
+    }//GEN-LAST:event_VerClientesBTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -820,23 +930,15 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Refrescar();
     }
     
-    public static DefaultComboBoxModel<String> ModeloCant(int i)
-    {
-        String[] elementos = new String [i];
-        for (int x = 0; x < i; x++)
-        {
-            elementos[x] = String.valueOf(x );
-        }
-        return new DefaultComboBoxModel<>(elementos);
-    }
+    
     public void Refrescar()
     {
         CBCategoria.setModel(new DefaultComboBoxModel(Medicinas.getListadoCategorias(true)));
         CBCategoriaIngreso.setModel(new DefaultComboBoxModel(Medicinas.getListadoCategorias(true)));
         Componentes_Ver.setModel(new DefaultComboBoxModel(Medicinas.getListadoCategorias(true)));
         aux=null;
-        jButton3.setBackground(Color.white);
-        jButton4.setBackground(Color.white);
+        IngresoImagenMNuevaBTT.setBackground(Color.white);
+        IngresoImagenAM.setBackground(Color.white);
     }
     
     private boolean validarLongitud() 
@@ -845,45 +947,32 @@ public class Ingreso_Productos extends javax.swing.JFrame {
            TFNombre.getText().length() <= 15 &&
            TFFabricante.getText().length() <= 15 &&
            TFDescripcion1.getText().length() <= 40;
-    }
-    
-    private String rellenarEspacios(String str, int longitud) 
-    {
-      for (int i =str.length();i < longitud;i++) 
-        {
-            str =str+ " ";
-        }
-        return str;
-    }
-    
-    
-    //Falta importar la biblioteca Jfreechart?
-
-    
-    
-    
- 
-    
-
-    
+    } 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonIngresoNuevo;
     private javax.swing.JPanel Botones;
     private javax.swing.JButton ButtonIngresoExistente;
+    private javax.swing.JButton CARGARbt;
     private javax.swing.JComboBox<String> CBCantidad;
     private javax.swing.JComboBox<String> CBCantidadIngreso;
     private javax.swing.JComboBox<String> CBCategoria;
     private javax.swing.JComboBox<String> CBCategoriaIngreso;
     private javax.swing.JComboBox<String> CBProductoIngreso;
+    private javax.swing.JButton CargarFacturaBT;
     private javax.swing.JTextField CategoriaTF;
     private javax.swing.JComboBox<String> Componentes_Ver;
+    private javax.swing.JTextArea FacturaTF;
     private javax.swing.JButton GuardarBT;
+    private javax.swing.JButton IngresoImagenAM;
+    private javax.swing.JButton IngresoImagenMNuevaBTT;
     private javax.swing.JButton Nuevos_ProductosBT;
     private javax.swing.JPanel Panel_Estadisticas;
+    private javax.swing.JPanel Panel_Factura;
     private javax.swing.JPanel Panel_Ingreso_Productos_Existente;
     private javax.swing.JPanel Panel_Ingreso_Productos_Nuevos;
     private javax.swing.JPanel Panel_Principal;
     private javax.swing.JPanel Panel_Tabla;
+    private javax.swing.JPanel Panel_Tabla_Clientes;
     private javax.swing.JButton Productos_ExistentesBT;
     private javax.swing.JTextField TFCodigo;
     private javax.swing.JTextField TFDescripcion1;
@@ -893,12 +982,13 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JTextField TFNombre;
     private javax.swing.JTextField TFPrecio;
     private javax.swing.JTable Tabla;
+    private javax.swing.JTable TablaClientes;
+    private javax.swing.JTable TablaFactura;
     private javax.swing.JButton VerBarrasBT;
+    private javax.swing.JButton VerClientesBT;
+    private javax.swing.JButton VerFacturaBT;
     private javax.swing.JButton Ver_TablaBT;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -920,11 +1010,19 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     // End of variables declaration//GEN-END:variables
     private Almacenamiento_Medicinas Medicinas;
+    private ALMACENAMIENTO_CLIENTES Cliente;
     private int Componentes, Consolas, Celulares, Computadores;
     private  DefaultTableModel TC;
+    private  DefaultTableModel FC;
+    private  DefaultTableModel C;
     private ImageIcon aux;
     private File faux;
+
 }

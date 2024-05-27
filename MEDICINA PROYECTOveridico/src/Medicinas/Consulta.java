@@ -9,6 +9,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Image;
+import java.io.IOException;
 import javax.swing.ImageIcon;
 
 /**
@@ -22,19 +23,17 @@ public class Consulta extends javax.swing.JFrame {
      * @param c
      * @param aux
      */
-    public Consulta(ALMACENAMIENTO_CLIENTES c,Almacenamiento_Medicinas aux,String Cedula) {
+    public Consulta(ALMACENAMIENTO_CLIENTES c,Almacenamiento_Medicinas aux,String Cedula,Almacenamiento_Medicinas fac) {
         initComponents();
-        File u=new File("D://"+Ced+".dat");
-        Factura=new Almacenamiento_Medicinas(u);
+        NFac=0;
+        Factura=fac;
         Factura.Borrar();
         TC =new DefaultTableModel();
-        String ids [] = {"Codigo","Nombre","Fabricante","Cantidad","Precio","FE","FA","Descripcion"};
-        TC.setColumnIdentifiers(ids);
         TB_Factura.setModel(TC);
         clientefinal=c;
         Ced=Cedula;
         Medicinas=aux;
-        UsuarioTx.setText("Bienvenido "+c.get(Ced,"NOMBRE")+" a Farmacias Toñito");
+        UsuarioTx.setText("Bienvenido "+c.get(Ced,"NOMBRE").trim()+" a Farmacias Toñito");
         CategoriaCB.setModel(new DefaultComboBoxModel(Medicinas.getListadoCategorias(false)));
         mostrarDatos();
     }
@@ -57,7 +56,7 @@ public class Consulta extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Panel_Principal = new javax.swing.JPanel();
         Panel_Ver = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        Panel_Compra = new javax.swing.JPanel();
         CategoriaCB = new javax.swing.JComboBox<>();
         ProductosCB = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
@@ -132,9 +131,9 @@ public class Consulta extends javax.swing.JFrame {
 
         Panel_Ver.setLayout(new javax.swing.BoxLayout(Panel_Ver, javax.swing.BoxLayout.LINE_AXIS));
 
-        jPanel3.setBackground(new java.awt.Color(0, 255, 219));
-        jPanel3.setForeground(new java.awt.Color(204, 255, 153));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Panel_Compra.setBackground(new java.awt.Color(0, 255, 219));
+        Panel_Compra.setForeground(new java.awt.Color(204, 255, 153));
+        Panel_Compra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CategoriaCB.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         CategoriaCB.setForeground(new java.awt.Color(44, 62, 80));
@@ -146,7 +145,7 @@ public class Consulta extends javax.swing.JFrame {
                 CategoriaCBActionPerformed(evt);
             }
         });
-        jPanel3.add(CategoriaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 456, 80));
+        Panel_Compra.add(CategoriaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 456, 80));
 
         ProductosCB.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         ProductosCB.setForeground(new java.awt.Color(44, 62, 80));
@@ -158,14 +157,14 @@ public class Consulta extends javax.swing.JFrame {
                 ProductosCBActionPerformed(evt);
             }
         });
-        jPanel3.add(ProductosCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 450, 40));
+        Panel_Compra.add(ProductosCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 450, 40));
 
         jLabel1.setBackground(new java.awt.Color(165, 165, 175));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Codigo");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
+        Panel_Compra.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
 
         CODIGO.setBackground(new java.awt.Color(255, 255, 255));
         CODIGO.setForeground(new java.awt.Color(44, 62, 80));
@@ -178,13 +177,13 @@ public class Consulta extends javax.swing.JFrame {
         CODIGO_TA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
         CODIGO.setViewportView(CODIGO_TA);
 
-        jPanel3.add(CODIGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 290, 40));
+        Panel_Compra.add(CODIGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 290, 60));
 
         jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(64, 64, 64));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Producto");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+        Panel_Compra.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
         PRODUCTO_TA.setEditable(false);
         PRODUCTO_TA.setBackground(new java.awt.Color(202, 235, 242));
@@ -194,14 +193,14 @@ public class Consulta extends javax.swing.JFrame {
         PRODUCTO_TA.setText("Producto Ta?");
         jScrollPane6.setViewportView(PRODUCTO_TA);
 
-        jPanel3.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 272, 40));
+        Panel_Compra.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 290, 50));
 
         jLabel4.setBackground(new java.awt.Color(165, 165, 175));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Precio");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
+        Panel_Compra.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
 
         PRECIO_TA.setEditable(false);
         PRECIO_TA.setBackground(new java.awt.Color(255, 255, 255));
@@ -212,14 +211,14 @@ public class Consulta extends javax.swing.JFrame {
         PRECIO_TA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
         PRECIO.setViewportView(PRECIO_TA);
 
-        jPanel3.add(PRECIO, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 290, 40));
+        Panel_Compra.add(PRECIO, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 290, 60));
 
         jLabel14.setBackground(new java.awt.Color(165, 165, 175));
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Marca");
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
+        Panel_Compra.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
 
         MarcaTA.setEditable(false);
         MarcaTA.setBackground(new java.awt.Color(255, 255, 255));
@@ -230,14 +229,14 @@ public class Consulta extends javax.swing.JFrame {
         MarcaTA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
         jScrollPane7.setViewportView(MarcaTA);
 
-        jPanel3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 290, 40));
+        Panel_Compra.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 290, 60));
 
         jLabel7.setBackground(new java.awt.Color(165, 165, 175));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Descripcion");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
+        Panel_Compra.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
 
         DescripcionTA.setEditable(false);
         DescripcionTA.setBackground(new java.awt.Color(255, 255, 255));
@@ -248,14 +247,14 @@ public class Consulta extends javax.swing.JFrame {
         DescripcionTA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
         jScrollPane2.setViewportView(DescripcionTA);
 
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 360, 119));
+        Panel_Compra.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 350, 180));
 
         jLabel6.setBackground(new java.awt.Color(165, 165, 175));
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Expira");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 740, -1, -1));
+        Panel_Compra.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 740, -1, -1));
 
         CantidadCB.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
         CantidadCB.setForeground(new java.awt.Color(44, 62, 80));
@@ -265,11 +264,11 @@ public class Consulta extends javax.swing.JFrame {
                 CantidadCBActionPerformed(evt);
             }
         });
-        jPanel3.add(CantidadCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 570, 110, 40));
+        Panel_Compra.add(CantidadCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 570, 110, 40));
 
         jLabel9.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 205, -1, -1));
+        Panel_Compra.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 205, -1, -1));
 
         PagarB.setBackground(new java.awt.Color(0, 128, 128));
         PagarB.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -280,10 +279,10 @@ public class Consulta extends javax.swing.JFrame {
                 PagarBActionPerformed(evt);
             }
         });
-        jPanel3.add(PagarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 650, 250, 102));
+        Panel_Compra.add(PagarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 700, 250, 102));
 
         IMAGEN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(IMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 365, 343));
+        Panel_Compra.add(IMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 365, 343));
 
         FE.setEditable(false);
         FE.setBackground(new java.awt.Color(255, 255, 255));
@@ -294,7 +293,7 @@ public class Consulta extends javax.swing.JFrame {
         FE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
         jScrollPane8.setViewportView(FE);
 
-        jPanel3.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 650, 200, 40));
+        Panel_Compra.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 650, 280, 60));
 
         FA.setEditable(false);
         FA.setBackground(new java.awt.Color(255, 255, 255));
@@ -305,23 +304,23 @@ public class Consulta extends javax.swing.JFrame {
         FA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(178, 235, 242)));
         jScrollPane9.setViewportView(FA);
 
-        jPanel3.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 730, 200, 40));
+        Panel_Compra.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 730, 270, 60));
 
         jLabel15.setBackground(new java.awt.Color(165, 165, 175));
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Cantidad");
-        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, -1, -1));
+        Panel_Compra.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, -1, -1));
 
         jLabel16.setBackground(new java.awt.Color(165, 165, 175));
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Elaborado");
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, -1, -1));
+        Panel_Compra.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, -1, -1));
 
-        Panel_Ver.add(jPanel3);
+        Panel_Ver.add(Panel_Compra);
 
         Panel_Informacion.setBackground(new java.awt.Color(119, 201, 212));
         Panel_Informacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -361,7 +360,7 @@ public class Consulta extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TB_Factura);
 
-        Panel_Informacion.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 680, 212));
+        Panel_Informacion.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 980, 230));
 
         jLabel10.setFont(new java.awt.Font("Lucida Sans", 3, 48)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(242, 242, 242));
@@ -427,7 +426,7 @@ public class Consulta extends javax.swing.JFrame {
         PTotalJL.setForeground(new java.awt.Color(242, 242, 242));
         PTotalJL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PTotalJL.setText("Total");
-        jPanel1.add(PTotalJL, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 70, 30));
+        jPanel1.add(PTotalJL, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 230, 30));
 
         jLabel13.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(156, 210, 211));
@@ -445,7 +444,7 @@ public class Consulta extends javax.swing.JFrame {
         });
         jPanel1.add(PagarBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 235, 58));
 
-        Panel_Informacion.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 600, 460));
+        Panel_Informacion.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 700, 580));
 
         Panel_Ver.add(Panel_Informacion);
 
@@ -502,6 +501,7 @@ public class Consulta extends javax.swing.JFrame {
             //PTotalJL.setText(String.format("%.2f",Facturafinal.getTotalProd())+"USD");
             //Llamo al metodo msotrat tabla que actualiza la tabla en base a la factura
             Factura.MostrarTabla(TC);
+            PTotalJL.setText(Factura.ValorTotal()+ "USD");
         }
         else
         {
@@ -512,21 +512,11 @@ public class Consulta extends javax.swing.JFrame {
     }//GEN-LAST:event_PagarBActionPerformed
 
     private void PagarBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarBTActionPerformed
-        /*JFileChooser jFileChooser3 = new JFileChooser();
-        jFileChooser3.setAcceptAllFileFilterUsed(false);
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de datos (*.dat)", "dat");
-        jFileChooser3.addChoosableFileFilter(filter);
-        jFileChooser3.setDialogTitle("Selecciona una carpeta para guardar la factura");
-
-        if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-            File file = jFileChooser3.getSelectedFile();
-            if (!file.getName().toLowerCase().endsWith(".dat")) {
-                file = new File(file.getParentFile(), file.getName() + ".dat");
-            }
-            //Facturafinal.Escribir(file);
-            dispose();
-        }
-        */
+        File file=new File("D://ARCHIVOS_AUXLIARES_MEDICINAS//"+Ced+","+NFac+".dat");
+        NFac++;
+        Factura.Copiar(file);
+        JOptionPane.showMessageDialog(null, "Factura Guardada en "+file.getPath(), "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+        dispose();     
     }//GEN-LAST:event_PagarBTActionPerformed
     //Metodos mios
     public void mostrarProducto()
@@ -622,6 +612,7 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JLabel PTotalJL;
     private javax.swing.JButton PagarB;
     private javax.swing.JButton PagarBT;
+    private javax.swing.JPanel Panel_Compra;
     private javax.swing.JPanel Panel_Informacion;
     private javax.swing.JPanel Panel_Principal;
     private javax.swing.JPanel Panel_Superior;
@@ -647,7 +638,6 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -663,4 +653,5 @@ public class Consulta extends javax.swing.JFrame {
     private ALMACENAMIENTO_CLIENTES clientefinal;
     private DefaultTableModel TC;
     private String Ced;
+    private int NFac;
 }

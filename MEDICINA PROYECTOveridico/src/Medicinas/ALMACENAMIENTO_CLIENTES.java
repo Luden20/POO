@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 public class ALMACENAMIENTO_CLIENTES {
     
@@ -64,7 +65,6 @@ public class ALMACENAMIENTO_CLIENTES {
                         String aux="";
                         for(int i=0;i<CharsDe(Atributo);i++)
                         {
-                            System.out.println("x");
                             aux=aux+RAC.readChar();
                         }
                         RAC.close();
@@ -107,9 +107,7 @@ public class ALMACENAMIENTO_CLIENTES {
                 for(int i =0;i<CharsDe("CEDULA");i++)
                 {
                     cedula=cedula+RAC.readChar();
-                    System.out.println(i+"  "+cedula);
                 }
-                System.out.println(cedula+" "+NB);
                 if(!cedula.equals(NB))
                 {
                     RAC.skipBytes((int)BytesHastaFinalPartiendoDe("CEDULA"));
@@ -153,7 +151,6 @@ public class ALMACENAMIENTO_CLIENTES {
                 bytesHasta = -1;
                 break;
         }
-        System.out.println("Salte "+bytesHasta+" bytes");
         return bytesHasta;
     }
 
@@ -221,6 +218,18 @@ public class ALMACENAMIENTO_CLIENTES {
             default -> -1;
         };
     }
+    
+    public String getInfoCliente(String Cedula)
+    {
+        if(Existe(Cedula))
+        {
+            return "NOMBRE:" +get(Cedula,"NOMBRE")+"    "+
+                    "APELLIDO:"+get(Cedula,"APELLIDO")+"\n"+
+                    "CEDULA:"+Cedula+"    "+
+                    "DIRECCION:"+get(Cedula,"DIRECCION");
+        }
+        return "NO SE HA ENCONTRADO AL CLIENTE";
+    }
     public void Cambiar(String Cedula,String Atributo,String Nuevo)
     {
         try(RandomAccessFile RAC=new RandomAccessFile(file,"rw"))
@@ -266,5 +275,51 @@ public class ALMACENAMIENTO_CLIENTES {
             
         }
         return Puntero;
+    }
+        public void MostrarTabla(DefaultTableModel TC)
+    {
+        String ids [] = {"Cedula","Nombre","Apellido","Direccion","Password"};
+        TC.setColumnIdentifiers(ids);
+        TC.setRowCount(0);
+        try(RandomAccessFile RAC=new RandomAccessFile(file,"rw"))
+        {
+            RAC.seek(0);
+            while(RAC.getFilePointer()<RAC.length())
+            {
+                String CEDULA="";
+                for(int i=0;i<CharsDe("CEDULA");i++)
+                {
+                    CEDULA=CEDULA+RAC.readChar();
+                }
+
+                String NOMBRE="";
+                for(int i=0;i<CharsDe("NOMBRE");i++)
+                {
+                    NOMBRE=NOMBRE+RAC.readChar();
+                }           
+                String APELLIDO="";
+                for(int i=0;i<CharsDe("APELLIDO");i++)
+                {
+                    APELLIDO=APELLIDO+RAC.readChar();
+                }
+
+                String DIRECCION="";
+                for(int i=0;i<CharsDe("DIRECCION");i++)
+                {
+                    DIRECCION=DIRECCION+RAC.readChar();
+                }
+                String PASSWORD="";
+                for(int i=0;i<CharsDe("CONTRASENA");i++)
+                {
+                    PASSWORD=PASSWORD+RAC.readChar();
+                }
+                
+                TC.addRow(new String[]{CEDULA,NOMBRE,APELLIDO,DIRECCION,PASSWORD});                
+            }                
+        }
+        catch(IOException e)
+        {
+            
+        }
     }
 }

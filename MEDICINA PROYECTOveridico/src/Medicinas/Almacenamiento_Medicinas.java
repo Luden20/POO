@@ -158,6 +158,23 @@ public class Almacenamiento_Medicinas {
             default -> -1;
         };
     }
+          public String TipoDeDato(String AT)
+    {
+        AT=AT.toUpperCase();
+        return switch (AT) {
+            case "CODIGO" -> "STRING";
+            case "CATEGORIA" -> "STRING";
+            case "NOMBRE" -> "STRING";
+            case "FABRICANTE" -> "STRING";
+            case "FE" -> "STRING";
+            case "FA" -> "STRING";
+            case "DESCRIPCION"->"STRING";
+            case "DI"->"STRING";
+            case "CANTIDAD" -> "INT";
+            case "PRECIO" -> "DOUBLE";
+            default -> "";
+        };
+    }
     //ME DICE CUANTOS BYTES TENGO QUE SALTAR DESDE EL INICIO DEL REGISTRO HASTA EL INICIO DEL ATRIBUTO REQUERIDO
     //SI AGREGO MAS ATRIBUTOS DEBO MANEJARO DESDE AQUI 
     public long BytesHasta(String AT) {
@@ -254,6 +271,10 @@ public class Almacenamiento_Medicinas {
         }
         return aux;
     }
+    public long BytesAlinicioDesdeElFinalDe(String Atributo)
+    {
+        return BytesPorRegistro()-BytesHastaFinalPartiendoDe(Atributo);
+    }
     //SI HASTA AQUI TODO SE HA DEFINIDO BIEN , EL RESTO SE HACE SOLO
     
     
@@ -279,19 +300,20 @@ public class Almacenamiento_Medicinas {
             if(Existe(Nombre))
             {
                 RAC.seek(BuscarPunteroAtributo(Atributo,Nombre)); 
-                switch(Atributo)
+                String TD=TipoDeDato(Atributo);
+                switch(TD)
                 {
                     //AQUI ES DONDE DEBO HACER DIFERENTES COSAS EN FUNCION DE QUE REQUIERA
                     //SI EL ATRIBUTO ES UN INT DEBO AGREGARLO AQUI
-                    case "CANTIDAD" -> {
+                    case "INT" -> {
                         return ""+RAC.readInt();
                     }
                     //SI ES UN DOUBLE AQUI
-                    case "PRECIO" -> {
+                    case "DOUBLE" -> {
                         return ""+RAC.readDouble();
                     }
                     //SI ES UN STRING AQUI, PERO ES IMPORTANTE QUE LA CANTIDAD DE CHARS ESTE BIEN DEFINIDA
-                    case "CODIGO", "CATEGORIA", "NOMBRE", "FABRICANTE","DESCRIPCION","DI","FA","FE" -> {
+                    case "STRING" -> {
                         String aux="";
                         for(int i=0;i<CharsDe(Atributo);i++)
                         {
@@ -399,7 +421,7 @@ public class Almacenamiento_Medicinas {
         return Puntero;
     }
     //ESTA FUNCION NOS DA EL LISTADO DE MEDICINAS/NOMBRES EN FUNCION DE LA CATEGORIA INGRESADA
-    public Object[] getListadoMedicinas(String Categoria)
+    public Object[] getListadoFiltrado(String AtFiltro,String Atributo,String Igualador)
     {
         ArrayList<String> listado = new ArrayList<String>();
         try(RandomAccessFile RAC=new RandomAccessFile(file,"rw"))
@@ -407,32 +429,45 @@ public class Almacenamiento_Medicinas {
             RAC.seek(0);
             while(RAC.getFilePointer()<RAC.length())
             {
-                RAC.skipBytes((int)BytesDe("CODIGO"));
-                String Cat ="";
-                for(int i =0;i<CharsDe("CATEGORIA");i++)
+                System.out.println("Puntero inicio de registro en"+RAC.getFilePointer());
+                RAC.skipBytes((int)BytesHasta(AtFiltro));
+                String Filtro ="";
+                for(int i =0;i<CharsDe(AtFiltro);i++)
                 {
-                    Cat=Cat+RAC.readChar();
+                    System.out.println("Leyendo en "+RAC.getFilePointer());
+                    Filtro=Filtro+RAC.readChar();
                 }
-                System.out.println("Se leyo la categoria "+Cat);
-                if(Cat.equals(Categoria))
+                System.out.println("Puntero luego de leer el filtro "+RAC.getFilePointer());
+                System.out.println("Se leyo la categoria "+Filtro);
+                if(Filtro.equals(Igualador))
                 {
-                    String Prd ="";
-                    for(int i =0;i<CharsDe("NOMBRE");i++)
+                    //Regreso al inicio
+                    RAC.seek(RAC.getFilePointer()-BytesAlinicioDesdeElFinalDe(AtFiltro));
+                    System.out.println("Puntero que deberia estar en el inicio"+RAC.getFilePointer());
+                    RAC.skipBytes((int)BytesHasta(Atributo));
+                    System.out.println("Puntero que deberia estar antes de mi lecutra"+RAC.getFilePointer());
+                    String Atr ="";
+                    for(int i =0;i<CharsDe(Atributo);i++)
                     {
-                        Prd=Prd+RAC.readChar();
+                        System.out.println("Leyendo en "+RAC.getFilePointer());
+                        Atr=Atr+RAC.readChar();
                     }
-                    //System.out.println("Se leyo el producto "+Prd);
-                    if(!listado.contains(Prd))
+                    System.out.println("Puntero que deberia estar luego de mi lecutra"+RAC.getFilePointer());
+                    System.out.println("Se leyo el producto "+Atr);
+                    if(!listado.contains(Atr))
                     {
-                        listado.add(Prd);
+                        listado.add(Atr);
                     }
-                    RAC.skipBytes((int)BytesHastaFinalPartiendoDe("NOMBRE"));
+                    System.out.println("Puntero estaba en  "+RAC.getFilePointer());
+                    RAC.skipBytes((int)BytesHastaFinalPartiendoDe(Atributo));
+                    System.out.println("Puntero en "+RAC.getFilePointer());
                 }
                 else
                 {
-                    RAC.skipBytes((int)BytesHastaFinalPartiendoDe("CATEGORIA"));
+                    RAC.skipBytes((int)BytesHastaFinalPartiendoDe(AtFiltro));
                 }    
             }
+            System.out.println("SALI");
             RAC.close();         
         }
         catch(IOException e)
@@ -444,7 +479,7 @@ public class Almacenamiento_Medicinas {
     }
     //ESTA FUNCION DEVUELE TODAS LAS CATEGORIAS
     
-    public Object[] getListadoCategorias(boolean xf)
+    public Object[] getListado(boolean xf,String Atributo)
     {
         ArrayList<String> listado = new ArrayList<String>();
         if(xf)
@@ -455,17 +490,18 @@ public class Almacenamiento_Medicinas {
         {
             while(RAC.getFilePointer()<RAC.length())
             {
-                RAC.skipBytes((int)BytesHasta("CATEGORIA"));
-                String Categoria ="";
-                for(int i =0;i<CharsDe("CATEGORIA");i++)
+                
+                RAC.skipBytes((int)BytesHasta(Atributo));
+                String at ="";
+                for(int i =0;i<CharsDe(Atributo);i++)
                 {
-                    Categoria=Categoria+RAC.readChar();
+                    at=at+RAC.readChar();
                 }
-                if(!listado.contains(Categoria)&&!Categoria.equals(""))
+                if(!listado.contains(at)&&!at.equals(""))
                 {
-                    listado.add(Categoria);
+                    listado.add(at);
                 }
-                RAC.skipBytes((int)BytesHastaFinalPartiendoDe("CATEGORIA"));
+                RAC.skipBytes((int)BytesHastaFinalPartiendoDe(Atributo));
             }
             RAC.close();         
         }

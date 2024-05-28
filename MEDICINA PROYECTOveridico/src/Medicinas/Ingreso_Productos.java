@@ -23,9 +23,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Consolas = 0;
         Celulares = 0;
         Computadores = 0;
-        CBCategoria.setModel(new DefaultComboBoxModel(Medicinas.getListadoCategorias(true)));
-        CBCategoriaIngreso.setModel(new DefaultComboBoxModel(Medicinas.getListadoCategorias(true)));
-        Componentes_Ver.setModel(new DefaultComboBoxModel(Medicinas.getListadoCategorias(false)));
+        CBCategoria.setModel(new DefaultComboBoxModel(Medicinas.getListado(true,"CATEGORIA")));
+        CBCategoriaIngreso.setModel(new DefaultComboBoxModel(Medicinas.getListado(true,"CATEGORIA")));
+        Componentes_Ver.setModel(new DefaultComboBoxModel(Medicinas.getListado(false,"CATEGORIA")));
     }
 
     private Ingreso_Productos() {
@@ -812,7 +812,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         // TODO add your handling code here:
         String categoriaSeleccionada = CBCategoriaIngreso.getSelectedItem().toString();
     
-        Object[] productos = Medicinas.getListadoMedicinas(categoriaSeleccionada);
+        Object[] productos = Medicinas.getListadoFiltrado("CATEGORIA","NOMBRE",categoriaSeleccionada);
     
         String[] productosString = new String[productos.length];
         for (int i = 0; i < productos.length; i++) 
@@ -1142,9 +1142,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     
     public void Refrescar()
     {
-        CBCategoria.setModel(new DefaultComboBoxModel(Medicinas.getListadoCategorias(true)));
-        CBCategoriaIngreso.setModel(new DefaultComboBoxModel(Medicinas.getListadoCategorias(true)));
-        Componentes_Ver.setModel(new DefaultComboBoxModel(Medicinas.getListadoCategorias(true)));
+        CBCategoria.setModel(new DefaultComboBoxModel(Medicinas.getListado(true,"CATEGORIA")));
+        CBCategoriaIngreso.setModel(new DefaultComboBoxModel(Medicinas.getListado(true,"CATEGORIA")));
+        Componentes_Ver.setModel(new DefaultComboBoxModel(Medicinas.getListado(true,"CATEGORIA")));
         aux=null;
         IngresoImagenMNuevaBTT.setBackground(Color.white);
         IngresoImagenAM.setBackground(Color.white);

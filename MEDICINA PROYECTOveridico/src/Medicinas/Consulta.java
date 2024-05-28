@@ -34,7 +34,7 @@ public class Consulta extends javax.swing.JFrame {
         Ced=Cedula;
         Medicinas=aux;
         UsuarioTx.setText("Bienvenido "+c.get(Ced,"NOMBRE").trim()+" a Farmacias Toñito");
-        CategoriaCB.setModel(new DefaultComboBoxModel(Medicinas.getListadoCategorias(false)));
+        CategoriaCB.setModel(new DefaultComboBoxModel(Medicinas.getListado(false,"CATEGORIA")));
         mostrarDatos();
     }
 
@@ -505,11 +505,7 @@ public class Consulta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CategoriaCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategoriaCBActionPerformed
-        // TODO add your handling code here:
-        //Esta linea setea el modelo de la combo box de productos
-        //Tengo una funcion de categoria que devuelve un arr de objetos
-        //Para acceder a esta categoria reviso en existenicas y buscao en funcion de lo que se seleccione en la combo box de categoria
-       ProductosCB.setModel(new DefaultComboBoxModel(Medicinas.getListadoMedicinas(CategoriaCB.getSelectedItem().toString())));
+       ProductosCB.setModel(new DefaultComboBoxModel(Medicinas.getListadoFiltrado("CATEGORIA","NOMBRE",CategoriaCB.getSelectedItem().toString())));
        mostrarProducto();
     }//GEN-LAST:event_CategoriaCBActionPerformed
 

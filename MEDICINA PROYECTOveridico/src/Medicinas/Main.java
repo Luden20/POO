@@ -15,9 +15,9 @@ public class Main {
         File p=new File("D://facaux.dat");
         System.out.println(u.getAbsolutePath());
         Almacenamiento_Medicinas a=new Almacenamiento_Medicinas(u);
-        //a.Borrar();
+        a.Borrar();
         a.Ingresar("cccccc", "llllllllll", "NNNNNNNNNNNNNNN", "FFFFFFFFFFFFFF1", 99, 9999.99, "D1/M1/ANI1", "D2/M2/ANI2","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        a.Ingresar("kkkkkk", "xxxxxxxxxx", "OOOOOOOOOOOOOOO", "FFFFFFFFFFFFFFF", 44, 9999.99, "D1/M3/ANI1", "D2/M2/ANI2","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        a.Ingresar("kkkkkk", "llllllllll", "OOOOOOOOOOOOOOO", "FFFFFFFFFFFFFFF", 44, 9999.99, "D1/M3/ANI1", "D2/M2/ANI2","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         a.Ingresar("kkkkkk", "xxxxxxxxxx", "PPPPPPPPPPPPPPP", "FFFFFFFFFFFFFF1", 11, 9291.91, "D2/M1/ANI1", "D2/M2/ANI2","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         ALMACENAMIENTO_CLIENTES cl=new ALMACENAMIENTO_CLIENTES(c);
         Almacenamiento_Medicinas f=new Almacenamiento_Medicinas(p);

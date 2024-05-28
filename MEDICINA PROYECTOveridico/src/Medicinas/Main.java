@@ -10,9 +10,9 @@ public class Main {
 
     public static void main(String[] args) {
         // TODO code application logic here       
-        File u=new File("D://ARCHIVOS_AUXLIARES_MEDICINAS//DATOS//dato.dat");
-        File c=new File("D://ARCHIVOS_AUXLIARES_MEDICINAS//CLIENTE//cliente.dat");
-        File p=new File("D://ARCHIVOS_AUXLIARES_MEDICINAS//DATOS//facaux.dat");
+        File u=new File("D://dato.dat");
+        File c=new File("D://cliente.dat");
+        File p=new File("D://facaux.dat");
         System.out.println(u.getAbsolutePath());
         Almacenamiento_Medicinas a=new Almacenamiento_Medicinas(u);
         //a.Borrar();

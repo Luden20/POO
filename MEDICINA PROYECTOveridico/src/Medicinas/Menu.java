@@ -149,7 +149,7 @@ public class Menu extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         CreacionCliente a = new CreacionCliente(CLIENTES);
         a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        a.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //a.setExtendedState(JFrame.MAXIMIZED_BOTH);
         a.setTitle("Regístrate");
         a.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed

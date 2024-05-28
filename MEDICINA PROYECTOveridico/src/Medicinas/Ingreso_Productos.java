@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Medicinas;
 import java.awt.Color;
 import java.io.File;
@@ -12,24 +8,7 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JOptionPane;
 import java.util.StringTokenizer;
-
-
-/*
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.JFreeChart;
-import org.jfree.data.general.DefaultPieDataset; 
-import org.jfree.chart.plot.PiePlot; 
-import org.jfree.chart.ChartFrame;
-import org.jfree.data.category.DefaultCategoryDataset;
-*/
-
 public class Ingreso_Productos extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Ingreso_Productos
-     * @param aux
-     * @param c
-     */
     public Ingreso_Productos(Almacenamiento_Medicinas aux, ALMACENAMIENTO_CLIENTES Cliente) {
         initComponents();
         this.Cliente=Cliente;
@@ -57,6 +36,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -113,6 +93,14 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         IngresoImagenMNuevaBTT = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         Panel_Estadisticas = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
         Panel_Ingreso_Productos_Existente = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         ButtonIngresoExistente = new javax.swing.JButton();
@@ -584,7 +572,107 @@ public class Ingreso_Productos extends javax.swing.JFrame {
 
         Panel_Principal.add(Panel_Ingreso_Productos_Nuevos, "card2");
 
+        Panel_Estadisticas.setBackground(new java.awt.Color(0, 51, 51));
         Panel_Estadisticas.setLayout(new java.awt.GridBagLayout());
+
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel1.setText("ESCOJA LO QUE SE QUIERE COMPARAR");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(22, 0, 22, 0);
+        Panel_Estadisticas.add(jLabel1, gridBagConstraints);
+
+        jLabel20.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel20.setText("ESCOJA EL CAMPO POR EL QUE SE QUIERE COMPARAR");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 20, 0);
+        Panel_Estadisticas.add(jLabel20, gridBagConstraints);
+
+        jComboBox1.setBackground(new java.awt.Color(204, 255, 204));
+        jComboBox1.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CATEGORIA", "NOMBRE", "FABRICANTE", "FE", "FA" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.ipadx = 98;
+        Panel_Estadisticas.add(jComboBox1, gridBagConstraints);
+
+        jComboBox2.setBackground(new java.awt.Color(204, 255, 204));
+        jComboBox2.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por Registro", "Por Cantidad", "Por Cantidad X Precio" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 71;
+        gridBagConstraints.insets = new java.awt.Insets(0, 21, 0, 21);
+        Panel_Estadisticas.add(jComboBox2, gridBagConstraints);
+
+        jLabel21.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel21.setText("ESCOJA EL TIPO DE GRAFICA QUE SE BUSCA");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 20, 0);
+        Panel_Estadisticas.add(jLabel21, gridBagConstraints);
+
+        jComboBox3.setBackground(new java.awt.Color(204, 255, 204));
+        jComboBox3.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Barras", "Pastel" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 98;
+        Panel_Estadisticas.add(jComboBox3, gridBagConstraints);
+
+        jButton1.setBackground(new java.awt.Color(0, 153, 102));
+        jButton1.setFont(new java.awt.Font("Century Gothic", 3, 36)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 51));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Medicinas/1573395 (1).png"))); // NOI18N
+        jButton1.setText("GRAFICAR");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.insets = new java.awt.Insets(25, 5, 25, 5);
+        Panel_Estadisticas.add(jButton1, gridBagConstraints);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        Panel_Estadisticas.add(jPanel7, new java.awt.GridBagConstraints());
+
         Panel_Principal.add(Panel_Estadisticas, "card3");
 
         Panel_Ingreso_Productos_Existente.setBackground(new java.awt.Color(4, 50, 91));
@@ -951,6 +1039,49 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         Refrescar();
     }//GEN-LAST:event_VerClientesBTActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    String atributo = (String) jComboBox1.getSelectedItem();
+    String metodo = (String) jComboBox2.getSelectedItem();
+    String tipoGrafico = (String) jComboBox3.getSelectedItem();
+
+    try {
+        if (tipoGrafico.equals("Barras")) {
+            if (metodo.equals("Por Registro")) {
+                    Medicinas.graficoBarrasDeDiferentesDe(atributo);
+            } else if (metodo.equals("Por Cantidad")) {
+                    Medicinas.graficoBarrasDeDiferentesDeTomandoCuentaCantidad(atributo);
+            } else if (metodo.equals("Por Cantidad X Precio")) {
+                    Medicinas.graficoBarrasDeDiferentesDeTomandoCuentaCantidadyPrecio(atributo);
+            }
+        } else if (tipoGrafico.equals("Pastel")) {
+            if (metodo.equals("Por Registro")) {
+                    Medicinas.graficoPastelDeDiferentesDe(atributo);
+            } else if (metodo.equals("Por Cantidad")) {
+                    Medicinas.graficoPastelDeDiferentesDeTomandoEnCuentaCantidad(atributo);
+            } else if (metodo.equals("Por Cantidad X Precio")) {
+                    Medicinas.graficoPastelDeDiferentesDeTomandoEnCuentaCantidadyPrecio(atributo);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar un atributo, un método y un tipo de gráfico.");
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error al generar el gráfico: " + e.getMessage());
+    }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+       
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+       
+    }//GEN-LAST:event_jComboBox3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1066,7 +1197,12 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JButton VerClientesBT;
     private javax.swing.JButton VerFacturaBT;
     private javax.swing.JButton Ver_TablaBT;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1078,6 +1214,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1091,6 +1229,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

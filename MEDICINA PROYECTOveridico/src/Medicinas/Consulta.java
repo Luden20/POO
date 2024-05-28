@@ -358,7 +358,7 @@ public class Consulta extends javax.swing.JFrame {
         CEDULA_TA.setRows(5);
         jScrollPane5.setViewportView(CEDULA_TA);
 
-        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 250, 60));
+        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 280, 70));
 
         jLabel11.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(64, 64, 64));
@@ -373,7 +373,7 @@ public class Consulta extends javax.swing.JFrame {
         NOMBRE_TA.setRows(5);
         jScrollPane4.setViewportView(NOMBRE_TA);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 250, 50));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 280, 60));
 
         jLabel12.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(64, 64, 64));
@@ -388,7 +388,7 @@ public class Consulta extends javax.swing.JFrame {
         DIRECCION_TA.setRows(5);
         jScrollPane3.setViewportView(DIRECCION_TA);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 250, 50));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 280, 60));
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(64, 64, 64));
@@ -545,7 +545,7 @@ public class Consulta extends javax.swing.JFrame {
             //En base a los productos que esten en la factura muestro el total que se debe pagar
             //Llamo al metodo msotrat tabla que actualiza la tabla en base a la factura
             Factura.MostrarTabla(TC);
-            PTotalJL.setText(Factura.ValorTotal()+ "USD");
+            PTotalJL.setText(String.format("%.2f", Factura.ValorTotal())+ "USD");
         }
         else
         {

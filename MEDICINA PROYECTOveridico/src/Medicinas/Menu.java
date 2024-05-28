@@ -51,7 +51,6 @@ public class Menu extends javax.swing.JFrame {
         jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 63, -1, -1));
 
         TT_USUARIO.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        TT_USUARIO.setForeground(new java.awt.Color(204, 255, 255));
         jPanel4.add(TT_USUARIO, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 170, 30));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -179,6 +178,10 @@ public class Menu extends javax.swing.JFrame {
                 a.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 a.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 Setear();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Uusario no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }  
         else

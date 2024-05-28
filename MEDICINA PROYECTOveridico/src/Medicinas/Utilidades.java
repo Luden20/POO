@@ -7,6 +7,7 @@ package Medicinas;
 import java.io.File;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -54,6 +55,13 @@ public class Utilidades {
             jFileChooser3.addChoosableFileFilter(filter); 
             if (jFileChooser3.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
                 file = jFileChooser3.getSelectedFile();
+                String fileName = file.getName();
+                 if (!fileName.toLowerCase().endsWith("." + extension.toLowerCase())) 
+                 {
+                    fileName += "." + extension;
+                }
+                file= new File(file.getParent(),fileName);
+                JOptionPane.showMessageDialog(null, "Operacion exitoso", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
             }
             return file;
     }

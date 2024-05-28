@@ -543,7 +543,6 @@ public class Consulta extends javax.swing.JFrame {
                 DescripcionTA.getText());
             //Facturafinal.agregarProducto(aux,Integer.parseInt(CantidadCB.getSelectedItem().toString()));
             //En base a los productos que esten en la factura muestro el total que se debe pagar
-            //PTotalJL.setText(String.format("%.2f",Facturafinal.getTotalProd())+"USD");
             //Llamo al metodo msotrat tabla que actualiza la tabla en base a la factura
             Factura.MostrarTabla(TC);
             PTotalJL.setText(Factura.ValorTotal()+ "USD");
@@ -557,7 +556,7 @@ public class Consulta extends javax.swing.JFrame {
     }//GEN-LAST:event_PagarBActionPerformed
 
     private void PagarBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PagarBTActionPerformed
-        File file=new File("D://ARCHIVOS_AUXLIARES_MEDICINAS//"+Ced+","+NFac+".dat");
+        File file=new File("D://FACTURA,"+Ced+","+NFac+".dat");
         NFac++;
         Factura.Copiar(file);
         JOptionPane.showMessageDialog(null, "Factura Guardada en "+file.getPath(), "Mensaje", JOptionPane.INFORMATION_MESSAGE);

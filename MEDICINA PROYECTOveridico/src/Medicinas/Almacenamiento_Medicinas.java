@@ -14,7 +14,38 @@ import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
+/*
+MANUAL DE USO :D
 
+ESTA ES UNA CLASE QUE ALMACENA INFORMACION SOBRE MEDICINAS EN UN ARCHIVO RANDOMICO
+CON DETERMINADOS CAMBIOS EN ALGUNAS FUNCIONES ES FACILMENTE APLICABLE A OTROS CONTEXTOS
+PERO PARA ESO HAY QUE TENER EN CUENTA EL ORDEN DE LOS DATOS Y ALGUNAS COSAS MAS
+
+ESTA CLASE MANEJA REGISTROS QUE OCUPAN 344 BYTES
+CADA REGISTRO SE IDENTIFICA CON SU NOMBRE
+POR ENDE CADA NOMBRE ES IRREPETIBLE
+EL CODIGO HIBA A SER EL IDENTFICADOR, PERO POR DIVERSAS CUESTIONES SE DECIDIO ESO
+
+COMO VERAN SE MANEJAN LOS ATRIBUTOS POR MEDIO DE ESTRIGS
+ESTO SE HISO PARA NO TENER QUE CREAR GET DE CADA AATRIBUTO
+DE ESTA FORMA ESTE ALMACENAMIENTO ES FACILMENTE ESCALABLE
+
+PARA USARSE EN INTERFACES Y OTROS PROGRAMAS SE DEBE RESPETAR LOS NOMBRES
+Y MAS QUE NADA ESTABLECER BIEN EL ESPACIO EN BYTES DE CADA ATRIBUTO
+SINO EL PUNTERO SE VUELVE LOCO
+
+
+EN ALGUNOS CASOS PUEDE NO CARGAR LOS ARCHIVOS DEPENDIENDO DE DONDE LOS POSICONES
+EN ALGUNAS PC FUNCIONA AUN CUANDO CREAS CARPETAS Y LO HACES MAS ORGANIZADO
+PERO EN LA MAYORIA HA DADO PROBLEMAS, POR LO QUE SE GUARDA DIRECTAMENTE EN EL DISCO D
+ES MENOS ELEGANTE PERO QUE SE LE VA A HACER
+
+-GRUPO 4
+-PROYECTO MEDICINAS
+
+-XD 1000 LINEAS DE CODIGO
+
+*/
 public class Almacenamiento_Medicinas {
     private File file;
     public Almacenamiento_Medicinas(File A)
@@ -70,7 +101,7 @@ public class Almacenamiento_Medicinas {
             }
             else if (Existe(Identificador()))
             {
-                AgregarCantidad(Identificador(),Cantidad);
+                AgregarCantidad("CANTIDAD",Identificador(),Cantidad);
             }
             
             RAC.close();         
@@ -87,7 +118,7 @@ public class Almacenamiento_Medicinas {
             if(Existe(Nombre))
             {
                 System.out.print("YA EXISTE SOLO SE AGREGA");
-                AgregarCantidad(Nombre,Cantidad);
+                AgregarCantidad("CANTIDAD",Nombre,Cantidad);
             }
             else
             {
@@ -276,10 +307,6 @@ public class Almacenamiento_Medicinas {
         return BytesPorRegistro()-BytesHastaFinalPartiendoDe(Atributo);
     }
     //SI HASTA AQUI TODO SE HA DEFINIDO BIEN , EL RESTO SE HACE SOLO
-    
-    
-    //FUNCION QUE BORRA TODO EL RANDOMICO
-    //USAR CON EXTREMO CUIDADO
     public void Borrar()
     {
         try(RandomAccessFile RAC=new RandomAccessFile(file,"rw"))
@@ -514,14 +541,18 @@ public class Almacenamiento_Medicinas {
     }
     
     //ESTA FUNCION FUNCIONA CON EL ATRIBUTO CANTIDAD, AGREGA CANTIDAD AL REGISTRO CORRESPONDIENTE
-    public void AgregarCantidad(String Nombre,int Cantidad)
+    public void AgregarCantidad(String Atributo,String Nombre,int Cantidad)
     {
         try(RandomAccessFile RAC=new RandomAccessFile(file,"rw"))
         {
-            RAC.seek(BuscarPunteroAtributo("CANTIDAD",Nombre));
-            int aux=RAC.readInt();
-            RAC.seek(BuscarPunteroAtributo("CANTIDAD",Nombre));
-            RAC.writeInt(aux+Cantidad);
+            String TipoDato=TipoDeDato(Atributo);
+            if(TipoDato.equals(("INT")))
+            {
+                RAC.seek(BuscarPunteroAtributo("CANTIDAD",Nombre));
+                int aux=RAC.readInt();
+                RAC.seek(BuscarPunteroAtributo("CANTIDAD",Nombre));
+                RAC.writeInt(aux+Cantidad);
+            }
             RAC.close();         
         }
         catch(IOException e)
@@ -968,4 +999,5 @@ public class Almacenamiento_Medicinas {
                 }
             return PTotal;
         }
+
 }

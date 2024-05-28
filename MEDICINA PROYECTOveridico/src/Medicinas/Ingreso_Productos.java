@@ -515,9 +515,9 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(243, 243, 243)
                 .addComponent(jLabel2)
-                .addContainerGap(1355, Short.MAX_VALUE))
+                .addContainerGap(1139, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -533,7 +533,6 @@ public class Ingreso_Productos extends javax.swing.JFrame {
 
         IngresoImagenMNuevaBTT.setBackground(new java.awt.Color(3, 133, 135));
         IngresoImagenMNuevaBTT.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
-        IngresoImagenMNuevaBTT.setForeground(new java.awt.Color(242, 242, 242));
         IngresoImagenMNuevaBTT.setText("Agregar Imagen");
         IngresoImagenMNuevaBTT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -552,23 +551,23 @@ public class Ingreso_Productos extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(25, 25, 25)
                 .addComponent(jLabel15)
-                .addGap(211, 211, 211)
-                .addComponent(IngresoImagenMNuevaBTT, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(498, Short.MAX_VALUE))
+                .addGap(212, 212, 212)
+                .addComponent(IngresoImagenMNuevaBTT)
+                .addContainerGap(553, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(266, Short.MAX_VALUE)
+                .addContainerGap(290, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IngresoImagenMNuevaBTT, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43))
+                    .addComponent(IngresoImagenMNuevaBTT)
+                    .addComponent(jLabel15))
+                .addGap(55, 55, 55))
         );
 
-        Panel_Ingreso_Productos_Nuevos.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 990, 340));
+        Panel_Ingreso_Productos_Nuevos.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 990, 370));
 
         Panel_Principal.add(Panel_Ingreso_Productos_Nuevos, "card2");
 
@@ -831,7 +830,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
             String productoSeleccionado = CBProductoIngreso.getSelectedItem().toString();
             int cantidadIngresada = Integer.parseInt(CBCantidadIngreso.getSelectedItem().toString());
 
-            Medicinas.AgregarCantidad(productoSeleccionado,cantidadIngresada);
+            Medicinas.AgregarCantidad("CANTIDAD",productoSeleccionado,cantidadIngresada);
             if(faux!=null)
             {
                 Medicinas.Cambiar(productoSeleccionado, "DI",Utilidades.rellenarEspacios(faux.getAbsolutePath(),50) );
@@ -894,8 +893,8 @@ public class Ingreso_Productos extends javax.swing.JFrame {
                             Utilidades.rellenarEspacios(TFFabricante.getText(), 15),
                             Integer.parseInt(CBCantidad.getSelectedItem().toString()),
                             Double.parseDouble(TFPrecio.getText()),
-                            Utilidades.rellenarEspacios(TFFechaElaboracion.getText(), 8),
-                            Utilidades.rellenarEspacios(TFFechaVencimiento.getText(), 8),
+                            Utilidades.rellenarEspacios(TFFechaElaboracion.getText(), 10),
+                            Utilidades.rellenarEspacios(TFFechaVencimiento.getText(), 10),
                             Utilidades.rellenarEspacios(TFDescripcion1.getText(), 50)
                         );
                     }
@@ -1021,6 +1020,7 @@ public class Ingreso_Productos extends javax.swing.JFrame {
                 String saux=file.getName();
                 StringTokenizer st=new StringTokenizer(saux,",");
                 String Ced=st.nextToken();
+                Ced=st.nextToken();
                 saux=st.nextToken();
                 st=new StringTokenizer(saux,".");
                 String FNum=st.nextToken();

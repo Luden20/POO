@@ -81,23 +81,23 @@ public class Almacenamiento_Medicinas {
     //PESE A QUE EXISTE CODIGO, LO QUE REALMENTE SE USA COMO IDENTIFICADOR ES EL NOMBRE DE LA MEDICINA
     //TODO GIRA EN TORNO A ESO
     
-        public void Ingresar(String Codigo,String Categoria,String Nombre,String Fabricante,int Cantidad,double Precio,String FE,String FA,String Des,String FD)
+        public void Ingresar(String Codigo,String Categoria,String Nombre,String Fabricante,int Cantidad,double Precio,String FE,String FA,String Des,String DI)
     {
         try(RandomAccessFile RAC=new RandomAccessFile(file,"rw"))
         {
             if(!Existe(Nombre))
             {
                 RAC.seek(RAC.length());
-                RAC.writeChars(Codigo);
-                RAC.writeChars(Categoria);
-                RAC.writeChars(Nombre);
-                RAC.writeChars(Fabricante);
+                RAC.writeChars(Utilidades.rellenarEspacios( Codigo,6));
+                RAC.writeChars(Utilidades.rellenarEspacios(Categoria,10));
+                RAC.writeChars(Utilidades.rellenarEspacios(Nombre,15));
+                RAC.writeChars(Utilidades.rellenarEspacios(Fabricante,15));
                 RAC.writeInt(Cantidad);
                 RAC.writeDouble(Precio);
-                RAC.writeChars(FE);
-                RAC.writeChars(FA);
-                RAC.writeChars(Des);
-                RAC.writeChars(FD);
+                RAC.writeChars(Utilidades.rellenarEspacios(FE,10));
+                RAC.writeChars(Utilidades.rellenarEspacios(FA,10));
+                RAC.writeChars(Utilidades.rellenarEspacios(Des,50));
+                RAC.writeChars(Utilidades.rellenarEspacios(DI,50));
             }
             else if (Existe(Identificador()))
             {
@@ -123,16 +123,16 @@ public class Almacenamiento_Medicinas {
             else
             {
                 RAC.seek(RAC.length());
-                RAC.writeChars(Codigo);
-                RAC.writeChars(Categoria);
-                RAC.writeChars(Nombre);
-                RAC.writeChars(Fabricante);
+                RAC.writeChars(Utilidades.rellenarEspacios( Codigo,6));
+                RAC.writeChars(Utilidades.rellenarEspacios(Categoria,10));
+                RAC.writeChars(Utilidades.rellenarEspacios(Nombre,15));
+                RAC.writeChars(Utilidades.rellenarEspacios(Fabricante,15));
                 RAC.writeInt(Cantidad);
                 RAC.writeDouble(Precio);
-                RAC.writeChars(FE);
-                RAC.writeChars(FA);
-                RAC.writeChars(Des);
-                RAC.writeChars("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");//En caso de ser en otra pese, adjuntar una imagen cualquiera
+                RAC.writeChars(Utilidades.rellenarEspacios(FE,10));
+                RAC.writeChars(Utilidades.rellenarEspacios(FA,10));
+                RAC.writeChars(Utilidades.rellenarEspacios(Des,50));
+                RAC.writeChars(Utilidades.rellenarEspacios(" ",50,"x"));;//En caso de ser en otra pese, adjuntar una imagen cualquiera
             }
             RAC.close();         
         }

@@ -157,18 +157,18 @@ public class CreacionCliente extends javax.swing.JFrame {
         if(Utilidades.ValidarLongitud(TT_CEDULA.getText(),13)&&Utilidades.ValidarLongitud(TT_NOMBRE.getText(), 15)&&Utilidades.ValidarLongitud(TT_APELLIDO.getText(),15)&&
             Utilidades.ValidarLongitud(TT_DIRECCION.getText(),30)&& Utilidades.ValidarLongitud(TT_CONTRASENA.getText(),8))
         {
-            if(CLIENTES.Existe(Utilidades.Aumentar_Espacios(TT_CEDULA.getText(),13)))
+            if(CLIENTES.Existe(Utilidades.rellenarEspacios(TT_CEDULA.getText(),13)))
             {
                 JOptionPane.showMessageDialog(this,"Este usuario ya existe", "Error", JOptionPane.ERROR_MESSAGE);
             }
             else
             {
                 CLIENTES.Ingresar_Cliente(
-                    Utilidades.Aumentar_Espacios(TT_CEDULA.getText(),13), 
-                    Utilidades.Aumentar_Espacios(TT_NOMBRE.getText(), 15),
-                    Utilidades.Aumentar_Espacios(TT_APELLIDO.getText(),15) ,
-                    Utilidades.Aumentar_Espacios(TT_DIRECCION.getText(),30), 
-                    Utilidades.Aumentar_Espacios(TT_CONTRASENA.getText(),8));
+                    Utilidades.rellenarEspacios(TT_CEDULA.getText(),13), 
+                    Utilidades.rellenarEspacios(TT_NOMBRE.getText(), 15),
+                    Utilidades.rellenarEspacios(TT_APELLIDO.getText(),15) ,
+                    Utilidades.rellenarEspacios(TT_DIRECCION.getText(),30), 
+                    Utilidades.rellenarEspacios(TT_CONTRASENA.getText(),8));
                     JOptionPane.showMessageDialog(null, "Usuario Creado", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
                 
             }

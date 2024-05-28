@@ -15,15 +15,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author polip
  */
-public class Utilidades {
-    public static String Aumentar_Espacios(String Str,int CD){
-        for(int i=Str.length();i<CD;i++)
-        {
-            Str=Str+" ";
-        }
-        return Str;
-    }
-    
+public class Utilidades {    
     public static boolean ValidarLongitud(String str,int max)
     {
         return str.length()>0&&str.length()<max;
@@ -39,10 +31,32 @@ public class Utilidades {
     }
     public static String rellenarEspacios(String str, int longitud) 
     {
-      for (int i =str.length();i < longitud;i++) 
+      if(str.length()!=longitud)
+      {
+          for (int i =str.length();i < longitud;i++) 
         {
             str =str+ " ";
-        }
+        }      
+      }
+      else
+      {
+          System.out.println("no se necesitan mas espacios");
+      }
+        return str;
+    }
+      public static String rellenarEspacios(String str, int longitud,String Char) 
+    {
+      if(str.length()!=longitud)
+      {
+          for (int i =str.length();i < longitud;i++) 
+        {
+            str =str+ Char;
+        }      
+      }
+      else
+      {
+          System.out.println("no se necesitan mas espacios");
+      }
         return str;
     }
     public static File obtenerArchivo(String extension,String Mensaje)

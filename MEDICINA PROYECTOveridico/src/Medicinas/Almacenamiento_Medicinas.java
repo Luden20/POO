@@ -548,9 +548,9 @@ public class Almacenamiento_Medicinas {
             String TipoDato=TipoDeDato(Atributo);
             if(TipoDato.equals(("INT")))
             {
-                RAC.seek(BuscarPunteroAtributo("CANTIDAD",Nombre));
+                RAC.seek(BuscarPunteroAtributo(Atributo,Nombre));
                 int aux=RAC.readInt();
-                RAC.seek(BuscarPunteroAtributo("CANTIDAD",Nombre));
+                RAC.seek(BuscarPunteroAtributo(Atributo,Nombre));
                 RAC.writeInt(aux+Cantidad);
             }
             RAC.close();         
@@ -561,14 +561,18 @@ public class Almacenamiento_Medicinas {
         }
     }
     //MISMO FUNCIONAMIENTO, PERO CON RESTA
-        public void RestarCantidad(String Nombre,int Cantidad)
+        public void RestarCantidad(String Atributo,String Nombre,int Cantidad)
     {
         try(RandomAccessFile RAC=new RandomAccessFile(file,"rw"))
         {
-            RAC.seek(BuscarPunteroAtributo("CANTIDAD",Nombre));
-            int aux=RAC.readInt();
-            RAC.seek(BuscarPunteroAtributo("CANTIDAD",Nombre));
-            RAC.writeInt(aux-Cantidad);
+            String TipoDato=TipoDeDato(Atributo);
+            if(TipoDato.equals(("INT")))
+            {
+                RAC.seek(BuscarPunteroAtributo(Atributo,Nombre));
+                int aux=RAC.readInt();
+                RAC.seek(BuscarPunteroAtributo(Atributo,Nombre));
+                RAC.writeInt(aux-Cantidad);
+            }
             RAC.close();         
         }
         catch(IOException e)
@@ -614,7 +618,7 @@ public class Almacenamiento_Medicinas {
                     FABRICANTE=FABRICANTE+RAC.readChar();
                 }
                 String CANTIDAD=""+RAC.readInt();
-                String PRECIO=""+RAC.readDouble();
+                String PRECIO=""+RAC.readDouble()+" USD";
                  String FE="";
                 for(int i=0;i<CharsDe("FE");i++)
                 {
@@ -684,7 +688,7 @@ public class Almacenamiento_Medicinas {
                     FABRICANTE=FABRICANTE+RAC.readChar();
                 }
                 String CANTIDAD=""+RAC.readInt();
-                String PRECIO=""+RAC.readDouble();
+                String PRECIO=""+RAC.readDouble()+" USD";
                 String FE="";
                 for(int i=0;i<CharsDe("FE");i++)
                 {

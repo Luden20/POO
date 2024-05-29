@@ -530,7 +530,7 @@ public class Consulta extends javax.swing.JFrame {
             //Producto aux=inventariado.getCategoria(CategoriaCB.getSelectedItem().toString()).getProducto(ProductosCB.getSelectedItem().toString());
             //Agrego el producto para modifcarlo y agregarlo y paso la cantidad seleccionada
             //aux.ReducirCantidad(Integer.parseInt(CantidadCB.getSelectedItem().toString()));
-            Medicinas.RestarCantidad(ProductosCB.getSelectedItem().toString(), Integer.parseInt(CantidadCB.getSelectedItem().toString()));
+            Medicinas.RestarCantidad("CANTIDAD",ProductosCB.getSelectedItem().toString(), Integer.parseInt(CantidadCB.getSelectedItem().toString()));
             Factura.Ingresar
                 (CODIGO_TA.getText(),
                 CategoriaCB.getSelectedItem().toString(), 

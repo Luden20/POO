@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import javax.swing.table.DefaultTableModel;
 
 
 
@@ -34,6 +36,7 @@ public class ConexionSQLite {
     }
     public ResultSet ejecutarQuery(String sql) 
     {
+        System.out.println(sql);
         ResultSet rs = null;
         try {
             PreparedStatement pstmt = Conexion.prepareStatement(sql);
@@ -55,6 +58,18 @@ public class ConexionSQLite {
              System.out.println("NO Conectado");
         }
     }
+    public void Instruccion(String sql)
+    {
+        try
+        {
+            PreparedStatement pstmt = Conexion.prepareStatement(sql);
+            pstmt.executeUpdate();
+        }
+        catch(SQLException e)
+        {
+        
+        }
+    }
     public static void printResultSet(ResultSet rs) {
         try
         {
@@ -73,6 +88,62 @@ public class ConexionSQLite {
         }
         catch(SQLException e)
         {
+        }
+    }
+    public Object[] Listado(String Tabla,String Atributo)
+    {
+        LinkedList<String> aux=new LinkedList<String>();
+        aux.add("VACIO");
+        try
+        {
+            aux.clear();
+            PreparedStatement p=Conexion.prepareStatement("SELECT "+Atributo+" COUNT(*) FROM "+Tabla+" GROUP BY "+Atributo);
+            ResultSet rs=p.executeQuery();
+            while(rs.next())
+            {
+                aux.add(rs.toString());
+                rs.next();
+            }
+        }
+        catch(SQLException e)
+        {
+        
+        }
+        return aux.toArray();
+    }
+    public void MostrarTabla(String query,DefaultTableModel T) {
+        try
+        {
+            ResultSet rs=ejecutarQuery(query);
+            if(rs!=null)
+            {
+                T.setRowCount(0);
+                ResultSetMetaData metaData = rs.getMetaData();
+                int columnCount = metaData.getColumnCount();
+                LinkedList<String> aux=new LinkedList<String>();
+                for (int i = 1; i <= columnCount; i++) {
+                    aux.add(metaData.getColumnName(i));
+                }
+                T.setColumnIdentifiers(aux.toArray());
+                System.out.println();    
+                LinkedList<String> aux2=new LinkedList<String>();
+                while (rs.next()) {
+                    aux2.clear();
+                    for (int i = 1; i <= columnCount; i++) {
+                        aux2.add(rs.getString(i));
+                    }
+                    T.addRow(aux2.toArray());
+                }
+            }
+            else
+            {
+                T.setRowCount(0);
+            }
+            
+        }
+        catch(SQLException e)
+        {
+            T.setRowCount(0);
         }
     }
 }

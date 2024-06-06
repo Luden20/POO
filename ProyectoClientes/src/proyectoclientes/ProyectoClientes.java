@@ -14,10 +14,8 @@ public class ProyectoClientes {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        ConexionSQLite  db=new ConexionSQLite("D:/Universidad/POO/Bases de Datos SQLite/Ciudades.db");
-        ResultSet x=db.ejecutarQuery("SELECT * FROM CLIENTES");
-        ConexionSQLite.printResultSet(x);
+        Tabla a=new Tabla();
+        a.setVisible(true);
     }
     
 }

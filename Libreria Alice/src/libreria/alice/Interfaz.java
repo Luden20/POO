@@ -20,7 +20,7 @@ public class Interfaz extends javax.swing.JFrame {
         initComponents();
         tabla = new DefaultTableModel();
         jTable1.setModel(tabla);
-        conexion = new ConexionSQLite("C:\\Users\\RODRIGUEZ-PC\\Documents\\GitHub\\POO\\Bases de Datos SQLite\\Librossssssssssssssssssssssssssssss.db");
+        conexion = new ConexionSQLite("D:\\Universidad\\POO\\Bases de Datos SQLite\\Librossssssssssssssssssssssssssssss.db");
         conexion.MostrarTabla("SELECT * FROM Libros;", tabla);
     }
 
@@ -97,7 +97,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(3, 133, 135));
         jButton1.setForeground(new java.awt.Color(242, 242, 242));
-        jButton1.setText("Ordenar por Editorial");
+        jButton1.setText("Agrupar por Editorial");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -210,7 +210,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        conexion.MostrarTabla("SELECT * FROM Libros ORDER BY Editorial;", tabla);
+        conexion.MostrarTabla("SELECT Editorial,COUNT(*) FROM Libros GROUP BY Editorial;", tabla);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void JBBuscarAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarAutorActionPerformed

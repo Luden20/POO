@@ -5,6 +5,7 @@
 package proyectoclientes;
 
 import java.sql.ResultSet;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,10 +21,19 @@ public class Tabla extends javax.swing.JFrame {
         initComponents();
         T =new DefaultTableModel();
         jTable1.setModel(T);
-        
-        db=new ConexionSQLite("D:/Universidad/POO/Bases de Datos SQLite/Ciudades.db");
-        Comando="SELECT * FROM CLIENTES WHERE CIUDAD LIKE '%%';";
+        Base="SELECT T.name as Cancion,\n" +
+        "at.name AS Artista,\n" +
+        "a.title AS Album \n" +
+        "FROM tracks t \n" +
+        "INNER JOIN albums a \n" +
+        "ON t.AlbumId=a.AlbumId \n" +
+        "INNER JOIN artists at \n" +
+        "ON at.ArtistId=a.ArtistId ";
+        db=new ConexionSQLite("D:/Universidad/POO/Bases de Datos SQLite/chinook.db");
+        Comando=Base+";";
         Mostrar.setText(Comando);
+        artista.setModel(db.Listado("artists", "name"));
+        filtro.setModel(db.ListadoAtributos(Base));
         db.MostrarTabla(Comando, T);
         Filtro="Cedula";
     }
@@ -38,6 +48,7 @@ public class Tabla extends javax.swing.JFrame {
         filtro = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         Mostrar = new javax.swing.JLabel();
+        artista = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +87,13 @@ public class Tabla extends javax.swing.JFrame {
 
         Mostrar.setText("Mostrar");
 
+        artista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        artista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                artistaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,9 +105,11 @@ public class Tabla extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(72, 72, 72)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(filtro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(artista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
                         .addComponent(jButton1)))
                 .addGap(17, 17, 17))
         );
@@ -100,7 +120,8 @@ public class Tabla extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(filtro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(artista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -119,17 +140,27 @@ public class Tabla extends javax.swing.JFrame {
     private void buscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorActionPerformed
         // TODO add your handling code here:
         Buscador=buscador.getText().toString();
-        Comando="SELECT * FROM CLIENTES WHERE "+Filtro+" LIKE '%"+Buscador+"%';";
+        Comando=Base+" WHERE "+Filtro+" LIKE '%"+Buscador+"%';";
         Mostrar.setText(Comando);
         db.MostrarTabla(Comando, T);
     }//GEN-LAST:event_buscadorActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Comando="SELECT * FROM CLIENTES WHERE CIUDAD LIKE '%%';";
+        Comando=Base;
         Mostrar.setText(Comando);
         db.MostrarTabla(Comando, T);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void artistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistaActionPerformed
+        // TODO add your handling code here:
+        int ide=db.getID("SELECT ArtistId FROM artists WHERE name LIKE '"+artista.getSelectedItem().toString()+"';");
+        //ID.setText(""+ide);
+        //Comando="SELECT * FROM tracks WHERE AlbumID ="+ide+";";
+        Comando=Base+"WHERE Artista LIKE '"+artista.getSelectedItem().toString()+"' ;";
+        Mostrar.setText(Comando);
+        db.MostrarTabla(Comando, T);
+    }//GEN-LAST:event_artistaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,6 +199,7 @@ public class Tabla extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Mostrar;
+    private javax.swing.JComboBox<String> artista;
     private javax.swing.JTextField buscador;
     private javax.swing.JComboBox<String> filtro;
     private javax.swing.JButton jButton1;
@@ -178,5 +210,6 @@ public class Tabla extends javax.swing.JFrame {
     private String Filtro;
     private String Buscador;
     private String Comando;
+    private String Base;
     private ConexionSQLite  db;
 }

@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.LinkedList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -90,26 +91,66 @@ public class ConexionSQLite {
         {
         }
     }
-    public Object[] Listado(String Tabla,String Atributo)
+    public DefaultComboBoxModel Listado(String Tabla,String Atributo)
     {
         LinkedList<String> aux=new LinkedList<String>();
         aux.add("VACIO");
         try
         {
             aux.clear();
-            PreparedStatement p=Conexion.prepareStatement("SELECT "+Atributo+" COUNT(*) FROM "+Tabla+" GROUP BY "+Atributo);
+            PreparedStatement p=Conexion.prepareStatement("SELECT "+Atributo+" FROM "+Tabla+" GROUP BY "+Atributo+";");
             ResultSet rs=p.executeQuery();
-            while(rs.next())
-            {
-                aux.add(rs.toString());
-                rs.next();
-            }
+            ResultSetMetaData metaData = rs.getMetaData();
+            int columnCount = metaData.getColumnCount();
+            while (rs.next()) {
+                for (int i = 1; i <= columnCount; i++) {
+                    aux.add(rs.getString(i));
+                }
+            };
+           
         }
         catch(SQLException e)
         {
-        
+            System.out.println(e.getMessage());
         }
-        return aux.toArray();
+        return new DefaultComboBoxModel(aux.toArray());
+    }
+    public DefaultComboBoxModel ListadoAtributos(String sql)
+    {
+        LinkedList<String> aux=new LinkedList<String>();
+        aux.add("VACIO");
+        try
+        {
+            aux.clear();
+            PreparedStatement p=Conexion.prepareStatement(sql+" LIMIT 1;");
+            ResultSet rs=p.executeQuery();
+            ResultSetMetaData metaData = rs.getMetaData();
+            int columnCount = metaData.getColumnCount();
+            for (int i = 1; i <= columnCount; i++) {
+                aux.add(metaData.getColumnName(i));
+            }
+           
+        }
+        catch(SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return new DefaultComboBoxModel(aux.toArray());
+    }
+    public int getID(String sql)
+    {
+        //Esta funcion asume que el query de seleccion esta bien hecho y devuelve un  solo registro con un solo atriubto
+        //HAGANLO BIEN O DEVOLVERLA CUALQUIER COSA
+        try
+        {
+            PreparedStatement p=Conexion.prepareStatement(sql);
+            ResultSet rs=p.executeQuery();
+            return rs.getInt(1);
+        }
+        catch(SQLException e)
+        {
+            return 0;
+        }
     }
     public void MostrarTabla(String query,DefaultTableModel T) {
         try

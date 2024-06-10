@@ -31,7 +31,7 @@ public class Interfaz extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         JBOrdenar = new javax.swing.JButton();
-        JCBGenero = new javax.swing.JComboBox<>();
+        JCBGenero = new javax.swing.JComboBox<String>();
         JBAnio = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -77,7 +77,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         getContentPane().add(JBOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 262, -1));
 
-        JCBGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos los Generos", "Accion", "Aventura", "Ciencia Ficcion", "Cuento", "Epopeya", "Fantasia", "Ficcion", "Misterio", "Poesia", "Realismo Mágico", "Romance", "Terror", "Tragedia" }));
+        JCBGenero.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Todos los Generos", "Accion", "Aventura", "Ciencia Ficcion", "Cuento", "Epopeya", "Fantasia", "Ficcion", "Misterio", "Poesia", "Realismo Mágico", "Romance", "Terror", "Tragedia" }));
         JCBGenero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCBGeneroActionPerformed(evt);
@@ -161,7 +161,7 @@ public class Interfaz extends javax.swing.JFrame {
                 TFTituloActionPerformed(evt);
             }
         });
-        jPanel3.add(TFTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 262, -1));
+        jPanel3.add(TFTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 262, 30));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 110, 300, 320));
 

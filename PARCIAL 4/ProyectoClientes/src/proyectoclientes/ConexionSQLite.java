@@ -8,6 +8,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -65,10 +66,13 @@ public class ConexionSQLite {
         {
             PreparedStatement pstmt = Conexion.prepareStatement(sql);
             pstmt.executeUpdate();
+            System.out.println("Se hizo bien");
+            JOptionPane.showMessageDialog(null, "Salió bien la operación", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
         catch(SQLException e)
         {
-        
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Ocurrió un error en la operación: "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     public static void printResultSet(ResultSet rs) {

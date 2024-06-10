@@ -119,6 +119,30 @@ public class ConexionSQLite {
         }
         return new DefaultComboBoxModel(aux.toArray());
     }
+    public DefaultComboBoxModel ListadoComplejo(String SQL)
+    {
+        LinkedList<String> aux=new LinkedList<String>();
+        aux.add("VACIO");
+        try
+        {
+            aux.clear();
+            PreparedStatement p=Conexion.prepareStatement(SQL);
+            ResultSet rs=p.executeQuery();
+            ResultSetMetaData metaData = rs.getMetaData();
+            int columnCount = metaData.getColumnCount();
+            while (rs.next()) {
+                for (int i = 1; i <= columnCount; i++) {
+                    aux.add(rs.getString(i));
+                }
+            };
+           
+        }
+        catch(SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return new DefaultComboBoxModel(aux.toArray());
+    }
     public DefaultComboBoxModel ListadoAtributos(String sql)
     {
         LinkedList<String> aux=new LinkedList<String>();

@@ -30,15 +30,10 @@ public class Tabla extends javax.swing.JFrame {
         "INNER JOIN artists at \n" +
         "ON at.ArtistId=a.ArtistId ";
         //db=new ConexionSQLite("D:/Universidad/POO/Bases de Datos SQLite/chinook.db");
-        db=new ConexionSQLite("C:\\Users\\RODRIGUEZ-PC\\Documents\\GitHub\\POO\\Bases de Datos SQLite\\chinook.db");
+        db=new ConexionSQLite("D:\\Universidad\\4to Sync\\POO\\POO\\Bases de Datos SQLite\\chinook.db");
         Comando=Base+";";
         Mostrar.setText(Comando);
-        artista.setModel(db.Listado("artists", "name"));
-        filtro.setModel(db.ListadoAtributos(Base));
-        CBInsertAlbum.setModel(db.Listado("artists", "name"));
-        CBPlaylist.setModel(db.Listado("playlists", "name"));
-        CBTrackAlbum.setModel(db.Listado("albums", "title"));
-        CBTrackGenero.setModel(db.Listado("genres","name"));
+        Actualizar();
         
         db.MostrarTabla(Comando, T);
         Filtro="Cancion";
@@ -53,7 +48,6 @@ public class Tabla extends javax.swing.JFrame {
         buscador = new javax.swing.JTextField();
         filtro = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
-        Mostrar = new javax.swing.JLabel();
         artista = new javax.swing.JComboBox<>();
         JBAlbum = new javax.swing.JButton();
         CBPlaylist = new javax.swing.JComboBox<>();
@@ -84,6 +78,28 @@ public class Tabla extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         ButttonTrack = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        TFPlaylist = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        CDPlaylistAlbum = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        CBPlaylistTrack = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        ButttonTrack1 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        CBPlaylistSelected = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        CBPlaylistArtista = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Mostrar = new javax.swing.JTextArea();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        CBDeletePlaylist = new javax.swing.JComboBox<>();
+        JBIngresoAlbum1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -130,9 +146,6 @@ public class Tabla extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1071, 22, -1, -1));
 
-        Mostrar.setText("Mostrar");
-        getContentPane().add(Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 485, 232, -1));
-
         artista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         artista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +154,7 @@ public class Tabla extends javax.swing.JFrame {
         });
         getContentPane().add(artista, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 22, -1, -1));
 
-        JBAlbum.setText("Ver Numero de Albunes");
+        JBAlbum.setText("Ver Numero de Albumes");
         JBAlbum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBAlbumActionPerformed(evt);
@@ -155,10 +168,10 @@ public class Tabla extends javax.swing.JFrame {
                 CBPlaylistActionPerformed(evt);
             }
         });
-        getContentPane().add(CBPlaylist, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 385, -1, -1));
+        getContentPane().add(CBPlaylist, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
 
         jLabel1.setText("Ver Playlists");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 388, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
 
         CBTop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "5", "10", "20", "50", "100" }));
         CBTop.addActionListener(new java.awt.event.ActionListener() {
@@ -166,13 +179,13 @@ public class Tabla extends javax.swing.JFrame {
                 CBTopActionPerformed(evt);
             }
         });
-        getContentPane().add(CBTop, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 442, -1, -1));
+        getContentPane().add(CBTop, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, -1, -1));
 
         jLabel2.setText("Top Canciones en Playlist");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 445, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, -1));
 
         jLabel3.setText("Top Generos");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 417, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
 
         CBGen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "5", "10" }));
         CBGen.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +193,7 @@ public class Tabla extends javax.swing.JFrame {
                 CBGenActionPerformed(evt);
             }
         });
-        getContentPane().add(CBGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 414, -1, -1));
+        getContentPane().add(CBGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, -1, -1));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -213,7 +226,7 @@ public class Tabla extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(TFArtist, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                .addComponent(TFArtist, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                 .addGap(19, 19, 19))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -231,10 +244,10 @@ public class Tabla extends javax.swing.JFrame {
                     .addComponent(TFArtist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, 200, 130));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 240, 180));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -270,7 +283,7 @@ public class Tabla extends javax.swing.JFrame {
                         .addComponent(JBIngresoAlbum)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(91, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel7)
@@ -286,7 +299,7 @@ public class Tabla extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CBInsertAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TFNombreAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
@@ -295,7 +308,7 @@ public class Tabla extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 380, -1, 160));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 420, 270, 180));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -383,7 +396,215 @@ public class Tabla extends javax.swing.JFrame {
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 380, 250, 220));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 470, 250, 220));
+
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel20.setText("Crear Playlist");
+
+        TFPlaylist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFPlaylistActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Crear Playlist");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Nombre");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel20)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel21)
+                .addGap(18, 18, 18)
+                .addComponent(TFPlaylist, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                .addGap(19, 19, 19))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addGap(35, 35, 35))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel20)
+                .addGap(23, 23, 23)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(TFPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
+                .addContainerGap(100, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 680, 240, 210));
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        CDPlaylistAlbum.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CDPlaylistAlbum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDPlaylistAlbumActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("Album");
+
+        CBPlaylistTrack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBPlaylistTrackActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setText("Cancion");
+
+        jLabel16.setText("Playlist");
+
+        ButttonTrack1.setText("Ingresar");
+        ButttonTrack1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButttonTrack1ActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Agregar Cancion a Playlist");
+
+        jLabel13.setText("Artista");
+
+        CBPlaylistArtista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBPlaylistArtistaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel15))
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CBPlaylistTrack, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CBPlaylistSelected, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(ButttonTrack1)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel17)
+                        .addGap(0, 72, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel13))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CDPlaylistAlbum, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CBPlaylistArtista, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(jLabel17)
+                .addGap(9, 9, 9)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(CBPlaylistArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(CDPlaylistAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CBPlaylistTrack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel16)
+                    .addComponent(CBPlaylistSelected, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(ButttonTrack1)
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 700, -1, -1));
+
+        Mostrar.setColumns(20);
+        Mostrar.setRows(5);
+        jScrollPane2.setViewportView(Mostrar);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, -1, -1));
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel18.setText("Borrar Playlist");
+
+        CBDeletePlaylist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBDeletePlaylistActionPerformed(evt);
+            }
+        });
+
+        JBIngresoAlbum1.setText("Borrar");
+        JBIngresoAlbum1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBIngresoAlbum1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JBIngresoAlbum1)
+                .addGap(75, 75, 75))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(CBDeletePlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel18))
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CBDeletePlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JBIngresoAlbum1)
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 570, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -428,7 +649,7 @@ public class Tabla extends javax.swing.JFrame {
     private void CBPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBPlaylistActionPerformed
         // TODO add your handling code here:
         String busqueda = CBPlaylist.getSelectedItem().toString();
-        Comando="SELECT T.name as Cancion, at.name AS Artista, a.title AS Album, COUNT(t.name) as Repeticiones FROM tracks t INNER JOIN playlist_track pt ON t.TrackID=pt.TrackId INNER JOIN playlists p ON pt.PlaylistId=p.PlaylistId INNER JOIN albums a ON t.AlbumId=a.AlbumId INNER JOIN artists at ON at.ArtistId=a.ArtistId WHERE p.Name Like '%" + busqueda + "%' GROUP BY T.name ORDER BY at.name;";
+        Comando="SELECT T.name as Cancion, at.name AS Artista, a.title AS Album FROM tracks t INNER JOIN playlist_track pt ON t.TrackID=pt.TrackId INNER JOIN playlists p ON pt.PlaylistId=p.PlaylistId INNER JOIN albums a ON t.AlbumId=a.AlbumId INNER JOIN artists at ON at.ArtistId=a.ArtistId WHERE p.Name Like '%" + busqueda + "%' GROUP BY T.name ORDER BY at.name;";
         Mostrar.setText(Comando);
         db.MostrarTabla(Comando, T);
     }//GEN-LAST:event_CBPlaylistActionPerformed
@@ -451,15 +672,10 @@ public class Tabla extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        db.Instruccion("insert into artists(Name) Values('"+ TFArtist.getText().toString() +"');");
-        artista.setModel(db.Listado("artists", "name"));
-        
-        artista.setModel(db.Listado("artists", "name"));
-        filtro.setModel(db.ListadoAtributos(Base));
-        CBInsertAlbum.setModel(db.Listado("artists", "name"));
-        CBPlaylist.setModel(db.Listado("playlists", "name"));
-        CBTrackAlbum.setModel(db.Listado("albums", "title"));
-        CBTrackGenero.setModel(db.Listado("genres","name"));
+        Comando="insert into artists(Name) Values('"+ TFArtist.getText().toString() +"');";
+        db.Instruccion(Comando);
+        Mostrar.setText(Comando);
+          Actualizar();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void TFArtistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFArtistActionPerformed
@@ -476,14 +692,10 @@ public class Tabla extends javax.swing.JFrame {
         String nomAlbum = TFNombreAlbum.getText();
         int id = db.getID("SELECT ArtistId FROM artists where Name ='" + artSel + "';");
         String sid = id + "";
-        db.Instruccion("INSERT INTO albums (Title,ArtistId)VALUES('" + nomAlbum + "','" + sid + "');");
-        
-        artista.setModel(db.Listado("artists", "name"));
-        filtro.setModel(db.ListadoAtributos(Base));
-        CBInsertAlbum.setModel(db.Listado("artists", "name"));
-        CBPlaylist.setModel(db.Listado("playlists", "name"));
-        CBTrackAlbum.setModel(db.Listado("albums", "title"));
-        CBTrackGenero.setModel(db.Listado("genres","name"));
+        Comando="INSERT INTO albums (Title,ArtistId)VALUES('" + nomAlbum + "','" + sid + "');";
+        db.Instruccion(Comando);
+        Mostrar.setText(Comando);
+          Actualizar();
     }//GEN-LAST:event_JBIngresoAlbumActionPerformed
 
     private void TFTrackNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFTrackNombreActionPerformed
@@ -499,20 +711,81 @@ public class Tabla extends javax.swing.JFrame {
         String idgenero = "" + db.getID("SELECT GenreId FROM genres where Name ='" + trackgenero + "';");
         String idalbum = "" + db.getID("SELECT AlbumID FROM albums where Title ='" + trackalbum + "';");
         
-        db.Instruccion("insert into tracks(Name,AlbumId,MediaTypeId,GenreId,Composer,Milliseconds,Bytes,UnitPrice) Values('" + trackname + "'," + idalbum + ",1," + idgenero + ",'" + trackcomposer + "',100,100,100);");
-        
-        artista.setModel(db.Listado("artists", "name"));
-        filtro.setModel(db.ListadoAtributos(Base));
-        CBInsertAlbum.setModel(db.Listado("artists", "name"));
-        CBPlaylist.setModel(db.Listado("playlists", "name"));
-        CBTrackAlbum.setModel(db.Listado("albums", "title"));
-        CBTrackGenero.setModel(db.Listado("genres","name"));
+        Comando="insert into tracks(Name,AlbumId,MediaTypeId,GenreId,Composer,Milliseconds,Bytes,UnitPrice) Values('" + trackname + "'," + idalbum + ",1," + idgenero + ",'" + trackcomposer + "',100,100,100);";
+        db.Instruccion(Comando);
+        Mostrar.setText(Comando);
+          Actualizar();
     }//GEN-LAST:event_ButttonTrackActionPerformed
 
     private void CBTrackAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBTrackAlbumActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CBTrackAlbumActionPerformed
 
+    private void TFPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFPlaylistActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TFPlaylistActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        Comando=("INSERT INTO playlists(Name) VALUES('"+TFPlaylist.getText()+"');");
+        db.Instruccion(Comando);
+        Mostrar.setText(Comando);
+          Actualizar();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void CDPlaylistAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDPlaylistAlbumActionPerformed
+       CBPlaylistTrack.setModel(db.ListadoComplejo("SELECT t.Name FROM tracks t INNER JOIN albums a on t.AlbumId=a.AlbumId WHERE a.Title ='"+CDPlaylistAlbum.getSelectedItem().toString()+"';"));
+    }//GEN-LAST:event_CDPlaylistAlbumActionPerformed
+
+    private void ButttonTrack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButttonTrack1ActionPerformed
+        // TODO add your handling code here:
+        String Playlist =CBPlaylistSelected.getSelectedItem().toString();
+        String PID=""+db.getID("SELECT PlaylistId from playlists where Name='"+Playlist+"';");
+        String Cancion=CBPlaylistTrack.getSelectedItem().toString();
+        String CID=""+db.getID("SELECT TrackId from tracks where Name='"+Cancion+"';");
+        Comando=("INSERT INTO playlist_track VALUES("+PID+","+CID+");");
+        db.Instruccion(Comando);
+        Mostrar.setText(Comando);
+        
+    }//GEN-LAST:event_ButttonTrack1ActionPerformed
+
+    private void CBPlaylistTrackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBPlaylistTrackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CBPlaylistTrackActionPerformed
+
+    private void CBPlaylistArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBPlaylistArtistaActionPerformed
+        // TODO add your handling code here:
+        CDPlaylistAlbum.setModel(db.ListadoComplejo("SELECT a.Title FROM albums a INNER JOIN artists at ON a.ArtistId=at.ArtistId where at.Name='"+CBPlaylistArtista.getSelectedItem().toString()+"';"));
+    }//GEN-LAST:event_CBPlaylistArtistaActionPerformed
+
+    private void CBDeletePlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBDeletePlaylistActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CBDeletePlaylistActionPerformed
+
+    private void JBIngresoAlbum1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBIngresoAlbum1ActionPerformed
+        // TODO add your handling code here:
+        String Playlist=CBDeletePlaylist.getSelectedItem().toString();
+        String ID=""+db.getID("SELECT playlistId from playlists where Name='"+Playlist+"';");
+        Comando="DELETE FROM playlist_track where PlaylistId="+ID+" ;";
+        String aux=" DELETE FROM playlists where PlaylistId="+ID+";";
+        db.Instruccion(Comando);
+        db.Instruccion(aux);
+        Mostrar.setText(Comando+"\n"+aux);
+        Actualizar();
+    }//GEN-LAST:event_JBIngresoAlbum1ActionPerformed
+    public void Actualizar()
+    {
+        artista.setModel(db.Listado("artists", "name"));
+        filtro.setModel(db.ListadoAtributos(Base));
+        CBPlaylistArtista.setModel(db.Listado("artists", "name"));
+        CBInsertAlbum.setModel(db.Listado("artists", "name"));
+        CBPlaylist.setModel(db.Listado("playlists", "name"));
+        CBPlaylistSelected.setModel(db.Listado("playlists", "name"));
+        CBTrackAlbum.setModel(db.Listado("albums", "title"));
+        CBTrackGenero.setModel(db.Listado("genres","name"));
+        CBDeletePlaylist.setModel(db.Listado("playlists", "name"));
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -550,17 +823,25 @@ public class Tabla extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButttonTrack;
+    private javax.swing.JButton ButttonTrack1;
+    private javax.swing.JComboBox<String> CBDeletePlaylist;
     private javax.swing.JComboBox<String> CBGen;
     private javax.swing.JComboBox<String> CBInsertAlbum;
     private javax.swing.JComboBox<String> CBPlaylist;
+    private javax.swing.JComboBox<String> CBPlaylistArtista;
+    private javax.swing.JComboBox<String> CBPlaylistSelected;
+    private javax.swing.JComboBox<String> CBPlaylistTrack;
     private javax.swing.JComboBox<String> CBTop;
     private javax.swing.JComboBox<String> CBTrackAlbum;
     private javax.swing.JComboBox<String> CBTrackGenero;
+    private javax.swing.JComboBox<String> CDPlaylistAlbum;
     private javax.swing.JButton JBAlbum;
     private javax.swing.JButton JBIngresoAlbum;
-    private javax.swing.JLabel Mostrar;
+    private javax.swing.JButton JBIngresoAlbum1;
+    private javax.swing.JTextArea Mostrar;
     private javax.swing.JTextField TFArtist;
     private javax.swing.JTextField TFNombreAlbum;
+    private javax.swing.JTextField TFPlaylist;
     private javax.swing.JTextField TFTrackComposer;
     private javax.swing.JTextField TFTrackNombre;
     private javax.swing.JComboBox<String> artista;
@@ -568,11 +849,20 @@ public class Tabla extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> filtro;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -583,7 +873,11 @@ public class Tabla extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
     private DefaultTableModel T;

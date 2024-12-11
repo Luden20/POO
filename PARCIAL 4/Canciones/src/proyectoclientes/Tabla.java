@@ -31,7 +31,9 @@ public class Tabla extends javax.swing.JFrame {
         "ON at.ArtistId=a.ArtistId ";
         //db=new ConexionSQLite("D:/Universidad/POO/Bases de Datos SQLite/chinook.db");
         //db=new ConexionSQLite("D:\\Universidad\\4to Sync\\POO\\POO\\Bases de Datos SQLite\\chinook.db");
-        db=new ConexionSQLite("D:\\Universidad\\POO\\Bases de Datos SQLite\\chinook.db");
+        db=new ConexionSQLite("C:\\Users\\polip\\Documents\\GitHub\\POO\\Bases de Datos SQLite\\chinook.db");
+        ConexionSQLite.printResultSet(db.ejecutarQuery("SELECT * FROM ARTISTS"));
+        
         Comando=Base+";";
         Mostrar.setText(Comando);
         Actualizar();
